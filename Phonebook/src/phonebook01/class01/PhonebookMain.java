@@ -13,7 +13,7 @@ public class PhonebookMain {
 		app.run();   // 실행
 		app.exit();   // 종료
 	} // end main()
-	
+	//dz
 	// 응용프로그램을 초기화 
 	public void init() {
 		sc = new Scanner(System.in);
