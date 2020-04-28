@@ -3,8 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <title>캘린더 폼 작성</title>
+
+<style>
+table, th, td {
+	border: 1px solid black; /* 두께, 선종류, 선색상 */
+	border-collapse: collapse; /* border 붙이기 */
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 15px; /* 셀 안쪽의 컨텐트와 border 사이 여백 */
+}
+
+th {
+	border: 1px solid black;
+	text-align: left;
+}
+
+table#table1, th, td {
+	border: 0px solid black;
+	
+}
+</style>
+
 </head>
 <body>
+	<div>
+		<table id="table1">
+			<tr>
+				<th colspan="2"><h>정책차림표 </h></th>
+				<th colspan="2"><h>미리보는 지원사업</h></th>
+				<th><h>마감임박 지원사업</h></th>
+				<th style="background-color: blue; color: white" colspan="2"><h>접수중인 지원사업</h></th></th>
+				
+			</tr>
+		</table>
+	</div>
+
+	<p>2015-06-17</p>
+	<div>
+		<table style="width: 100%">
+			<tr>
+				<th colspan="7"><input type="radio" checked />전체 <input
+					type="radio" />창업*벤처 <input type="radio" />소상공인 <input
+					type="radio" />판로*수출 <input type="radio" />R&D <input
+					type="radio" /> 금융*세제 <input type="radio" />인력</th>
+			</tr>
+			<tr>
+				<td>일</td>
+				<td>월</td>
+				<td>화</td>
+				<td>수</td>
+				<td>목</td>
+				<td>금</td>
+				<td>토</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td>22</td>
+				<td>23</td>
+				<td>24</td>
+				<td>25</td>
+				<td>26</td>
+				<td>27</td>
+			</tr>
+			<tr>
+				<td>28</td>
+				<td>29</td>
+				<td>30</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+
+	<p>* 2015년 6월 7일, 전체 검색결과, 진행중인 사업은 총 614건 입니다.</p>
+	<div>
+
+		<table style="width: 100%">
+			<tr>
+				<th>번호</th>
+				<th colspan="4">지원사업명</th>
+				<th>주관부처</th>
+				<th colspan="2">신청기간</th>
+				<th>조회</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+					<button style="border-color: red; color: red;">on-line</button>
+				</td>
+				<td>중소기업청</td>
+				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th>731</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+					<button style="border-color: red; color: red;">on-line</button>
+				</td>
+				<td>중소기업청</td>
+				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th>731</th>
+			</tr>
+			<tr>
+				<td>614</td>
+				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+					<button style="border-color: red; color: red;">on-line</button>
+				</td>
+				<td>중소기업청</td>
+				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th>731</th>
+			</tr>
+			<tr>
+				<td>614</td>
+				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+					<button style="border-color: red; color: red;">on-line</button>
+				</td>
+				<td>중소기업청</td>
+				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th>731</th>
+			</tr>
+
+			<tr>
+				<th colspan="9">1  2  3  4  5</th>
+
+			</tr>
+			<tr>
+				
+				<td colspan="9">
+				<input type="text" value="키워드" /> <input type="text" value="" /> <button style="background-color: blue; color: white">검색</button></td>
+			</tr>
+			<tr>
+				<td colspan="9"></td>
+			</tr>
+
+		</table>
+
+
+	</div>
+
 
 </body>
 </html>
