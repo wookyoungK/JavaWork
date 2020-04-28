@@ -12,15 +12,10 @@ public class Main {
 	for(i=0; i<list.length; i++) {
 		list[i]=sc.nextInt();
 		}
-	for(j=0; j<i-1; j++)
-		if(j%2==0) {
-			sum = sum + list[j];
-	}else {
-		break;
+	for(j=0; j<i; j++) {
+		if(j%2==0) sum = sum + list[j];		
 	}
-		
-	
+	System.out.println(sum);
 	}
-	
-	}
+}
 

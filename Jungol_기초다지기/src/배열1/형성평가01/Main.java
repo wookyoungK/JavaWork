@@ -15,5 +15,7 @@ public class Main {
 		for(j=i-1; j>=0; j--) {
 		System.out.print(list[j]+" ");
 		}
-	}
+		System.out.println(i);
+		
+	}//혹시몰라성~
 }//연습
