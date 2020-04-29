@@ -8,23 +8,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		char list[]= {'J', 'U', 'N', 'G', 'O' ,'L'};
+		char list[] = { 'J', 'U', 'N', 'G', 'O', 'L' };
 		char a;
 		int i;
 		int j;
-		
-		
-		a=sc.nextLine();
-		for(i=0; i<list.length; i++) {
-			if(list.equals(a)) {
-				System.out.println(i);
-			}else {
-				System.out.println("none");
-			}
+
+		a = sc.next
+
+		if (list.equals(a)) {
+			System.out.println(i);
+		} else {
+			System.out.println("none");
 		}
-		
+
 	}
-	
-	
 
 }
