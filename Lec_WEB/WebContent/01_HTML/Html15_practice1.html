@@ -10,7 +10,7 @@ table, th, td {
 	border-collapse: collapse; /* border 붙이기 */
 }
 
-th, td {
+td {
 	border: 0px solid black;
 	padding: 15px; /* 셀 안쪽의 컨텐트와 border 사이 여백 */
 }
@@ -23,31 +23,27 @@ th {
 </head>
 <body>
 	<div>
-		<p>주문자 정보 입력</p>
-		<table style="width: 80%; border-top: 3px solid black">
+		<p style="font-size: 20px">주문자 정보 입력</p>
+		<table style="width: 70%; border-top: 3px solid black;">
 			<tr>
-				<td>주문자정보</td>
-				<td colspan="2">비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.</td>
-				<td><input type="submit" value="휴대폰인증" /><input type="submit"
+				<td >주문자정보</td>
+				<td style="border-right: 1px solid black; colspan="2">비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.
+				<input type="submit" value="휴대폰인증" />  <input type="submit"
 					value="아이핀 인증" /></td>
 			</tr>
 			<tr>
-				<td>주소</td>
-				<td colspan="3"><input type="text" value="" disabled /> <input
+				<td >주소</td>
+				<td style="border-right: 1px solid black;" colspan="3"><input style="width: 100px;" type="text" value="" disabled /> <input
 					type="submit" value="주소찾기" /></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td colspan="3"><input type="text" value="" disabled /></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="3"><input type="text" value="" /></td>
-
+				<td style="border-right: 1px solid black;" colspan="3"><input style="width: 500px;"  type="text" value="" disabled /><br>
+				<input style="width: 500px;" type="text" value="" /></td>
 			</tr>
 			<tr>
 				<td>휴대전화</td>
-				<td colspan="4"><select>
+				<td style="border-right: 1px solid black;" colspan="4"><select>
 						<option value="volvo">010</option>
 						<option value="saab">011</option>
 						<option value="fiat">031</option>
@@ -73,31 +69,28 @@ th {
 	<br>
 	<div>
 		<p>배송지 정보 입력</p>
-		<table style="width: 80%; border-top: 3px solid black">
+		<table style="width: 70%; border-top: 3px solid black">
 			<tr>
-				<td style="border-bottom: 1px solid black">배송지선택</td>
-				<td style="border-bottom: 1px solid black;" colspan="3"><input
+				<td style="border-bottom: 1px solid black; background-color: lightgray">배송지선택</td>
+				<td style="border-bottom: 1px solid black; border-right: 1px solid black; background-color: lightgray" colspan="3"><input
 					type="submit" value="주문지 정보와 동일" /></td>
 			</tr>
 			<tr>
-				<td>받으시는 분</td>
-				<td colspan="3"><input type="text" value="" /></td>
+				<td >받으시는 분</td>
+				<td style="border-right: 1px solid black;" colspan="3"><input type="text" value="" /></td>
 			</tr>
 			<tr>
 				<td>주소</td>
-				<td colspan="3"><input type="text" value="" disabled /> <input
+				<td style="border-right: 1px solid black;" colspan="3"><input type="text" value="" disabled /> <input
 					type="submit" value="주소찾기" /> <input type="checkbox">배송지목록에
 					추가</td>
 			</tr>
 			<tr>
 				<td></td>
-				<td colspan="3"><input type="text" value="" disabled /></td>
+				<td style="border-right: 1px solid black;" colspan="3"><input style="width: 500px;"  type="text" value="" disabled /><br>
+				<input style="width: 500px;" type="text" value="" /></td>
 			</tr>
-			<tr>
-				<td></td>
-				<td colspan="3"><input type="text" value="" /></td>
 
-			</tr>
 			<tr>
 				<td>휴대전화</td>
 				<td colspan="4"><select>
@@ -111,7 +104,7 @@ th {
 			</tr>
 			<tr>
 				<td>배송지요구사항</td>
-				<td colspan="3"><input type="text" value="" /> (0자/50자)<br>
+				<td style="border-right: 1px solid black;" colspan="3"><input type="text" value="" /> (0자/50자)<br>
 					*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</td>
 
 			</tr>
@@ -124,21 +117,21 @@ th {
 	<br>
 	<div>
 		<p>결제 정보 입력</p>
-		<table style="width: 80%; border-top: 3px solid black;">
+		<table style="width: 70%; border-top: 3px solid black;">
 			<tr>
-				<td>신용카드</td>
-				<td colspan="3"><input type="radio" value="" checked />신용카드(일반)
+				<td style="background-color: lightgray;">신용카드</td>
+				<td style="background-color: lightgray" colspan="3"><input type="radio" value="" checked />신용카드(일반)
 					<input type="radio" value="" />신용카드(법인) <input type="radio"
 					value="" />해외발급카드</td>
 
 			</tr>
 			<tr>
-				<td style="border-bottom: 1px solid black;">현금결제</td>
-				<td style="border-bottom: 1px solid black;" colspan="3"><input
+				<td style="border-bottom: 1px solid black; background-color: lightgray;">현금결제</td>
+				<td style="border-bottom: 1px solid black; background-color: lightgray;" colspan="3"><input
 					type="radio" value="" />무통장입금 <input type="radio" value="" />실시간계좌이체</td>
 			</tr>
 			<tr>
-				<td>카드선택</td>
+				<td >카드선택</td>
 				<td colspan="3"><select>
 						<option value="">선택하세요</option>
 						<option value="">우리카드</option>
@@ -148,7 +141,7 @@ th {
 				<td>할부방식</td>
 				<td colspan="3">
 				<select>
-						<option value="">할부방식</option>
+						<option value="">일시불</option>
 						<option value="">우리카드</option>
 				</select></td>
 			</tr>

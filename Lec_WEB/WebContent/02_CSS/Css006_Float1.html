@@ -9,16 +9,19 @@ img {
 	margin-left:15px;  /* 왼쪽 바깥 여백 */
 }
 img#f1 {
-	/* TODO */
+	float: none; /* 기본값 */
 }
 img#f2 {
-	/* TODO */
+	float: right;
+	margin-right: 100px;
 }
 img#f3 {
-	/* TODO */
+	float: left;
 }
 
-/* TODO : clear*/
+div#clear{
+	clear: left; /* float: left 의 영향을 안받는다 */
+}
 
 </style>
 </head>
@@ -26,6 +29,8 @@ img#f3 {
 	https://www.w3schools.com/css/css_float.asp
 	
 	float 는 content 들을 어떻게 배치하고 자리 잡을지 세팅한다.
+	주변content에 영향을준다!!
+	
 	
 	left - element를  컨테이너의 왼쪽으로 float 한다
 	right- element를  컨테이너의 오른쪽으로 float 한다
@@ -62,7 +67,7 @@ img#f3 {
 </p>
 
 <!-- TODO : clear -->
-
+<div id="clear"></div>
 <hr> <!-- hr의 위치 주목! -->
 
 

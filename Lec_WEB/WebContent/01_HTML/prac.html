@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+
+
+<style>
+table{
+	border: 1px solid black; /* 두께, 선종류, 선색상 */
+	border-collapse: collapse; /* border 붙이기 */
+}
+
+th{
+	border: 3px solid black; /* 두께, 선종류, 선색상 */
+
+}
+
+td{
+	border: 1px solid black; /* 두께, 선종류, 선색상 */
+
+}
+</style>
+
+<style>
+#p,th,td {
+	border: 2px solid black;
+
+}
+th#d{
+border: 10px solid black;
+가능
+}
+
+p.c1{
+border: 10px solid black;
+/*ㄴㄴㄴ 이렇게는 않됨  */
+}
+tr{
+	border: 2px solid red;
+	/*ㄴㄴㄴ 이렇게는 않됨  */
+}
+#table1{
+	border: 10px solid black;
+}
+
+th{
+	border: 10px solid blue;
+			
+}
+
+</style>
+</head>
+<div>
+	<table class="p">
+		<tr>
+			<th class ="d">이게헤더임</th>
+			<td class= "c1">1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<th>이게헤더임</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+
+	
+	</table>
+	<br>
+	<br>
+	
+		<table id="table1">
+		<tr>
+			<th>이게헤더임</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<th>이게헤더임</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+
+	</table>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+

@@ -7,7 +7,7 @@
 'content' 가 element box 를 벗어난 경우 어떻게 처리할지 명시
 overflow 는 height 값을 가진 block 속성 element 에 대해서만 동작함!
 
-	visible : (기본값) clip 발생 안하고, 그냥 box 영역 밖에 보임
+	visible : (기본값)(default값) clip 발생 안하고, 그냥 box 영역 밖에 보임 이게 
 	hidden : clip 발생, 넘치는 content 는 안 보임
 	scroll : clip 발생하나 scroll 바 등장하여 볼수는 있게 한다
 	auto : overflow 발생시에만 scoll 바 등장
@@ -25,32 +25,29 @@ y축(수직) overflow 값에 대해서만 설정할때는 overflow-y
 
  -->
 <style>
-div.ex1 {
-  background-color: lightblue;
+div{
+background-color: lightblue;
   width: 110px;
   height: 110px;
-  /* TODO */
+  }
+div.ex1 {
+  
+ 	overflow: scroll;
 }
 
 div.ex2 {
-  background-color: lightblue;
-  width: 110px;
-  height: 110px;
-  /* TODO */
+
+  overflow: hidden;
 }
 
 div.ex3 {
-  background-color: lightblue;
-  width: 110px;
-  height: 110px;
-  /* TODO */
+
+  overflow: auto;
 }
 
 div.ex4 {
-  background-color: lightblue;
-  width: 110px;
-  height: 110px;
-  /* TODO */
+
+  overflow: visible;
 }
 </style>
 </head>

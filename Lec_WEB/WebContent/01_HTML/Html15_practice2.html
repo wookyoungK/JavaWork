@@ -5,7 +5,7 @@
 <title>캘린더 폼 작성</title>
 
 <style>
-table, th, td {
+table {
 	border: 1px solid black; /* 두께, 선종류, 선색상 */
 	border-collapse: collapse; /* border 붙이기 */
 }
@@ -16,33 +16,36 @@ th, td {
 }
 
 th {
-	border: 1px solid black;
-	text-align: left;
-}
-
-table#table1, th, td {
 	border: 0px solid black;
-	
+	text-align: left;
 }
 </style>
 
 </head>
 <body>
 	<div>
-		<table id="table1">
+		<table style="width: 70%">
 			<tr>
-				<th colspan="2"><h>정책차림표 </h></th>
-				<th colspan="2"><h>미리보는 지원사업</h></th>
-				<th><h>마감임박 지원사업</h></th>
-				<th style="background-color: blue; color: white" colspan="2"><h>접수중인 지원사업</h></th></th>
-				
+				<th style="background-color: lightgray;" colspan="2">정책차림표</th>
+				<th style="background-color: lightgray;" colspan="2">미리보는 지원사업</th>
+				<th style="background-color: lightgray;">마감임박 지원사업</th>
+				<th style="background-color: blue; color: white" colspan="2">접수중인지원사업</th>
+
+			</tr>
+		</table>
+	</div>
+	<div>
+		<table style="width: 70%; border: 0px solid black">
+			<tr>
+				<th style="text-align: center; font-size: 30px; color: blue"
+					colspan="7">< 2015-06-17 ></th>
 			</tr>
 		</table>
 	</div>
 
-	<p>2015-06-17</p>
+
 	<div>
-		<table style="width: 100%">
+		<table style="width: 70%">
 			<tr>
 				<th colspan="7"><input type="radio" checked />전체 <input
 					type="radio" />창업*벤처 <input type="radio" />소상공인 <input
@@ -50,13 +53,13 @@ table#table1, th, td {
 					type="radio" /> 금융*세제 <input type="radio" />인력</th>
 			</tr>
 			<tr>
-				<td>일</td>
-				<td>월</td>
-				<td>화</td>
-				<td>수</td>
-				<td>목</td>
-				<td>금</td>
-				<td>토</td>
+				<td style="background-color: lightgray;">일</td>
+				<td style="background-color: lightgray;">월</td>
+				<td style="background-color: lightgray;">화</td>
+				<td style="background-color: lightgray;">수</td>
+				<td style="background-color: lightgray;">목</td>
+				<td style="background-color: lightgray;">금</td>
+				<td style="background-color: lightgray;">토</td>
 			</tr>
 			<tr>
 				<td></td>
@@ -98,70 +101,90 @@ table#table1, th, td {
 				<td>28</td>
 				<td>29</td>
 				<td>30</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td style="background-color: lightgray;"></td>
+				<td style="background-color: lightgray;"></td>
+				<td style="background-color: lightgray;"></td>
+				<td style="background-color: lightgray;"></td>
 			</tr>
 		</table>
 	</div>
-
-	<p>* 2015년 6월 7일, 전체 검색결과, 진행중인 사업은 총 614건 입니다.</p>
+	<br>
+	<h style="color: red">* 2015년 6월 7일, 전체</h>
+	<h>검색결과, 진행중인 사업은 </h>
+	<h style="color: red">총 614건</h>
+	<h> 입니다.</h>
+	<br>
+	<br>
 	<div>
 
-		<table style="width: 100%">
+		<table style="width: 70%">
 			<tr>
-				<th>번호</th>
-				<th colspan="4">지원사업명</th>
-				<th>주관부처</th>
-				<th colspan="2">신청기간</th>
-				<th>조회</th>
+				<th style="background-color: lightgray;">번호</th>
+				<th style="background-color: lightgray;" colspan="4">지원사업명</th>
+				<th style="background-color: lightgray;">주관부처</th>
+				<th style="background-color: lightgray;" colspan="2">신청기간</th>
+				<th style="border: 1px solid black; background-color: lightgray;">조회</th>
+			</tr>
+			<tr>
+				<td >1</td>
+				<td  colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+					<button style="border-color: red; color: red;">on-line</button>
+				</td>
+				<td >중소기업청</td>
+				<td  colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th style="border: 1px solid black; border-left: 0px solid black;">731</th>
 			</tr>
 			<tr>
 				<td>1</td>
 				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
 					<button style="border-color: red; color: red;">on-line</button>
 				</td>
-				<td>중소기업청</td>
-				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
-				<th>731</th>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
-					<button style="border-color: red; color: red;">on-line</button>
-				</td>
-				<td>중소기업청</td>
-				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
-				<th>731</th>
+				<td >중소기업청</td>
+				<td  colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th style="border: 1px solid black; border-left: 0px solid black;">731</th>
 			</tr>
 			<tr>
 				<td>614</td>
-				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+				<td  colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
 					<button style="border-color: red; color: red;">on-line</button>
 				</td>
-				<td>중소기업청</td>
-				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
-				<th>731</th>
+				<td >중소기업청</td>
+				<td  colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th style="border: 1px solid black; border-left: 0px solid black;">731</th>
 			</tr>
 			<tr>
 				<td>614</td>
-				<td colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
+				<td  colspan="4">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..
 					<button style="border-color: red; color: red;">on-line</button>
 				</td>
-				<td>중소기업청</td>
-				<td colspan="2">2015.06.04 ~ 2015.06.30</td>
-				<th>731</th>
+				<td >중소기업청</td>
+				<td  colspan="2">2015.06.04 ~ 2015.06.30</td>
+				<th style="border: 1px solid black;">731</th>
 			</tr>
 
 			<tr>
-				<th colspan="9">1  2  3  4  5</th>
+				<th style="text-align: center" colspan="9">
+					<button><<</button>
+					<button><</button>
+					<button style="background-color: blue; color: white;">1</button>
+					<button>2</button>
+					<button>3</button>
+					<button>4</button>
+					<button>5</button>
+					<button>></button>
+					<button>>></button>
+				</th>
 
 			</tr>
 			<tr>
-				
-				<td colspan="9">
-				<input type="text" value="키워드" /> <input type="text" value="" /> <button style="background-color: blue; color: white">검색</button></td>
+
+				<td style="text-align: center; background-color: lightgray;" colspan="9"><select
+					name="cars3" size="1" multiple><option value="">키워드</option>
+						<option value="">사브</option>
+						<option value="">피아트</option>
+						<option value="">아우디</option>
+				</select> <input type="text" value="" />
+					<button style="background-color: blue; color: white">검색</button></td>
 			</tr>
 			<tr>
 				<td colspan="9"></td>
