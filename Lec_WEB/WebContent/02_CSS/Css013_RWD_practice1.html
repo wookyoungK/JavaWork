@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<style>
+
+
+
+*{
+    box-sizing: border-box;
+}
+/* 기본 스타일 :PC first */
+
+
+.clear{
+    clear: both;
+}
+
+/* 1: 기본 스타일 mobile first */
+[class*="col-"]{
+	float: left;
+    padding: 15px;
+    width: 100%;
+}
+.col-t-3{
+    width: 33.33%;
+}
+.header1{
+    display: none;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header2{
+    background-color: darkorchid;
+}
+.menu{
+    background-color: darkturquoise;
+}
+
+.footer{
+    background-color: greenyellow;
+}
+.header1{
+    background-color: lightslategrey;
+}
+
+
+/* 2: 600 px 이상 : Itablet */
+
+@media screen and (min-width: 600px){
+
+.header1{display: inline;}
+.col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+.col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+li{
+    height: 78px;
+}
+}
+
+/* 3:767 px 이상 :pc */
+@media screen and (min-width: 768px){
+ 
+.header1{display: inline;}
+.col-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+.col-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+.col-m-3 {width: 25%;}
+.col-m-4 {width: 33.33%;}
+.col-m-5 {width: 41.66%;}
+.col-m-6 {width: 50%;}
+.col-m-7 {width: 58.33%;}
+.col-m-8 {width: 66.66%;}
+.col-m-9 {width: 75%;}
+.col-m-10 {width: 83.33%;}
+.col-m-11 {width: 91.66%;}
+.col-m-12 {width: 100%;}
+li{
+    height: 52px;
+}
+
+}
+
+
+
+
+
+
+</style>
+<body>
+
+
+
+<!-- header -->
+
+<div class= "header1 col-2 col-m-4">
+    <h1>A</h1>
+</div>
+<div class="header2 col-10 col-m-8">
+    <h1>B</h1>
+</div>
+
+    <div class="clear"></div>
+     
+    <!-- menu -->
+    <div class="menu col-2 col-m-2">
+        <p1>C</p1>
+        <br><br><br><br><br><br>
+          
+    </div>
+     
+    <!-- article -->
+    <div class= "article col-8 col-m-6" style="background-color: lightseagreen;">
+        <p1>D</p1>
+        <br><br><br><br><br><br>
+     
+    </div>
+     
+    <!-- aside -->
+    <div class="aside1">
+        <ul>
+            <li class="col-t-3 col-2 col-m-4" style="background-color: hotpink;">E</li>
+            <li class="col-t-3 col-2 col-m-4" style="background-color: indianred;">F</li>
+            <li class="col-t-3 col-3 col-m-4" style="background-color: khaki;">G</li>
+        </ul>
+    </div>
+
+     
+    <!-- footer -->
+    <div class="footer col-9 col-m-12">
+        <p>H</p>
+        <p></p>
+        <p></p>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+    </html>

@@ -3,7 +3,7 @@ package com.lec.java.level1;
 import java.util.Arrays;
 
 public class Sort {
-	//k번째수
+	// k번째수
 	public static void main(String[] args) {
 
 	}// end main
@@ -11,17 +11,30 @@ public class Sort {
 }// end class
 
 class Solution {
-	public int[] solution(int[] array, int[][] commands) {
-		int[] answer =  new int [commands.length];
-		
-        for (int i = 0; i < commands.length; i++) {
-            int[] arr = Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);
-            
-            Arrays.sort(arr);
-            answer[i] = arr[commands[i][2]-1];
-        }
+    public String solution(int n) {
+        String answer = "";
 
-		return answer;
+        
+        while(true){
+            if(n==0)
+                break;
+               
+            if(n%3==1){
+                n = n/3;
+                answer=answer+"1";
+  
+            }
+            else if(n%3 ==2){
+                n= n/3;
+                answer=answer+"2";
+            }
+            else if(n%3 ==0){
+                n=(n-3)/3;
+                answer=answer+"4";
+            }
+      
+        }//end while
 
-	} 
-}
+        return answer;
+    }//end
+}//end class
