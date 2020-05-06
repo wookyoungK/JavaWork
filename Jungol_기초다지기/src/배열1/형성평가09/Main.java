@@ -1,4 +1,4 @@
-package 선택제어문.자가진단09;
+package 배열1.형성평가09;
 
 import java.util.Scanner;
 
@@ -17,21 +17,21 @@ public class Main {
 			if (list[i] == 0)
 				break;
 		}
-		
-		j=i;
-		
+
+		j = i;
+
 		for (i = 0; i < j; i++) {
 			if (list[i] % 2 == 0) {
-					list[i] =list[i]/2;
-				
-			}else {
-				list[i]=list[i]*2;
+				list[i] = list[i] / 2;
+
+			} else {
+				list[i] = list[i] * 2;
 			}
 		}
-		
+
 		System.out.println(j);
-		for(i=0; i<j; i++) {
-			System.out.print(list[i]+" ");
+		for (i = 0; i < j; i++) {
+			System.out.print(list[i] + " ");
 		}
 
 	}// end main
