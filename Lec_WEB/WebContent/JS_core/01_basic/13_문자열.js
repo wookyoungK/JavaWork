@@ -48,8 +48,52 @@ console.log(str1.search("locate"))  // 7
 //substring(start, end)
 //substr(start, length)
 console.log("문자열 추출<br>slice(), substring(), substr()");
-str = "Apple, Banana, Kiwi";
+str1 = "Apple, Banana, Kiwi";
 
+console.log()
+console.log(str1.slice(7,13))  // 7부터 13전까지
+console.log(str1.slice(-12,-6))
+console.log(str1.slice(7))  // 7부터 13전까지
+
+
+console.log(str1.substring(7, 13));  // slice()와 유사하나 음수인덱싱 지원안함.
+console.log(str1.substring(7)); // 7부터 끝까지
+
+
+console.log(str1.substr(7,6));  // 7부터 6글자
+console.log(str1.substr(7))  // 7부터 끝까지
+
+
+// 문자열 치환
+// replace() : 치환한 결과 문자열 리턴, 정규표현식 사용 가능
+// 기본적으로 첫번째 '매칭된 문자열 만 치환
+console.log("문자열 치환 replace()");
+str = "Please visit Japan!";
+
+console.log(str.replace("Japan","Korea"));  //원본 str1 변경안함
+console.log(str.replace(/JAPAN/i, "Korea"));  // 정규표현식 대소문자 구분없이 치환
+
+str1 = "Please visit Japan! GO Japan";
+console.log(str1.replace("Japan","Korea")); //기본적으로 첫번째만 치환됨.
+console.log(str1.replace(/Japan/g, "Korea"));  // 정규표현식, global match ,대소문자구분
+
+str2 = "Hello world!"
+console.log(str2.toUpperCase())
+console.log(str2.toLowerCase())
+
+str1 = "Hello"; str2 = "world";
+console.log(str1 + " " + str2);
+console.log(str1.concat(" ",str2))
+
+//trim() : 좌우 공백 제거
+str1 = "       Hello World!        ";
+console.log(`str1 = [${str1}]`);
+str2 = str1.trim();
+console.log(`str2 = [${str2}]`);
+
+//split() : string -> array
+str3 = '2020-05-07';
+console.log(str3.split('-'))
 
 
 
