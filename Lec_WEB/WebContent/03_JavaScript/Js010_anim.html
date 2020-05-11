@@ -36,11 +36,28 @@ clearInterval('애니메이션id')
 var clockAnimId = undefined;
 function clock(){
 
-	// TODO
+    if(!clockAnimId){
+      // 애니메이션 시작
+      setInterval(tick, 1000);
+    }else{
+      //애니메이션 종료
+      clearInterval(clockAnimId);
+      clockAnimId = undefined;
+    }
 
 }
 
-// TODO
+function tick(){
+    var d = new Date();  // 현재시간
+    document.getElementById("timeboard").innerHTML =
+      d.getFullYear() + "/" +
+      (d.getMonth() + 1) + "/" +    // 월은 0 부터 시작
+      d.getDate() + " " +
+      d.getHours()+ ":" +
+      d.getMinutes() + ":"+
+      d.getSeconds()
+      ;
+} 
 
 </script>
 
@@ -57,8 +74,23 @@ function clock(){
 function myMove() {
 
 	// TODO
+  var elem = document.getElementById('animate');
+  var pos =0;
 
+  var id= setInterval(frame, 5);
+  function frame(){
+    if(pos == 350){
+      clearInterval(id);
+    }else{
+      pos++;
+      elem.style.top = pos+ 'px'; //이거안넣으면 동작 x?
+      elem.style.left = pos+ 'px'; //이거안넣으면 동작 x? 
+
+  }
+   }
 }
+
+
 </script>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
