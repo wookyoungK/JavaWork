@@ -34,8 +34,18 @@
 <div></div>
 
 <script>
+  // :animated 라는 selector 는
+  //현재 animation 중인 element에 적용
 
-// TODO
+$("#run").click(function(){
+    $("div:animated").toggleClass("colored");
+});
+
+
+function animateIt(){
+  $("#mover").slideToggle("slow", animateIt);
+}
+animateIt();
 
 </script>
 

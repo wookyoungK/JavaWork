@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.clear {
+    clear: both;
+ }
+
+ div#top_menu {
+    width: 80%;
+    margin: 50px 20px 0 0;
+    float: right;
+ }
+
+div#login {
+    float : right;
+
+ }
+ 
+ div#intro{
+     width:80%;
+     margin: 50px 20px 0 0;
+     float: right;
+ }
