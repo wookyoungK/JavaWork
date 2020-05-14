@@ -248,8 +248,38 @@ div.go_login a:hover{
 }
 
 .gym{
-   border: 1px solid black;
+   /* border: 1px solid black; */
+   width: 100%;
+   height: 800px;
 }
+.gym
+
+#a{
+   background-image: url("https://modo-phinf.pstatic.net/20180118_96/1516286054577mhqmF_JPEG/mosaQ2Zqfa.jpeg?type=w1100" );
+   height: 800px;
+}
+
+#b{
+   background-image: url("https://modo-phinf.pstatic.net/20180118_268/1516286057231LNmBQ_JPEG/mosawkbRqI.jpeg?type=w1100");
+   height: 800px;
+
+}
+#c{
+   background-image: url("https://modo-phinf.pstatic.net/20180118_238/1516286059466laIhx_JPEG/mosaouLstE.jpeg?type=w1100");
+   height: 800px;
+
+}
+#d{
+   background-image: url("https://modo-phinf.pstatic.net/20180118_297/15162860662441qSY8_JPEG/mosaXUX8eS.jpeg?type=w1100");
+   height: 800px;
+
+}
+
+
+
+
+
+
 /* hr{
    margin: 1px;
    float: left;
