@@ -1,107 +1,266 @@
 @charset "UTF-8";
-body{
+
+*{
+   box-sizing: border-box;
+}
+body, div ,img{
    margin: 0px;
    padding: 0px;
+   border: 0px;
+}
+a{
+   text-decoration: none;
+}
+ol, ul {
+   margin-top: 0;
+   margin-bottom: 10px;
+}
+ul, ol, li {
+   list-style: none;
+}
+.footer{
+   display: flex;
+    background-color: white;
+    color: #231815;
+    width: 100%;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 0;
+    flex-wrap: nowrap;
+}
+.t_login{
+   display: block;
+   height: 50px;
+}
+.t_login ul {
+   float: right;
+   display: flex;
 }
 #main_img{
     width: 100%;
     height: 1000px;
     background-image: url("https://c.pxhere.com/photos/11/14/dumbbell_sport_weights_strength_training_weight_lifting_muscles_muscle_training_train-1376234.jpg!d");
     background-repeat: no-repeat;
-    opacity: 2;
+    opacity: 1;
     background-size: cover;
 }
-
 #main_logo{
+   
    position: absolute;
    width: 800px;
    height: 600px;
    top: 200px;
    left: 600px;
-   opacity: 0.6; 
-   
+   opacity: 1; 
+   border-style: none;
+}
+#main_img a:hover{
+   opacity: 0.3;
 }
 
-div#login a{
-   width: 100%;
-   padding: 60px 30px 50px 1800px;
-   font-size: 30px;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   color: gold;
+div.t_login a{
+   font-size: 18px;
+   font-family: sans-serif;
 
+}
+div.t_login a:hover{
+   
+   color: gold;
 }
 div#top_menu{
    padding: 30px 100px;
+   font-weight: 700;
    height: auto;
-}
-div#t_login{
+   position: relative;
    
 }
+div.t_login{
+   color: #ffffff
+}
+a.login{
+   padding: 10px;
+   color: honeydew;
+}
+a.join{
+   padding: 10px 0px 10px 10px;
+   color: honeydew;
+}
+div.home img{
+   width:220px;
+   
+}
+div.home a:hover{
+   opacity: 0.5;
+}
 
-
-
-
-/*  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
-
-header {
-    height: 200px;
-    margin: 0;
-    padding: 0;
- }
- 
- nav#top_menu {
-    width: 100%;
-    margin: 50px 20px 0px 0px;
-    float: right;
- }
- 
- /* top_menu안에서ㅡ이부눕ㄴ */
- nav#top_menu ul {
-    list-style: none;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 13px;
-    font-weight: 100;
-    color: #333;
- }
- 
- /* 한칸한칸 */
- nav#top_menu ul li { 
-    float: left;
-    margin: 0 5px;
- }
- 
- nav#top_menu a {
-    display: block;
-    height: 20px;
-    padding: 10px;
-    text-decoration: none;
-    /* href시 밑줄 사라짐  */
-    color: #333;
- }
- 
- nav#top_menu a:hover {
-   color: #F90
- }
- 
- #login a {
-    text-decoration: none;
-    color: #333;
- }
- 
- #login a:hover {
-    color: #F90
-    /* 올려놓을시 색바뀌는것 */
- }
- div#sub_menu{
-   width: 100%;
-   margin: 50px 20px 0px 0px;
+.t_nav{
    float: right;
- }
+   display: block;
+}
+.t_nav a{
+   color: white;
+   font-size: 18px;
 
- div#sub_menu a:hover{
-   color: #F90
- }
+}
+.t_nav a:hover{
+   color:gold;
+}
+/*--------footer,고정(모든페이지) ----------------------------------------------------*/
+.f1 img{
+   width: 200px;
+}
+.f2_nav .f2_content:first-child{
+   padding-left: 0;
+}
+.f2_nav .f2_content{
+   font-weight: 900;
+   color: gray;
+   display: inline-block;
+   border-right: 1.3px solid gray;
+   padding: 1px 10px;
+   margin-top: 50px;
+   margin-bottom: 20px;
+   font-size: 12px;
+   font-family: sans-serif;
+}
 
- .clear {
-    clear: both;
- }
+.f2_content a{
+   background-color: transparent;
+}
+.f2_content a:hover{
+   color: inherit;
+}
+.f_info{
+   font-size: 12px;
+   display: block;
+}
+.f3{
+   display: flex;
+    flex-direction: column;
+    margin: 50px 0 40px 60px;
+    width: 400px;
+}
+.f3_nav{
+   display: flex;
+   align-items: center;
+}
+.f3 .f3_nav .f3_content{
+   width: 50px;
+   margin-right: 15px;
+}
+.ar{
+   font-size: 16px;
+   font-family: sans-serif;
+   font-weight: bold;
+
+}
+/*  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ index.html------------*/
+
+/* -----------------------고정 메뉴(모든페이지)  */
+#g{
+   position: relative;
+   font-family: 'Noto Sans KR', sans-serif;
+   font-size: 12px;
+   margin: auto;
+   padding: 30px 100px;
+   font-weight: 1000;
+   height: auto;
+}
+   
+div.go_login{
+   color: #231815;
+}
+a.gologin{
+   padding: 10px;
+   color: #231815;
+}
+a.gojoin{
+   padding: 10px 0px 10px 10px;
+   color: #231815;
+}
+
+.go_nav a{
+   color: #231815;
+   font-size: 18px;
+
+}
+.go_login{
+   display: block;
+   height: 50px;
+}
+.go_login ul {
+   float: right;
+   display: flex;
+}
+
+div.go_login a{
+   font-size: 18px;
+   font-family: sans-serif;
+
+}
+div.go_login a:hover{
+   
+   color: gold;
+}
+
+.go_nav{
+   float: right;
+   display: block;
+}
+
+.go_nav a:hover{
+   color:gold;
+}
+
+/* ------------------------sub menu -------------*/
+.sub_menu{
+   float: left;
+   width: 100%;
+   padding: 10px 0px 0 0 ;
+   bottom: 10px;
+   margin: auto;
+   /* height: 800; */
+   text-align: center;
+   background-color: black;
+}
+
+.sub_menu a{
+      display: block;
+      font-size: 16px;
+      color: gold;
+}
+.sub_menu a:hover{
+   cursor: pointer;
+   opacity: 0.5;
+}
+
+/* -----------------one---------------------- */
+#one{
+   float: left;
+   width: 100%;
+   height: auto;
+   padding: 50px 0 20px 300px;
+   font-size: 30px;
+   color: rgb(212, 183, 18);
+   font-weight: 1000;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.gym{
+   border: 1px solid black;
+}
+/* hr{
+   margin: 1px;
+   float: left;
+   width: 1100px;
+   padding: 1100px 300px;
+   margin-left: 300px;
+   font-size: larger;
+} */
+
+
+
+/* -----------------two---------------------- */
+/* -----------------three---------------------- */
+
