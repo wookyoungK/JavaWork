@@ -6,14 +6,16 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="CSS/default.css" rel="stylesheet" type="text/css">
+    <script src="default.js" type="text/javascript"></script>
     <link href="JS/default.js" rel="stylesheet" type="text/javascript">
 
-    <script src="default.js" type="text/javascript"></script>
 
     
 </head>
 
 <body>
+
+  
 
 		    <div id="g">		
                 <div class= "go_login">
@@ -41,32 +43,53 @@
 
 
             <nav class ="sub_menu">	
-                <a href="http://127.0.0.1:5500/myweb/introduce.html"><u>GYM</u></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://127.0.0.1:5500/myweb/introduce.html">GYM</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="http://127.0.0.1:5500/myweb/introduce.html">트레이너</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#">측정하기</a>
+                <a href="#"><u>측정하기</u></a>
             </nav>
-        
+            
+            <div id ="side">
+                <!-- <a href="#"></a> -->
+                
+            </div>
 
             <div class="menu_select">
-                <span id="one"><U><I>GYM</I></U></span>
+                <span id="one"><U><I>측정하기</I></U></span>
             </div><br><hr><br>
 
-            <div class="gym">
-                <div id="a"> </div>
-                <div id="b"></div>
-                <div id="c"></div>
-                <div id="d"></div>
-                <div id="e"></div>
+                
 
-                <div id = ></div>
-            </div><br><hr>
-            
-
-
-
-
+            <div id = "form">
+                <img id="bar" src="images/bar.PNG">
+                <div id="btnbox">
+                    <button type="button" onclick="showData();">측정 결과</button>
+                    <!-- <div id="bar">
+                    </div> -->
+                    <br>
+                    <br>
+                    <br>
+                    <p id="result"></p>
 
 
+                </div>
+                <form name="myform1">  
+                    <span class="important">*</span>성별:
+                    <input type="radio" name="gender" value="Male" required>남 
+                    <input type="radio" name="gender" value="FeMale">여  
+                    <br><br>
+                    
+                    <span class="important">*</span>키:
+                    <input type="text" name="key" required><br><br>
+                    <span class="important">*</span>몸무게:
+                    <input type="text" name="weight" required><br><br>
+
+                    
+                    
+                    
+                </form>
+            </div>    
+                <hr>    
+               
             
         <footer class="footer">
             <div class="f1">

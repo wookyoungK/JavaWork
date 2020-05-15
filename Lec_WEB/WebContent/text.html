@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css" type=text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
+    <title>Document</title>
+    <style>
+        .map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<script>
+
+var map =new ol.Map({
+    target: 'map',
+    layers:[
+        new ol.layer.Tile({
+            source:new ol.source.OSM()
+        })
+    ],
+    view: new ol.View({
+        center:ol.proj.fromLonLat([127.00169,37.56421]),
+        zoom:6,
+        enableRotation:false
+    })
+});
+</script>
+<body>
+    <div id="map" class="map"></div> 
+    <!-- 지도 표시영역 -->
+    <div>
+        <!-- 지도회전 -->
+        <button type ="button" onclick="Javascript:viewRotation('left')">좌</button>
+        <button type ="button" onclick="Javascript:viewRotation('left')">우</button>
+
+    </div>
+    <script>
+        function viewRotation(direction){
+            var view =map.getView();
+            var rotation =view.getRotation();
+
+            if(direction =='left'){
+                view.setRotation(rotation - (Math.PI/6));
+
+            }else{
+                view.setRotation(rotation+(Math.PI/6));
+            }
+        }
+    </script>
+</body>
+</html>

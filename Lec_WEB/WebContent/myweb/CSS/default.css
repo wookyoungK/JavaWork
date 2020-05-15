@@ -22,7 +22,7 @@ ul, ol, li {
    display: flex;
     background-color: white;
     color: #231815;
-    width: 100%;
+    width: 1100px;
     padding: 20px 10px;
     position: relative;
     bottom: 0;
@@ -212,6 +212,16 @@ div.go_login a:hover{
    color:gold;
 }
 
+#side{
+   /* background-image: */
+   position: fixed;
+	right: 0px; top: 600px;
+	margin: 4px;
+	
+   width: 80px;
+   height: 80px;
+}
+
 /* ------------------------sub menu -------------*/
 .sub_menu{
    float: left;
@@ -226,8 +236,9 @@ div.go_login a:hover{
 
 .sub_menu a{
       display: block;
-      font-size: 16px;
+      font-size: 18px;
       color: gold;
+      font-weight: 1000;
 }
 .sub_menu a:hover{
    cursor: pointer;
@@ -249,37 +260,67 @@ div.go_login a:hover{
 
 .gym{
    /* border: 1px solid black; */
-   width: 100%;
+   width: 1100px;
    height: 800px;
+   margin-left: 300px;
 }
-.gym
+
 
 #a{
-   background-image: url("https://modo-phinf.pstatic.net/20180118_96/1516286054577mhqmF_JPEG/mosaQ2Zqfa.jpeg?type=w1100" );
+   z-index: 1;
+   position: absolute;
+   background-image: url("https://modo-phinf.pstatic.net/20180118_96/1516286054577mhqmF_JPEG/mosaQ2Zqfa.jpeg?type=w1100"  );
    height: 800px;
+   width: 1000px;
+   background-repeat: no-repeat;
 }
 
 #b{
+   z-index: 2;
+   position: absolute;
+
    background-image: url("https://modo-phinf.pstatic.net/20180118_268/1516286057231LNmBQ_JPEG/mosawkbRqI.jpeg?type=w1100");
    height: 800px;
+   width: 1000px;
+   background-repeat: no-repeat;
+
 
 }
 #c{
+   z-index: 3;
+   position: absolute;
+
    background-image: url("https://modo-phinf.pstatic.net/20180118_238/1516286059466laIhx_JPEG/mosaouLstE.jpeg?type=w1100");
    height: 800px;
+   width: 1000px;
+   background-repeat: no-repeat;
 
 }
 #d{
+   z-index: 4;
+   position: absolute;
+
    background-image: url("https://modo-phinf.pstatic.net/20180118_297/15162860662441qSY8_JPEG/mosaXUX8eS.jpeg?type=w1100");
    height: 800px;
+   width: 1000px;
+   background-repeat: no-repeat;
 
 }
+#d{
+   z-index: 5;
+   position: absolute;
 
+   background-image: url("https://modo-phinf.pstatic.net/20180118_244/1516286061628RSWGD_JPEG/mosaOSakcV.jpeg?type=w1100");
+   height: 800px;
+   width: 1000px;
+   background-repeat: no-repeat;
 
+}
+hr{
+   margin-left: 300px;
+   width: 1000px;
 
-
-
-
+}
 /* hr{
    margin: 1px;
    float: left;
@@ -288,9 +329,55 @@ div.go_login a:hover{
    margin-left: 300px;
    font-size: larger;
 } */
-
-
-
 /* -----------------two---------------------- */
+
+
+#btnBox{
+   margin-left: 300px;
+	/* border: 1px solid orange; */
+   width: auto;
+   height: 100px;
+   color: black;
+}
+
+#form {
+   margin-left: 300px;
+   width: 300px;
+}
+
+.important {
+	color:red;
+}
+
+#form p{
+
+	border: 3px solid orange;
+   width: 300px;
+   color: black;
+
+}
+#bar{
+   margin-left: 300px;
+
+}
+
 /* -----------------three---------------------- */
 
+#map {
+width: 80%;
+ height:400px;
+}
+
+#guide{
+   margin-left: 730px;
+}
+#guide a{
+   background-color: black;
+   font-weight: 700px;
+   color: blanchedalmond;
+   border-radius: 30%;
+}
+#guide a:hover{
+   color: gold;
+   opacity: 0.2;
+}
