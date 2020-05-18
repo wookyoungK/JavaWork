@@ -3,6 +3,23 @@
 *{
    box-sizing: border-box;
 }
+
+
+#mNav{
+   display: none;  position: absolute; top:10px; right:14px;
+}
+.ham{display: block; width: 25px; height: 20px; background:rgba(0, 0,0, 0); padding-top:15px 10px 10px 10px;}
+.ham span{position: relative; display: block; width: 25px; height: 4px; background: goldenrod;}
+.ham span:before{
+   content: '';
+   width: 25px; height: 4px; background: goldenrod;
+   position: absolute; left: 0; bottom: -7px;
+}
+.ham span:after{
+   content: '';
+   width: 25px; height: 4px; background: goldenrod;
+   position: absolute; left: 0; top: -7px;
+}
 body, div ,img{
    margin: 0px;
    padding: 0px;
@@ -107,10 +124,16 @@ div.home a:hover{
 }
 /*--------footer,고정(모든페이지) ----------------------------------------------------*/
 .f1 img{
-   width: 200px;
+   width: 350px;
+}
+.f4 img{
+   width: 350px;
+}
+.f2{
+   padding-left: 60px;
 }
 .f2_nav .f2_content:first-child{
-   padding-left: 0;
+   padding-left: 0px;
 }
 .f2_nav .f2_content{
    font-weight: 900;
@@ -212,15 +235,49 @@ div.go_login a:hover{
    color:gold;
 }
 
-#side{
-   /* background-image: */
+#side1{
+
    position: fixed;
-	right: 0px; top: 600px;
-	margin: 4px;
-	
-   width: 80px;
-   height: 80px;
+	right: 10px; top: 600px;
+   margin: 4px;
+   box-shadow: 3px 4px 10px 2px rgba(0,0,0,.2);
+   background-repeat: no-repeat;
+   background-color: antiquewhite;
+	border-radius: 30px;
+   width: 60px;
+   height: 60px;
+ 
+  
 }
+
+#side2{
+   position: fixed;
+	right: 10px; top: 535px;
+   margin: 4px;
+   padding-left: 15px;
+   padding-top: 15px;
+   background-repeat: no-repeat;
+   background-color: antiquewhite;
+   box-shadow: 3px 4px 10px 2px rgba(0,0,0,.2);
+	border-radius: 30px;
+   width: 60px;
+   height: 60px;
+}
+
+#top{
+   position: fixed;
+	right: 10px; top: 665px;
+   margin: 4px;
+   padding-left: 5px;
+   padding-top: 5px;
+   background-repeat: no-repeat;
+   box-shadow: 3px 4px 10px 2px rgba(0,0,0,.2);
+	border-radius: 30px;
+   width: 60px;
+   height: 60px;
+}
+
+
 
 /* ------------------------sub menu -------------*/
 .sub_menu{
@@ -233,7 +290,6 @@ div.go_login a:hover{
    text-align: center;
    background-color: black;
 }
-
 .sub_menu a{
       display: block;
       font-size: 18px;
@@ -309,8 +365,8 @@ div.go_login a:hover{
 #d{
    z-index: 5;
    position: absolute;
-
    background-image: url("https://modo-phinf.pstatic.net/20180118_244/1516286061628RSWGD_JPEG/mosaOSakcV.jpeg?type=w1100");
+
    height: 800px;
    width: 1000px;
    background-repeat: no-repeat;
@@ -321,21 +377,14 @@ hr{
    width: 1000px;
 
 }
-/* hr{
-   margin: 1px;
-   float: left;
-   width: 1100px;
-   padding: 1100px 300px;
-   margin-left: 300px;
-   font-size: larger;
-} */
+
 /* -----------------two---------------------- */
 
 
 #btnBox{
    margin-left: 300px;
 	/* border: 1px solid orange; */
-   width: auto;
+   width: 300px;
    height: 100px;
    color: black;
 }
@@ -356,8 +405,12 @@ hr{
    color: black;
 
 }
-#bar{
+#bar {
    margin-left: 300px;
+
+}
+#arrow{
+   margin-left: 750px;
 
 }
 
@@ -381,3 +434,162 @@ width: 80%;
    color: gold;
    opacity: 0.2;
 }
+/* ---------------modal */
+
+.modal-content{
+
+   width: 80%;
+   background-color: #fefefe;
+   margin: 15% auto; /* 두개면 하나씩 상하 좌우 이렇게임 , top 에서 15% 좌우 균일(중앙정렬)*/
+   padding: 20px;
+   border: 1px solid #888;
+}
+
+.close{
+   font-size: 28px;
+   font-weight: bold;
+   color: #aaa;
+   float: right;
+
+}
+
+.close:hover, .close:focus{
+   color:#666;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+/* ----------main 반응----------------- */
+
+
+   @media (max-width : 650px ){
+   ul{
+
+      padding: 0;
+   }
+   div.t_login a{
+      font-size: 15px;
+   }
+}
+
+/* ----------menu introduce----------------- */
+@media (max-width : 1450px){ /*pc*/
+   div#main_img{
+      width: 100%;}
+  
+   img#main_logo{
+      width: 100%;
+      background-size: 100% 100%;
+   }
+
+   img#main_logo{left: 10px;}
+   .f3{display: none;
+   }
+   .footer{width: 700px;
+   }
+   nav.sub_menu{display: none;
+   }
+   span#one{padding: 0px 0 20px 0;
+   }
+   hr{display: none;
+   }
+   div.gym{margin-left: 0px;
+   }
+   #form{margin-left: 0px;
+
+   }
+}
+/* ================================================================================= */
+
+
+
+.modal{
+   width:100%;     /* 윈도우 전체 차지*/
+   height:100%;    /* 윈도우 전체 차지*/
+   position: fixed;
+   background-color: rgba(0, 0, 0, 0.4);
+   left: 0;
+   top: 0;
+   z-index: 1; /* 최상단에 보이게 하기 */
+   overflow: auto; /* 필요한 경우 스크롤바 생기기 */
+   display: none;   /* 기본적으로 팝업 안보이기*/
+} 
+.modal-content{
+   display: block;
+   width: 80%;
+   background-color: #fefefe;
+   margin: 15% auto; /* 두개면 하나씩 상하 좌우 이렇게임 , top 에서 15% 좌우 균일(중앙정렬)*/
+   padding: 20px;
+   border: 1px solid #888;
+}
+
+.close{
+   font-size: 28px;
+   font-weight: bold;
+   color: #aaa;
+   float: right;
+
+}
+
+.close:hover, .close:focus{
+   color:#666;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+/* ================================================================================= */
+@media(max-width:1100px){ /*..*/
+   .f2{
+      display: none;
+   }
+   nav.t_nav{ display: none;}
+   .side{
+      display: none;
+   }
+  span#one{
+   padding: 0px 0 20px 0;}
+      #mNav{display: block;
+         }
+      .footer{width: 400px;
+      }
+      .go_nav{display: none;
+      }
+      .go_login{display: none;
+      }
+      .gym{width: 100%;
+      }
+      #a, #b, #c, #d, #e, .gym, #one{ 
+     width: 100%;
+     background-size: 100% 100%;
+   }
+}
+
+   @media (max-width: 900px){ /*측정하기만 적용*/
+      #arr, #bar{display: none;}
+      #guide{display: none;}
+
+   }
+
+   @media (max-width: 600px){ /*모바일*/
+      #map{
+         width:250px;
+      }
+      .side{display: block;}
+      br{display: none;}
+      #line, #line2, #lin1, #line3,#line4{display: block;}
+      #a, #b, #c, #d, #e, .gym{ 
+         background-size: 70% 80%;
+         height: 300px;
+        }
+        .footer{width: 100px;}
+        .f1 img{width:100px}
+        .f4 img{display: none;}
+        #g{padding: 30px 0px;}
+        div.home img{width: 120px;}
+        #side1{right: 25px; top: 100px;}
+        #side2{right: 25px; top: 170px;}
+        #top{right: 25px; top: 240px;}
+        #form p{width: 160px;height: 300px;}
+        
+   }

@@ -35,7 +35,7 @@
                         <a href="http://127.0.0.1:5500/myweb/index.html#">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="http://127.0.0.1:5500/myweb/introduce.html">INTRODUCE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="#">GYM PHOTO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#">NOTICE</a>
+						<a href="http://127.0.0.1:5500/myweb/map.html">NOTICE</a>
                     </nav>
 
                 </div>                
@@ -44,7 +44,7 @@
 
             <nav class ="sub_menu">	
                 <a href="http://127.0.0.1:5500/myweb/introduce.html">GYM</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="http://127.0.0.1:5500/myweb/introduce.html">트레이너</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://127.0.0.1:5500/myweb/introduce.html">NOTICE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="#"><u>측정하기</u></a>
             </nav>
             
@@ -55,39 +55,63 @@
 
             <div class="menu_select">
                 <span id="one"><U><I>측정하기</I></U></span>
+
+                <ul class="side">
+                    <li id="side1">
+                        <a href="#">
+                            <img src="images/call3.png">
+                        </a>
+                    </li>
+                    <li id="side2">
+                        <a href="#">
+                            <img src="images/call4.png">
+                        </a>
+                    </li>
+                    <li id="top">
+                        <a href="http://127.0.0.1:5500/myweb/map.html">
+                            <img src="https://icon-icons.com/icons2/903/PNG/48/next-5_icon-icons.com_69490.png">
+                        </a>
+                    </li>
+                </ul>
             </div><br><hr><br>
 
                 
-
+            <div id="arr">
+                <img id="arrow" src="images/arrow.PNG">
+            </div>
             <div id = "form">
                 <img id="bar" src="images/bar.PNG">
                 <div id="btnbox">
-                    <button type="button" onclick="showData();">측정 결과</button>
-                    <!-- <div id="bar">
-                    </div> -->
-                    <br>
-                    <br>
-                    <br>
-                    <p id="result"></p>
+                    <p id="result"> 
 
+                    </p>
+                    <!-- <button type="button" onclick="showData();">측정 결과</button> -->
+                    <!-- <div id="bar">
+                    </div>
+                    <br>
+                    <br>
+                    <br> -->
+                
 
                 </div>
-                <form name="myform1">  
-                    <span class="important">*</span>성별:
-                    <input type="radio" name="gender" value="Male" required>남 
-                    <input type="radio" name="gender" value="FeMale">여  
-                    <br><br>
+                <nav id="mNav">
+					<h2 class ="ir_so"></h2>
+					<a href="#" class = "ham"><span></span></a>
+				</nav>
+                    <form name="myform1" action="" >  
+                        <span class="important">*</span>성별:
+                        <input type="radio" name="gender" value="Male" >남 
+                        <input type="radio" name="gender" value="FeMale">여  
+                        <br id="line4"><br>
                     
-                    <span class="important">*</span>키:
-                    <input type="text" name="key" required><br><br>
-                    <span class="important">*</span>몸무게:
-                    <input type="text" name="weight" required><br><br>
-
-                    
-                    
-                    
-                </form>
+                        <span class="important">*</span>키:
+                        <input type="text" name="key" ><br id="line1"><br id="line2">
+                        <span class="important">*</span>몸무게:
+                        <input type="text" name="weight" ><br id="line">
+                        <input id="please" type="button" value="측정 결과" onclick="showData()">
+                    </form>
             </div>    
+                <br><br>
                 <hr>    
                
             
@@ -146,8 +170,5 @@
             </div>
         </footer>
     
-    
-            
-            
 </body>
 </html>

@@ -5,29 +5,31 @@ function showData(){
         var gender = "";
             for(i=0; i < frm["gender"].length; i++){
                 if(frm["gender"][i].checked){
-                gender += frm["gender"][i].value;
+                  gender += frm["gender"][i].value;
                 break; //어차피 하나일테니까.
-                }
+              }
             }
+        var key = frm["key"].value.trim(); 
+    
+            if(isNaN(key) || frm['key'].value.trim() == "" ){
+                alert("키가 유효한값이 아닙니다\n숫자만 입력");
+                return false;
+            }
+
+
         var weight = frm["weight"].value.trim(); 
         if(isNaN(weight) || frm['weight'].value.trim() =="" ){
-            alert(weight + "몸무게가 유효한값이 아닙니다\n숫자만 입력");
+            alert("몸무게가 유효한값이 아닙니다\n숫자만 입력");
             return false;
         }
-        result += "몸무게: " + weight +"kg"+ "<br>";
     
 
-        var key = frm["key"].value.trim(); 
-
-        if(isNaN(key) || frm['key'].value.trim() == "" ){
-            alert(key + "키가 유효한값이 아닙니다\n숫자만 입력");
-            return false;
-        }
-        result += "키: " + key+"cm" + "<br>";
-        result +="성별: " + gender + "<br>";
+        result += "\n"+"<br>"+"키: " + key+"cm" + "<br>";
+        result +="\n"+"<br>"+"성별: " + gender + "<br>";
+        result += "\n"+"<br>"+"몸무게: " + weight +"kg"+ "<br>";
         
         // ------------------------- bmi 계산----------------
-        var cm, kg, bmi;
+        var cm, kg;
         var kg = frm["weight"].value.trim(); 
         var cm  =frm["key"].value.trim();
         cm =cm *0.01;
@@ -35,24 +37,17 @@ function showData(){
         if(bmi>0)
         {
             result +="BMI: " + bmi;
-        } 
+        }else{
+          alert("잘못된값입니다")
+        }
         document.getElementById("result").innerHTML =result;
-
-        return true;
-
         
-        
+  
 }//end showData 데이터 보여주기 (join.html)
 
-//-----------------------------사진전환--------------------
-// $(document).ready(function(){
 
-    
-//     $("#a").hide();
-//     $("#b").hide();
-//     $("#c").hide();
-//     $("#d").hide();
-// })
+
+//-----------------------------사진전환--------------------
 
 $(document).ready(function(){
     function slide(){
@@ -112,16 +107,57 @@ $(document).ready(function(){
     $(document).ready(function(){
 
         $("#btn01").click(function(){
-            $("div#d01").animate({left: '250px'});
+            $("div#d01").animate({right: '250px'});
         });
     });
 
     // ----------------------------------------------------
+  $(document).ready(function(){
 
-    $("#btn06").click(function(){
-        var div = $("div#d06");  
-        div.animate({left: '100px', width:'200px'}, "slow");
+    $("#side1").mouseenter(function(){
+      $(this).animate({width: '130px'}, 1000)
+
+    })
+
+    $("#side1").mouseleave(function(){
+      $(this).animate({width: '60px'}, 1000)
+    })
+      
+      $("#side2").mouseenter(function(){
+        $(this).animate({width: '130px'}, 1000)
         
-		// 주의: animate() 는 색상에 대해서는 애니메이션 안한다
+      })
+      
+      $("#side2").mouseleave(function(){
+        $(this).animate({width: '60px'}, 1000)
+      
+      })
+      // 주의: animate() 는 색상에 대해서는 애니메이션 안한다
 		
-    });
+  });
+
+  
+
+//-------------------팝업--------------
+var modal = document.getElementById("myModal");
+var btn =document.getElementById("myBtn");
+var span =document.getElementsByClassName("close")[0];
+
+// 버튼 클릭하면 팝업 보이게 하기
+btn.onclick = function(){
+  modal.style.display = "block";
+
+}
+
+//팝업의 x 버튼 누르면 닫히게 하기
+span.onclick = function(){
+  modal.style.display ="none";
+}
+
+//팝업 창 바깥을 클릭해도 팝업이 닫히게 하기(modal) <-->(반대: modaless)
+window.onclick = function(event){
+  //event.target : event 발생한 element 객체
+  if(event.target == modal){
+    modal.style.display="none";
+  }
+}

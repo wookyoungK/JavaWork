@@ -7,19 +7,16 @@
 </head>
 <body>
 
-    <form action="" onsubmit="검증코드">
+    <form action="" onsubmit="return 검증코드">
         <input type='text' name='myname' value='홍길동'>
         <input type="submit">
-        <!-- 일경우 onsubmit으로 form에 지정해주어야한다! -->
     </form>
 
     <hr>
 
-
     <form action="">
         <input type='text' name='myname' value='활빈당'>
-        <input type="button" value ="제출" onclick="검증코드 코드안에서 submit">
-        <!-- 그냥 버튼일경우 그냥 내가  form에 지정해주면됨  -->
+        <input type="button" value="제출" onclick="검증코드 코드안에서 submit()">
     </form>
 
 
