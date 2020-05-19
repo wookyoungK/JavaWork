@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.net.*" %>    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,12 +26,17 @@
 	String name = "홍길동";
 	int age = 33;
 %>
+
+
 <%@ include file="sub2.jsp" %>
+
+
+
 <%--<jsp:include page="sub2.jsp"/> --%>
 
 <jsp:include page="sub3.jsp">
-	<jsp:param value="<%= name %>" name="name"/>
-	<jsp:param value="<%= age %>" name="age"/>
+	<jsp:param value='<%= URLEncoder.encode(name, "utf-8") %>' name="name"/>
+	<jsp:param value='<%= age %>' name="age"/>
 </jsp:include>
 
 

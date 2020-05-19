@@ -120,3 +120,12 @@ ON t_professor(pay DESC);
 
 
 
+SELECT * FROM applerhk;
+SELECT * FROM idx;
+
+CREATE UNIQUE INDEX idx ON applerhk(userid);
+
+
+
+
+
