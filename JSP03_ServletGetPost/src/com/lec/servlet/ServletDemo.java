@@ -41,10 +41,7 @@ public class ServletDemo extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 
-
-
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doPost() 호출");
