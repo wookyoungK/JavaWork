@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 
 		) // web.xml과 동시에 사용불가 
 			//2.방법2: Servlet 파일에 초기화 파라미터를 직접 기술하는 방법
+
+
 public class InitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
