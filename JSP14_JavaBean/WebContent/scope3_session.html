@@ -2,17 +2,19 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>request scope</title>
+<title>session scope</title>
 </head>
 <body>
-	<h3>Request Scope</h3>
+	<h3>Session Scope</h3>
 	<b>카운트 초기값을 입력하세요...</b>
 	<P>----------------------------------</P>
-	<form action="scope2_request1.jsp">
+	<form action="scope3_session1.jsp">
 	   <!-- 카운터 시작값 -->
 		<input type="text" name="count">
 		<input type="submit" value="전송"/>
 	</form>
 </body>
+<!-- 기존의 값이 계속 남아있어서 서버가 종료되기전에는 기존에값에 계속 더해준다!!!!   -->
+<!--  시간이지나면 (30분 여기에선) session이 사라진다!!!!ㄴ -->
 </html>
 
