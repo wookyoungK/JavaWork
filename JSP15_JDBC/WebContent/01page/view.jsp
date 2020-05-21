@@ -8,6 +8,24 @@
 	//* 이 단계에서 parameter 검증필요 원래는 해야하지만 검증 생약 앞에 4번에서 검증하는것보기 return꼭해야한다!!! 원래는 꼭해야함 
 	//코드가 계속 길어져서 안하는것임
 	// ※ 이 단계에서 parameter 검증 필요
+	
+		int curPage =1; //현재 페이지 (디폴트 1page)
+	
+	//현재 몇 페이지 인지 paramerter 받아오기
+	
+	String pageParam = request.getParameter("page");
+	if(pageParam != null && !pageParam.toString().trim().equals("")){
+		try{
+			
+			int p = Integer.parseInt(pageParam);
+			if(p>0)
+				curPage = p;
+			
+		}catch(NumberFormatException e){
+		
+			
+		}
+	}
 %>
 
 <%!
@@ -147,8 +165,8 @@ UID : <%= uid %><br>
 </div>
 <hr>
 <br>
-<button onclick="location.href = 'update.jsp?uid=<%= uid%>'">수정하기</button>
-<button onclick="location.href = 'list.jsp'">목록보기</button>
+<button onclick="location.href = 'update.jsp?uid=<%= uid%>&page=<%=curPage%>'">수정하기</button>
+<button onclick="location.href = 'list.jsp?page=<%=curPage%>'">목록보기</button>
 <button onclick="chkDelete(<%= uid %>)">삭제하기</button>
 <button onclick="location.href = 'write.jsp'">신규등록</button>
 

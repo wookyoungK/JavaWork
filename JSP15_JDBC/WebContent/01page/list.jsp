@@ -152,9 +152,9 @@ table, th, td{
 					+ new SimpleDateFormat("hh:mm:ss").format(t);
 		}
 		
-		out.println("<td>"+rnum +"</td>"); 
+		out.println("<td>"+rnum +"</td>"); //rownum 찍어주기
 		out.println("<td>"+uid +"</td>");
-		out.println("<td><a href='view.jsp?uid=" + uid + "'>"+subject+"</a></td>");
+		out.println("<td><a href='view.jsp?uid=" + uid + "&page="+curPage+"'>"+subject+"</a></td>");
 		//view.jsp로넘어가면 어느글에대한 view.jsp로 넘어가야하는것인지 알아야한다 -->uid값으로 구분
 		out.println("<td>"+name+"</td>");
 		out.println("<td>"+viewcnt+"</td>");
