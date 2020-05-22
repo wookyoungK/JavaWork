@@ -24,6 +24,7 @@
 		return;   // 더이상 JSP 프로세싱 하지 않고 종료
 	} // end if
 %>
+
 <%
 	String name = arr[0].getName();
 	String subject = arr[0].getSubject();

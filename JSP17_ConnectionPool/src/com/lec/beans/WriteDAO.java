@@ -2,7 +2,6 @@ package com.lec.beans;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +9,11 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 import common.D;
 
@@ -25,18 +29,18 @@ public class WriteDAO {
 	ResultSet rs = null;   // SELECT 결과, executeQuery()
 	
 	// DAO 객체가 생성될때 Connection 도 생성된다.
-	public WriteDAO() {
+	public WriteDAO() {} // 생성자  (더이상 Connection 생성 안한다!)
+	
+	// Connection Pool  리소스
+	public static Connection getConnection() throws SQLException, NamingException {
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/testDB");
 		
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("WriteDAO 생성, 데이터 베이스 연결!");
-		} catch(Exception e) {
-			e.printStackTrace();
-			// throw e;
-		}		
-		
-	} // 생성자
+		return ds.getConnection();
+	}
+	
+	
 
 	// DB 자원 반납 메소드,
 	public void close() throws SQLException {
@@ -47,7 +51,7 @@ public class WriteDAO {
 	} // end close()
 	
 	// 새글 작성 <-- DTO
-	public int insert(WriteDTO dto) throws SQLException {
+	public int insert(WriteDTO dto) throws SQLException, NamingException {
 		String subject = dto.getSubject();
 		String content = dto.getContent();
 		String name = dto.getName();
@@ -57,10 +61,13 @@ public class WriteDAO {
 	}
 	
 	// 새글 작성 <-- 제목, 내용, 작성자 
-	public int insert(String subject, String content, String name) throws SQLException {
+	public int insert(String subject, String content, String name) 
+							throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {			
+			conn = getConnection();  // Connection Pool
+			
 			pstmt = conn.prepareStatement(D.SQL_WRITE_INSERT);
 			pstmt.setString(1, subject);
 			pstmt.setString(2, content);
@@ -111,10 +118,12 @@ public class WriteDAO {
 	}
 	
 	// 전체 SELECT
-	public WriteDTO [] select() throws SQLException {
+	public WriteDTO [] select() throws SQLException, NamingException {
 		WriteDTO [] arr = null;
 		
 		try {
+			conn = getConnection();  // Connection Pool
+			
 			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
@@ -127,11 +136,13 @@ public class WriteDAO {
 	
 	// 특정 uid 의 글 내용 읽기, 조회수 증가
 	// viewCnt 도 1 증가 해야 하고, 글 읽어와야 한다 --> 트랜잭션 처리
-	public WriteDTO [] readByUid(int uid) throws SQLException{
+	public WriteDTO [] readByUid(int uid) throws SQLException, NamingException{
 		int cnt = 0;
 		WriteDTO [] arr = null;
 		
 		try {
+			conn = getConnection();  // Connection Pool
+			
 			// 트랜잭션 처리
 			// Auto-commit 비활성화
 			conn.setAutoCommit(false);
@@ -162,10 +173,12 @@ public class WriteDAO {
 	
 	
 	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
-	public WriteDTO [] selectByUid(int uid) throws SQLException {
+	public WriteDTO [] selectByUid(int uid) throws SQLException, NamingException {
 		WriteDTO [] arr = null;
 		
 		try {
+			conn = getConnection();  // Connection Pool
+			
 			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_BY_UID);
 			pstmt.setInt(1, uid);
 			rs = pstmt.executeQuery();
@@ -178,9 +191,12 @@ public class WriteDAO {
 	
 	
 	// 특정 uid 의 글 수정 (제목, 내용)
-	public int update(int uid, String subject, String content) throws SQLException {
+	public int update(int uid, String subject, String content) 
+						throws SQLException, NamingException {
 		int cnt = 0;
 		try {
+			conn = getConnection();  // Connection Pool
+			
 			pstmt = conn.prepareStatement(D.SQL_WRITE_UPDATE);
 			pstmt.setString(1, subject);
 			pstmt.setString(2, content);
@@ -195,9 +211,11 @@ public class WriteDAO {
 	} // end update()
 	
 	// 특정 uid 글 삭제하기
-	public int deleteByUid(int uid) throws SQLException {
+	public int deleteByUid(int uid) throws SQLException, NamingException {
 		int cnt = 0;
 		try {
+			conn = getConnection();  // Connection Pool
+			
 			pstmt = conn.prepareStatement(D.SQL_WRITE_DELETE_BY_UID);
 			pstmt.setInt(1, uid);
 			cnt = pstmt.executeUpdate();

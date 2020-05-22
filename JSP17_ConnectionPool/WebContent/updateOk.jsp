@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="dao" class="com.lec.beans.WriteDAO"/>
-
+	
 <% // parameter 받아오기
 	request.setCharacterEncoding("utf-8");  // 한글 인코딩 꼭!
 	int uid = Integer.parseInt(request.getParameter("uid"));

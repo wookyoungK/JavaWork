@@ -32,6 +32,7 @@
 %>
  --%>
 
+
 <%
 	// DAO 사용한 트랜잭션
 	//int cnt = dao.insert(subject, content, name);
