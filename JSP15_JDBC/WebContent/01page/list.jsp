@@ -82,7 +82,7 @@
     rs.close();
     pstmt.close();
     
-    totalPage =(int)Math.ceil(cnt/ (double)pageRows); //총 몇페이지 분량
+    totalPage =(int)Math.ceil(cnt/ (double)pageRows); //총 몇페이지 분량 , Math.ceil 소수점이하를 올림한다.(해당 숫자보다 작지않는 정수들 중 가장작은수)
     
     int fromRow = (curPage -1 ) * pageRows +1; //몇번째 row 부터?
     
