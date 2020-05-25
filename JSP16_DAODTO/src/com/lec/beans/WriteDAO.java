@@ -74,7 +74,7 @@ public class WriteDAO {
 		return cnt;
 	}
 	
-	// ResultSet --> DTO 배열로 리턴
+	// ResultSet --> DTO 배열로 리턴  arr = createArray(rs) 는 다여기서 받아오는것
 	public WriteDTO [] createArray(ResultSet rs) throws SQLException {
 		WriteDTO [] arr = null;  // DTO 배열
 		
@@ -110,7 +110,7 @@ public class WriteDAO {
 		return arr;
 	}
 	
-	// 전체 SELECT
+	// 전체 SELECT 전체 select() 메소드로 전체목록을 보여주는것!! list.jsp 
 	public WriteDTO [] select() throws SQLException {
 		WriteDTO [] arr = null;
 		
@@ -125,6 +125,7 @@ public class WriteDAO {
 		return arr;
 	} // end select()
 	
+	// view.jsp
 	// 특정 uid 의 글 내용 읽기, 조회수 증가
 	// viewCnt 도 1 증가 해야 하고, 글 읽어와야 한다 --> 트랜잭션 처리
 	public WriteDTO [] readByUid(int uid) throws SQLException{
@@ -160,8 +161,8 @@ public class WriteDAO {
 		return arr;
 	} // end readByUid()
 	
-	
-	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
+	//update.jsp  수정하기 버튼클릭시 내용 그대로 나와야함으로, list에쓰는 select와 같다
+ 	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
 	public WriteDTO [] selectByUid(int uid) throws SQLException {
 		WriteDTO [] arr = null;
 		

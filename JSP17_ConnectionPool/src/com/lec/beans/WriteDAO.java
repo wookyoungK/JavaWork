@@ -14,6 +14,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+//이것을 사용하여 Connection poll 사용 여기만 수정해주면 다른곳은 수정안해도됨 
+// JNDI 사용한것임 
 
 import common.D;
 

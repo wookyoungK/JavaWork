@@ -1,6 +1,9 @@
+<%--  test용 이거없어도 D.java에서 커넥션잡아줌
+ 
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   <%@ page import = 'java.sql.*' %><%-- JDB 관련 import --%>
+   <%@ page import = 'java.sql.*' %>JDB 관련 import
    <%!
    //JDBC 관련 기본 객체 변수
    Connection conn = null;
@@ -43,9 +46,10 @@
       }
    }
    %>
-   <%-- 위 트랜잭션이 마무리 되면 페이지 보여주기 --%>
+   위 트랜잭션이 마무리 되면 페이지 보여주기
 
 
 
 
 
+ --%>

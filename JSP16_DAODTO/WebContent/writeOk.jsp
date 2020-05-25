@@ -8,7 +8,9 @@
 <jsp:useBean id="dto" class="com.lec.beans.WriteDTO"/>
 <jsp:setProperty property="*" name="dto"/>
 
-<%--
+
+<%-- 
+이부분을 살리면 DAO 만사용한것이고 이부분을 없애면 DAO + DTO 사용한겅심 
 <%
 	request.setCharacterEncoding("utf-8");  // 한글 인코딩 꼭!
 	// 입력한 값 받아오기			
@@ -29,13 +31,13 @@
 <%		
 		return;    // ★ 더 이상 JSP 프로세싱 하지 않도록 종료 ★
 	}
-%>
- --%>
+%> --%>
+ 
 
 <%
 	// DAO 사용한 트랜잭션
-	//int cnt = dao.insert(subject, content, name);
-	int cnt = dao.insert(dto);
+	//int cnt = dao.insert(subject, content, name); //DAO 만사용 
+	 int cnt = dao.insert(dto); // DAO + DTO 사용 
 %>
 
 <% if(cnt == 0){ %>

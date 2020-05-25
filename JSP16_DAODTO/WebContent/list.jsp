@@ -60,13 +60,7 @@ table, th, td{
 
 	</table>
 	<br>
-	<button onclick = "locatin.href='write.jsp'">신규등록</button>
-
-
-    
-    
-    
-
+	<button onclick = "location.href='write.jsp'">신규등록</button>
 
 </body>
 </html>

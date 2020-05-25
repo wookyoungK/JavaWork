@@ -10,6 +10,7 @@
 %>
 
 <% // dao 사용한 트랜잭션
+// 내가선택한 uid값의 내용들이 저장됨 배열은 무조건 1개임 1개선택만하니까 
 	WriteDTO [] arr = dao.readByUid(uid);
 %>
 
@@ -25,6 +26,7 @@
 	} // end if
 %>
 <%
+//그래서 여기서보면 arr[0] 으로 사용하는것임
 	String name = arr[0].getName();
 	String subject = arr[0].getSubject();
 	String content = arr[0].getContent();
@@ -53,7 +55,7 @@ function chkDelete(uid){
 <body>
 <h2>읽기 <%= subject %></h2>
 <br>
-UID : <%= uid %><br>
+UID : <%= uid %> teest<br>
 작성자 : <%= name %><br>
 제목 : <%= subject %><br>
 등록일 : <%= regDate %><br>
