@@ -44,7 +44,17 @@ ${ name }<br>
 <c:out value="${error }"/>
 <br>
 
+<c:catch var="ex">
+name parameter 값 = <%= request.getParameter("name") %><br>
+<% if(request.getParameter("name").equals("test")){// 예외 발생 %>
+ 	${param.name }은 test 입니다.
+ 	<% } %>
+</c:catch>
 
+<c:if test="${ex !=null }">
+	예외발생<br>
+	${ex }
+</c:if>
 
 </body>
 </html>
