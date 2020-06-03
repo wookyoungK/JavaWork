@@ -161,7 +161,7 @@ public class WriteDAO {
 	} // end readByUid()
 	
 	
-	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
+	 //특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
 	public WriteDTO [] selectByUid(int uid) throws SQLException {
 		WriteDTO [] arr = null;
 		

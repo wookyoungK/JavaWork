@@ -17,8 +17,6 @@ public class ViewCommand implements Command {
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		// 매개변수 받아오기
 
-
-
 		try {
 			//트랜직션수행
 			arr= dao.readByUid(uid);
