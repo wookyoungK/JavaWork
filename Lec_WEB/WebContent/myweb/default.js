@@ -63,6 +63,7 @@ $(document).ready(function(){
         $("#b").delay(2000).fadeOut(1000)
         return $("#c").delay(2000).fadeIn(1000).promise()
     })
+    
     .then(function(){
         $("#c").delay(3000).fadeOut(1000)
         return $("#d").delay(2000).fadeIn(1000).promise()
