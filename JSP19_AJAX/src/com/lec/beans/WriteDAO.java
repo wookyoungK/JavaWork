@@ -125,46 +125,6 @@ public class WriteDAO {
 		return arr;
 	} // end select()
 	
-	//페징 관련
-	//몇번째 from 부터 몇개 rows 를 SELECT
-	public WriteDTO [] selectFromRow(int from, int rows) throws SQLException{
-		WriteDTO [] arr = null;
-		
-		
-		try {
-			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_FROM_ROW);
-			pstmt.setInt(1, from);
-			pstmt.setInt(2,  from + rows);
-			rs = pstmt.executeQuery();
-			arr = createArray(rs);	
-			
-		}finally {
-			
-			close();
-		}//end try
-		
-		return arr;
-	}// end selectFromRow()
-	
-	//전체 글의 개수
-	public int countAll() throws SQLException{
-		int cnt=0;
-		
-		try {
-			pstmt = conn.prepareStatement(D.SQL_WRITE_COUNT_ALL);
-			rs = pstmt.executeQuery();
-			rs.next();
-			cnt = rs.getInt(1);
-			
-		}finally {
-			close();
-		}// end try
-		
-		
-		
-		return cnt;
-	}//coutnAll()
-	
 	// 특정 uid 의 글 내용 읽기, 조회수 증가
 	// viewCnt 도 1 증가 해야 하고, 글 읽어와야 한다 --> 트랜잭션 처리
 	public WriteDTO [] readByUid(int uid) throws SQLException{
