@@ -6,33 +6,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lec.beans.WriteDAO;
-import com.lec.beans.WriteDTO;
 
 public class UpdateCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		WriteDAO dao = new WriteDAO(); //DAO 객체 생성
 		int cnt = 0;
-		
-  // 한글 인코딩 꼭!
+
+		WriteDAO dao = new WriteDAO();
+
+		//입력한 값을 받아오기
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
-		
-		// 매개변수 받아오기
 
-		try {
-			//트랜직션수행
-			cnt= dao.update(uid,subject,content);
-			request.setAttribute("update", cnt);
-			
-		} catch(SQLException e) {
+		// 유효성 체크  null 이거나, 빈문자열이면 이전화면으로 돌아가기
+		if(subject != null && subject.trim().length() > 0){			
+			try {			
+				cnt = dao.update(uid, subject, content);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 
-			e.printStackTrace();
-		}
+		} // end if
+
+		request.setAttribute("result", cnt);
 
 	}
-
 
 }

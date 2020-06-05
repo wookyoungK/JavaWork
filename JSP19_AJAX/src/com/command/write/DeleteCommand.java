@@ -6,29 +6,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lec.beans.WriteDAO;
-import com.lec.beans.WriteDTO;
+
 
 public class DeleteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		WriteDAO dao = new WriteDAO(); //DAO 객체 생성
-		int cnt=0;
+		int cnt = 0;
+
+		WriteDAO dao = new WriteDAO();
+
+		//입력한 값을 받아오기
 		int uid = Integer.parseInt(request.getParameter("uid"));
-		// 매개변수 받아오기
 
-		try {
-			//트랜직션수행
-			cnt= dao.deleteByUid(uid);
-		
-			request.setAttribute("delete", cnt);
-			
-		} catch(SQLException e) {
-
+		try {			
+			cnt = dao.deleteByUid(uid);
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
+		request.setAttribute("result", cnt);
 	}
-
 
 }

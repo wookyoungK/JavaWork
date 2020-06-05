@@ -1,0 +1,45 @@
+package com.command.write;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.lec.beans.WriteDAO;
+import com.lec.beans.WriteDTO;
+
+public class UpdateCommand implements Command {
+
+	@Override
+	public void excute(HttpServletRequest request, HttpServletResponse response) {
+		WriteDAO dao = new WriteDAO(); //DAO 객체 생성
+		int cnt = 0;
+		
+		// ajax response 에 필요한 값들
+		StringBuffer message = new StringBuffer();
+		String status = "FAIL";   // 기본 FAIL
+  // 한글 인코딩 꼭!
+		int uid = Integer.parseInt(request.getParameter("uid"));
+		String subject = request.getParameter("subject");
+		String content = request.getParameter("content");
+		
+		// 매개변수 받아오기
+
+		try {
+			//트랜직션수행
+			cnt= dao.update(uid,subject,content);
+			request.setAttribute("update", cnt);
+			
+		} catch(SQLException e) {
+
+			e.printStackTrace();
+		}
+
+		request.setAttribute("result", cnt);
+		request.setAttribute("status", status);
+		request.setAttribute("message", message.toString());
+
+	}
+
+
+}
