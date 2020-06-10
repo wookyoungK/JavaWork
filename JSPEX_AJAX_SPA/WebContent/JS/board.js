@@ -5,6 +5,24 @@ $(document).ready(function(){
 	// 게시판 목록 1페이지 로딩
 	loadPage(page);
 	
+	// 글작성 버튼 누르면 팝업
+	$("#btnWrite").click(function(){
+		$("#dlg_write").show();
+	});
+	
+	// 모달 대화상자에서 close 버튼 누르면 닫기
+	$(".modal .close").click(function(){
+		$(this).parents(".modal").hide();
+	});
+	
+	
+	// 글작성  submit 되면  jquery에서 submit 하는것 action 준거없다!!
+	//parents,parent 
+	$("#frmWrite").submit(function(){
+		$(this).parents(".modal").hide();
+		return chkWrite();
+	})
+	
 });
 
 // page 번째 페이지 로딩
@@ -39,7 +57,7 @@ function updateList(jsonObj){
 		var items = jsonObj.data;   // 배열
 		for(i = 0; i < count; i++){
 			result += "<tr>\n";
-			result += "<td>" + "</td>\n";
+			result += "<td><input type='checkbox' name='uid' value='" + items[i].uid + "'></td>\n";
 			result += "<td>" + items[i].uid + "</td>\n";
 			result += "<td>" + items[i].subject + "</td>\n";
 			result += "<td>" + items[i].name + "</td>\n";
@@ -128,9 +146,14 @@ function changePageRows(){
 	loadPage(window.page);
 }
 
-
-
-
+//새글 등록 처리
+function chkWrite(){
+	
+	$("#frmWrite").serialize(); //해당 폼안의 name 이 있는 것들을 전부 끌고 들어옴
+	
+	return false; // 페이지 리로딩은 안할것이다.
+	
+}// end chkWrite
 
 
 
