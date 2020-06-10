@@ -53,11 +53,11 @@ function updateList(jsonObj){
 		$("#pageinfo").text(jsonObj.page + "/" + jsonObj.totalpage + "페이지, " + jsonObj.totalcnt + "개의 글");
 		
 		// pageRows
-		var txt = "<select id='rows'>\n";
-		txt += "<option" + ((window.pageRows == 10)?"selected":"") + ">10개씩</option>\n";
-		txt += "<option" + ((window.pageRows == 20)?"selected":"") + ">20개씩</option>\n";
-		txt += "<option" + ((window.pageRows == 50)?"selected":"") + ">50개씩</option>\n";
-		txt += "<option" + ((window.pageRows == 100)?"selected":"") + ">100개씩</option>\n";		
+		var txt = "<select id='rows' onchange='changePageRows()'>\n";
+		txt += "<option " + ((window.pageRows == 10)?"selected":"") + " value='10'>10개씩</option>\n";
+		txt += "<option " + ((window.pageRows == 20)?"selected":"") + " value='20'>20개씩</option>\n";
+		txt += "<option " + ((window.pageRows == 50)?"selected":"") + " value='50'>50개씩</option>\n";
+		txt += "<option " + ((window.pageRows == 100)?"selected":"") + " value='100'>100개씩</option>\n";		
 		txt += "</select>\n";
 		$("#pageRows").html(txt);
 		
@@ -123,6 +123,10 @@ function buildPagination(writePages, totalPage, curPage, pageRows){
 } // end buildPagination()
 
 
+function changePageRows(){
+	window.pageRows = $("#rows").val();
+	loadPage(window.page);
+}
 
 
 
