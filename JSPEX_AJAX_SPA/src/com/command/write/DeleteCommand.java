@@ -34,16 +34,14 @@ public class DeleteCommand implements Command {
 					uids[i] = Integer.parseInt(params[i]);
 				}
 				cnt = dao.deleteByUid(uids);
-				status = "Ok";
+				status = "OK";
 			} catch (SQLException e) {
-				message.append("[트랜잭션 에러:"+e.getMessage()+"]");
-			} catch(Exception e) {
-				message.append("[유효하지 않은 parameter]"+Arrays.deepToString(params));
-				//uid값이 숫자가 아닐ㄱ경우
+				//e.printStackTrace();
+				message.append("[트랜잭션 에러:" + e.getMessage() + "]");
+			} catch (Exception e) {
+				message.append("[유효하지 않은 parameter]" + Arrays.toString(params));
 			}
-		}
-		
-
+		} // end if
 
 		request.setAttribute("result", cnt);
 		request.setAttribute("status", status);

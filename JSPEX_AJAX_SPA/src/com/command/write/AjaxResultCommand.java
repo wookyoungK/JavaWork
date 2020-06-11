@@ -19,21 +19,35 @@ public class AjaxResultCommand implements Command {
 		result.setMessage((String)request.getAttribute("message"));
 		result.setCount((Integer)request.getAttribute("result"));		
 		
-
-		ObjectMapper mapper = new ObjectMapper();	
-
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
 		try {
-
-			String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
-
-			response.setContentType("application/json; charset=utf-8");
-			response.getWriter().write(jsonString);
-		} catch (JsonProcessingException e) {
+			String jsonString = mapper.writerWithDefaultPrettyPrinter()
+								.writeValueAsString(result);
+			
+			response.setContentType("application/json; charset=utf-8"); 
+			response.getWriter().write(jsonString);			
+		} catch(JsonProcessingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
+		}
+		
+		
+		
+	} // end execute()
 
-	}
+} // end Command
 
-}
+
+
+
+
+
+
+
+
+
+
+

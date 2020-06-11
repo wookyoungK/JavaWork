@@ -15,13 +15,16 @@ $(document).ready(function(){
 		$(this).parents(".modal").hide();
 	});
 	
-	
-	// 글작성  submit 되면  jquery에서 submit 하는것 action 준거없다!!
-	//parents,parent 
+	// 글작성  submit 되면
 	$("#frmWrite").submit(function(){
 		$(this).parents(".modal").hide();
 		return chkWrite();
-	})
+	});
+	
+	// 글 삭제 버튼 누르면
+	$("#btnDel").click(function(){
+		chkDelete();
+	});
 	
 });
 
@@ -146,40 +149,85 @@ function changePageRows(){
 	loadPage(window.page);
 }
 
-//새글 등록 처리
+
+// 새글 등록 처리
 function chkWrite(){
+
+	var data = $("#frmWrite").serialize();   // 해당 폼 안의 name 이 있는 것들을 끌고 들어옴, string 타입
+					// name=aaa&subject=bbb&content=ccc
 	
-	$("#frmWrite").serialize(); //해당 폼안의 name 이 있는 것들을 전부 끌고 들어옴
+	//alert(data + "--" + typeof data);
 	
-	return false; // 페이지 리로딩은 안할것이다.
+	// ajax request
+	$.ajax({
+		url : "writeOk.ajax",
+		type : "POST",
+		cache : false,
+		data : data,  // POST 로 ajax request 하는 경우 parameter 담기
+		success : function(data, status){
+			if(status == "success"){
+				if(data.status == "OK"){
+					alert("INSERT 성공 " + data.count + "개:" + data.status);
+					loadPage(1);  // 첫페이지 리로딩
+				} else {
+					alert("INSERT 실패 " + data.status + " : " + data.message);
+				}
+			}
+		}
+	});
 	
-}// end chkWrite
+	// request 후, form 에 입력된것 reset()
+	$('#frmWrite')[0].reset();
+	
+	
+	
+	return false;  // 페이지 리로딩은 안할것이다.
+	
+} // end chkWrite()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// check된 uid 의 게시글들만 삭제하기
+function chkDelete(){
+	var uids = [];   // 빈 배열 준비
+	$("#list tbody input[name=uid]").each(function(){
+		//$(this) 는 checkbox 
+		if($(this).is(":checked")){  // jQuery 에서 check 여부 확인방법
+			uids.push($(this).val());   // 배열에 uid 값 추가
+		}
+	});
+	
+	//alert(uids);
+	
+	if(uids.length == 0){
+		alert('삭제할 글을 체크해주세요');
+	} else {
+		if(!confirm(uids.length + "개의 글을 삭제하시겠습니까?")) return false;
+		
+		var data = $("#frmList").serialize();
+		//   uid=1010&uid=1011&uid=1012
+		$.ajax({
+			url : "deleteOk.ajax",
+			type : "POST",
+			data : data,
+			cache : false,
+			success : function(data, status){
+				if(status == "success"){
+					if(data.status == "OK"){
+						alert("DELETE 성공 " + data.count + "개");
+						// 현재 페이지 리로딩
+						loadPage(window.page);
+					} else {
+						alert("DELETE 실패 " + data.message);
+					}
+				}
+			}
+		});
+	}
+	
+	
+	
+	
+	
+} // end chkDelete()
 
 
 

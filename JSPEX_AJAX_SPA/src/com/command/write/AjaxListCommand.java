@@ -6,9 +6,9 @@ import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.controller.AjaxWriteList;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lec.beans.AjaxWriteList;
 import com.lec.beans.WriteDTO;
 
 public class AjaxListCommand implements Command {
@@ -17,30 +17,30 @@ public class AjaxListCommand implements Command {
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		WriteDTO [] dtoArr = (WriteDTO [])request.getAttribute("list");
 		
-		AjaxWriteList result =new AjaxWriteList();
+		AjaxWriteList result = new AjaxWriteList();
 		
 		result.setStatus((String)request.getAttribute("status"));
 		result.setMessage((String)request.getAttribute("message"));
 		
-		
 		if(dtoArr != null) {
 			result.setCount(dtoArr.length);
 			result.setList(Arrays.asList(dtoArr));
-			
-			
 		}
 		
-		//페이징 할때 필요한 값들
-		try {
+		// 페이징 할때 필요한 값들
+		try {			
 			result.setPage((Integer)request.getAttribute("page"));
 			result.setTotalPage((Integer)request.getAttribute("totalPage"));
 			result.setWritePages((Integer)request.getAttribute("writePages"));
 			result.setPageRows((Integer)request.getAttribute("pageRows"));
 			result.setTotalCnt((Integer)request.getAttribute("totalCnt"));
-		}catch(Exception e) {
-			// 무시  /view.ajax 에선 페이징 관련 변수값들이 없다..
+		} catch(Exception e) {
+			// 개 무시..    /view.ajax 에선 페이징 관련 변수값들이 없다..
 		}
-		ObjectMapper mapper =new ObjectMapper(); //JSON 매핑할  객체
+		
+		
+		
+		ObjectMapper mapper = new ObjectMapper();  // Json 매핑할 객체
 		
 		try {
 			String jsonString = 
@@ -53,6 +53,23 @@ public class AjaxListCommand implements Command {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+		
+	} // end execute()
+	
+	
 
-}
+} // end Command
+
+
+
+
+
+
+
+
+
+
+
+
+
+

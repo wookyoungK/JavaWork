@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,36 +13,32 @@ import com.command.write.*;
 @WebServlet("*.ajax")
 public class AjaxController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	public AjaxController() {
+       
+    public AjaxController() {
         super();
-	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ajaxAction(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ajaxAction(request, response);
 	}
-
-	protected void ajaxAction(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	
+	protected void ajaxAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("ajaxAction() 호출");
-		request.setCharacterEncoding("utf-8");
 
-		// 바구니에 돌아가면서 사탕을담는것으로 생각해보자
-
-		// 컨트롤러는 다음 두개를 선택해야 한다.
+		request.setCharacterEncoding("UTF-8");
 		
-		Command command = null; // 어떠한 커맨드? --? 어떠한 로직 수행.
-
-		// URL로부터 URI, ContextPath, Command 분리
+		// 컨트롤러는 다음 두개를 선택해야 한다.
+		Command command = null;   // 어떠한 커맨드? --> 어떠한 로직 수행.
+		
+		// URL로부터 URI, ContextPath, Command 분리 
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
 		String com = uri.substring(conPath.length());
-
+		
 		// 테스트 출력
 		System.out.println("uri: " + uri);
 		System.out.println("conPath: " + conPath);
@@ -75,6 +72,24 @@ public class AjaxController extends HttpServlet {
 		} // end switch
 		
 		
-		}//end switch
-	
-}
+		
+		
+	}  // ajaxAction
+
+} // end Controller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

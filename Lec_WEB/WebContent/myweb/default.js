@@ -17,6 +17,7 @@ function showData(){
             }
 
 
+             
         var weight = frm["weight"].value.trim(); 
         if(isNaN(weight) || frm['weight'].value.trim() =="" ){
             alert("몸무게가 유효한값이 아닙니다\n숫자만 입력");

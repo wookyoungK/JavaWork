@@ -23,20 +23,22 @@
 	
 	<div class="clear"></div>
 	
-	<table>
-		<thead>
-			<th>#</th>
-			<th>UID</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>조회수</th>
-			<th>작성일</th>
-		</thead>
-		
-		<tbody>
-		
-		</tbody>
-	</table>
+	<form id="frmList" name="frmList">
+		<table>
+			<thead>
+				<th>#</th>
+				<th>UID</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>조회수</th>
+				<th>작성일</th>
+			</thead>
+			
+			<tbody>
+			
+			</tbody>
+		</table>
+	</form>
 
 	<%--버튼 --%>
 	<div class="d01">
