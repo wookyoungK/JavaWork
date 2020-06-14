@@ -37,6 +37,7 @@ form p:hover {cursor: pointer; color:blue;}
 <body>
 <%-- Java 방식 --%>
 <h3><%= cnt %>개의 파일 확인</h3>
+<h2></h2>
 <ul>
 <%
 	for(int i = 0; i < cnt; i++){
