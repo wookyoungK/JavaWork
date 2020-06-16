@@ -42,5 +42,5 @@ INSERT INTO test_write(wr_uid, wr_subject, wr_content, wr_name)
 	SELECT test_write_seq.nextVal, wr_subject, wr_content, wr_name FROM test_write;
 
 
-
+drop sequence TEST_WRITE_SEQ;
 
