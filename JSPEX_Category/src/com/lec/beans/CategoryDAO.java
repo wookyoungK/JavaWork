@@ -43,13 +43,13 @@ public class CategoryDAO {
 			conn.close();
 	} // end close()
 
-	public CategoryDTO[] selectByUid(int depth,int parent) throws SQLException {
+	public CategoryDTO[] selectByUid(String depth,String parent) throws SQLException {
 		CategoryDTO[] arr = null;
 
 		try {
 			pstmt = conn.prepareStatement(D.SQL_CATEGORY_BY_DEPTH_N_PARENT);
-			pstmt.setInt(1, depth);
-			pstmt.setInt(2, parent);
+			pstmt.setString(1, depth);
+			pstmt.setString(2, parent);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {
@@ -58,12 +58,11 @@ public class CategoryDAO {
 		return arr;
 	}
 	
-	public CategoryDTO [] select(int depth) throws SQLException {
+	public CategoryDTO [] select() throws SQLException {
 		CategoryDTO [] arr = null;
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT);
-			pstmt.setInt(1, depth);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {

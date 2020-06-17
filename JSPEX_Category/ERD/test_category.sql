@@ -12,7 +12,7 @@ CREATE TABLE test_category
 	ca_uid number NOT NULL,
 	ca_name varchar2(30) NOT NULL,
 	ca_depth number DEFAULT 1,
-	ca_parent NUMBER DEFAULT 0,
+	ca_parent NUMBER,
 	ca_order number DEFAULT 1,
 	PRIMARY KEY (ca_uid)
 );
@@ -80,6 +80,7 @@ FROM test_category
 WHERE ca_depth = 2 AND ca_parent = 1
 ORDER BY ca_order ASC;
 
+SELECT * FROM test_category WHERE CA_DEPTH =1 OR CA_DEPTH IS NULL ;
 //
 
 

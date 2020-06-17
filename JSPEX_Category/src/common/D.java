@@ -16,7 +16,7 @@ public class D {
 			"SELECT * FROM test_category WHERE ca_depth = ? AND ca_parent=?";	
 	
 	public static final String SQL_WRITE_SELECT=
-			"SELECT * FROM test_category where ca_depth = ?";
+			"SELECT * FROM test_category WHERE CA_DEPTH =1";
 	
 	//TODO : 필요한 쿼리문 만들어보기 
 
