@@ -10,15 +10,15 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src="${pageContext.request.contextPath }/JS/board.js"></script>
+<script src="${pageContext.request.contextPath }/JS/category.js"></script>
 
 <title>다단계 카테고리 - SELECT 하기</title>
 </head>
 <body>
 	<div class="cate" id="mycate">
-		<span> <select ></select>
-		</span> <span> <select ></select>
-		</span> <span> <select ></select>
+		<span> <select disabled></select>
+		</span> <span> <select disabled></select>
+		</span> <span> <select disabled></select>
 		</span>
 	</div>
 

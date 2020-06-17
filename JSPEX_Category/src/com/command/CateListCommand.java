@@ -18,7 +18,7 @@ public class CateListCommand implements Command {
       String depth = request.getParameter("depth");
       String parent = request.getParameter("parent");
 
-      if (parent == "" || parent=="" || depth=="" || depth==null ||parent==null) {
+      if (parent=="" || depth=="" || depth==null ||parent==null || Integer.parseInt(request.getParameter("parent"))==0) {
          try {
             arr = dao.select();
             request.setAttribute("list", arr);
