@@ -1,5 +1,6 @@
 package com.lec.spring.di02;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -14,7 +15,7 @@ Dependency Injection (DI, 의존주입)
 	즉 '외부' 에서 만들어 놓은 것을 가져옴.
 */
 
-
+ 
 public class DIMain02 {
 
 	public static void main(String[] args) {
@@ -37,6 +38,9 @@ public class DIMain02 {
 		
 		ctx.close(); //Application Context 컨테이너는 반드시close()!
 		System.out.println("Main 종료");
+		
+		ApplicationContext ctx2;
+		
 	}//end Main()
 
 }

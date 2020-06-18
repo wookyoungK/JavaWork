@@ -5,7 +5,7 @@ public class MessageEng implements MessageBean {
 	
 	
 	String msgEng= "Good Morining";
-	
+	 
 	
 	public MessageEng() {
 		System.out.println("MessageEng() 생성");
