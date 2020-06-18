@@ -33,7 +33,7 @@ public class MinusOp implements OperatorBean {
 
 	@Override
 	public int doOperate() {
-		return operand1 + operand2;
+		return operand1 - operand2;
 	}
 
 }

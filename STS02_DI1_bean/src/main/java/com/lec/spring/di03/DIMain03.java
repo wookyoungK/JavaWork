@@ -16,7 +16,7 @@ public class DIMain03 {
 		System.out.println("컨테이너 생성\n");
 		
 		Score score=null;
-		
+		 
 		score= ctx.getBean("myScore1",Score.class);
 		System.out.println(score);
 		
@@ -39,6 +39,9 @@ public class DIMain03 {
 		System.out.println(score);
 
 		score = ctx.getBean("myScore7", Score.class);
+		System.out.println(score);
+
+		score = ctx.getBean("myScore8", Score.class);
 		System.out.println(score);
 		
 		

@@ -63,9 +63,9 @@
 	<!-- setter 메소드 사용 -->
 	<bean id="myScore6" class="com.lec.spring.Score">
 		<property name="kor" value="78" />
-			<!-- myScore6.setKor(88)  -->
+		<!-- myScore6.setKor(88) -->
 		<property name="eng" value="12" />
-		
+
 		<!-- <property name="math" value="103" /> -->
 		<property name="math">
 			<value>103</value>
@@ -73,16 +73,23 @@
 		<property name="comment" value="욘두" />
 
 	</bean>
-	<!-- 생성자와 setter 동시에 가능
-		생성자 먼저 호출되고, setter 수행됨
-	 -->
-	 <bean id="myScore7" class="com.lec.spring.Score">
-	 	<constructor-arg value="73"/>
-	 	<property name="comment" value="꿈만같다"/>
-	 	<constructor-arg value="72"/>
-	 	<constructor-arg value="71"/>
-	 	<constructor-arg value="욘두"/>
-	 </bean>
+	<!-- 생성자와 setter 동시에 가능 생성자 먼저 호출되고, setter 수행됨 -->
+	<bean id="myScore7" class="com.lec.spring.Score">
+		<constructor-arg value="73" />
+		<property name="comment" value="꿈만같다" />
+		<constructor-arg value="72" />
+		<constructor-arg value="71" />
+		<constructor-arg value="욘두" />
+	</bean>
 
+	<bean id="myScore8" class="com.lec.spring.Score">
+		<property name="score">
+			<list>
+				<value>100</value>
+				<value>20</value>
+				<value>30</value>
+			</list>
+		</property>
+	</bean>
 
 </beans>
