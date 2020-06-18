@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-
+  
 <!--    <servlet>
   	<servlet-name>ServletInit</servlet-name>
   	<servlet-class>com.lec.servlet.InitServlet</servlet-class>

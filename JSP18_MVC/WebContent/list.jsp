@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ page import = "com.lec.beans.*" %>
-
+  
 <% //Controller 로 부터 결과 데이터 받음. , ListCommand 에서 request에 담았음  , attribute 이름 잘까먹음 기억잘하기!!!!!!!!!!!ㄴ
 	WriteDTO [] arr = (WriteDTO [] )request.getAttribute("list");
 	// 여기만 하면딤? 끝? 

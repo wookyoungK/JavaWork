@@ -13,8 +13,8 @@
 <title>글목록</title>
 </head>
 <body>
-
-	<style>
+ 
+<style>
 table {
 	width: 100%;
 }

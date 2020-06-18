@@ -16,7 +16,6 @@
 	int cnt = originalFileNames.length;
 %>
 
-
 <%-- parameter 받기 : JSTL --%>
 <c:set var="originalFileNames" value="${paramValues.originalFileName }"/>
 <c:set var="fileSystemNames" value="${paramValues.fileSystemName }"/>
@@ -37,7 +36,6 @@ form p:hover {cursor: pointer; color:blue;}
 <body>
 <%-- Java 방식 --%>
 <h3><%= cnt %>개의 파일 확인</h3>
-<h2></h2>
 <ul>
 <%
 	for(int i = 0; i < cnt; i++){
