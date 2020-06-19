@@ -7,9 +7,14 @@
 
 	<context:annotation-config />
 
-	<bean id="dao1" class="com.lec.beans.DAO">
+	<!-- <bean id="dao1" class="com.lec.beans.DAO">
 		<constructor-arg value="DAO_1" />
+	</bean> -->
+	
+	<bean id="dao1" class="com.lec.beans.DAOEx">
+		<constructor-arg value="DAO_Ex" />
 	</bean>
+
 
 	<bean id="regService" class="com.lec.beans.RegisterService">
 		<constructor-arg ref="dao1" />
@@ -19,8 +24,8 @@
 		class="com.lec.beans.RegisterService"> -->
 	
 	<bean id="readService" class="com.lec.beans.ReadService"/>
-	
 	<bean id="updateService" class="com.lec.beans.UpdateService"/>
+	<bean id="deleteService" class="com.lec.beans.DeleteService"/>
 	
 
 </beans>

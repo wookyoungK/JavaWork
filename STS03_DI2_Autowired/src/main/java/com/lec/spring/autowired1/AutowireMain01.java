@@ -4,7 +4,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class AutowireMain01 {
 
-	public static void main(String[] args) {
+	public static void main(String[] aa13rgs) {
 		System.out.println("Autowired 자동 주입");
 
 		GenericXmlApplicationContext ctx = 
@@ -14,6 +14,7 @@ public class AutowireMain01 {
 		System.out.println(ctx.getBean("regService"));
 		System.out.println(ctx.getBean("readService"));
 		System.out.println(ctx.getBean("updateService"));
+		System.out.println(ctx.getBean("deleteService"));
 
 		ctx.close();
 
