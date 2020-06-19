@@ -14,6 +14,7 @@ public class DIApp {
 		System.out.println("컨테이너 생성\n");
 
 		OperatorBean operator=null;
+		
 		operator = ctx.getBean("op", OperatorBean.class);
 		int value = operator.doOperate();
 		System.out.println("결과:" + value);

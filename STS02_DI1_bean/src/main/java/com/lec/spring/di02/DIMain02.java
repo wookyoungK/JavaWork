@@ -20,7 +20,7 @@ public class DIMain02 {
 
 	public static void main(String[] args) {
 		System.out.println("Main 시작");
-	
+	 
 		
 		//스프링 설정파일 resource 명시
 		String configLocation = "classpath:appCtx.xml";

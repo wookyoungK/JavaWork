@@ -6,7 +6,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import com.lec.spring.Score;
 
 public class DIMain03 {
- 
+  
 	public static void main(String[] args) {
 		System.out.println("Main 시작");
  
