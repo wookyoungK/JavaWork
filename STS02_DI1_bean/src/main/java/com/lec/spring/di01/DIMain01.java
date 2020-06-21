@@ -1,7 +1,7 @@
 package com.lec.spring.di01;
 
 import com.lec.spring.MessageBean;
-import com.lec.spring.MessageEng;
+import com.lec.spring.MessageKor;
 
 /*
  * Dependency Injection (DI, 의존주입)
@@ -27,7 +27,7 @@ public class DIMain01 {
 		// 의존하고 있던 객체를 재컴파일 해야 한다( 수정해야 한다!)
 		//그래서 누군가가 만들어줘서 사용할수있는 이런식의 방식으로 해야한다!
 		//그래서 이렇게 안쓴다!! 보완한것 --> DIMain02
-		msg =new MessageEng(); //직접 만들어(new) 사용
+		msg =new MessageKor(); //직접 만들어(new) 사용
 		msg.sayHello();
 		
 		System.out.println("Main종료");
