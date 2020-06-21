@@ -52,7 +52,7 @@ class ReadService implements Service {
 class UpdateService implements Service {
 	// 멤버변수에 @Autowired 자동주입
 	// 멤버변수 '타입' 과 일치하는 bean 객체가 자동 주입된다.
-	@Autowired
+	
 	DAO dao;
 
 	// 기본생성자는 있다!

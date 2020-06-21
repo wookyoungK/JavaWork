@@ -12,8 +12,8 @@ public class AutowireMain01 {
 		System.out.println("-- 컨테이너 생성 --");
 
 		System.out.println(ctx.getBean("regService"));
-//		System.out.println(ctx.getBean("readService"));
-//		System.out.println(ctx.getBean("updateService"));
+		System.out.println(ctx.getBean("readService"));
+		System.out.println(ctx.getBean("updateService"));
 //		System.out.println(ctx.getBean("deleteService"));
 
 		ctx.close();
