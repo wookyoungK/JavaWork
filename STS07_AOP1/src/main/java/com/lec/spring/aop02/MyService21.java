@@ -12,5 +12,8 @@ public class MyService21 extends Service {
 		printInfo(); // 핵심기능
 
 	}
-
+	
+	public void hahaha() {
+		System.out.println("hahaha"); 
+	}
 }
