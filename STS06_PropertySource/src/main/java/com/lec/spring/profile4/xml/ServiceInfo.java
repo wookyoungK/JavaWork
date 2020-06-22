@@ -4,6 +4,9 @@ public class ServiceInfo {
 
 	private String ipNum;
 	private String PortNum;
+	
+	
+	
 	public String getIpNum() {
 		return ipNum;
 	}

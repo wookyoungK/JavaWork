@@ -12,7 +12,7 @@ public class AdminConnection implements EnvironmentAware, InitializingBean, Disp
 	private String adminPw;
 	
 	// 빈 이 생성될때 호출
-	// afterPropertiesSet() 이전에 호출, 즉 InitializingBean 보다 먼저 호출됨에 주촉
+	// afterPropertiesSet() 이전에 호출, 즉 InitializingBean 보다 먼저 호출됨에 주목
 	@Override
 	public void setEnvironment(Environment environment) {
 		System.out.println("setEnvironment() 호출");
