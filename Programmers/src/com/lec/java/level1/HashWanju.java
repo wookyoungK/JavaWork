@@ -26,13 +26,13 @@ public class HashWanju {
 				}
 			}
 		}
-		Set<Integer> keySet =list.keySet();
-		Iterator<String> itr = keySet.iterator();
-		while(itr.hasNext()) {
-			answer=itr.next();
-		}
-		
-		System.out.println(answer);
+//		Set<Integer> keySet =list.keySet();
+//		Iterator<String> itr = keySet.iterator();
+//		while(itr.hasNext()) {
+//			answer=itr.next();
+//		}
+//		
+//		System.out.println(answer);
 	}
 
 }
