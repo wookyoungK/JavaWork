@@ -1,6 +1,7 @@
 package com.lec.java.level1;
 // 효율성 생각하기!
 // 답은나오지만 효율성이 0점임 
+//6.25일까지 완료하기
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
