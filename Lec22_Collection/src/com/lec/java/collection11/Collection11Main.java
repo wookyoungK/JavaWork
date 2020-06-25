@@ -78,7 +78,7 @@ public class Collection11Main {
 		while(itr.hasNext()) {
 			int key = itr.next();
 			
-			System.out.println(key+":"+hmap.get(key));
+			System.out.println(key+":"+hmap.get(key)+"dd");
 		}
 		
 		System.out.println();
