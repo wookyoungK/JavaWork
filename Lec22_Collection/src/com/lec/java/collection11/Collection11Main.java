@@ -76,7 +76,7 @@ public class Collection11Main {
 		Set<Integer> keySet =hmap.keySet();
 		Iterator<Integer> itr = keySet.iterator();
 		while(itr.hasNext()) {
-			int key = itr.next();
+			int key = itr.next	();
 			
 			System.out.println(key+":"+hmap.get(key)+"dd");
 		}
