@@ -1,5 +1,5 @@
 package com.lec.java.level1;
-
+//완전탐색 - 모의고사
 public class Mowigosa {
 
 	public static void main(String[] args) {
@@ -7,4 +7,10 @@ public class Mowigosa {
 
 	}
 
+}
+class Solution {
+    public int[] solution(int[] answers) {
+        int[] answer = {};
+        return answer;
+    }
 }
