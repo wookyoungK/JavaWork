@@ -1,7 +1,5 @@
 package com.lec.java.level1;
 
-import java.util.Arrays;
-import java.util.HashMap;
 
 //완전탐색 - 모의고사
 public class Mowigosa {
@@ -16,7 +14,6 @@ public class Mowigosa {
 		int max = 0;
 		int maxcount = 0;
 		
-		HashMap<Integer, Integer> list = new HashMap<Integer, Integer>();
 		for (int i = 0; i < answer.length; i++) {
 			if (answer[i] == a[i % 5]) {
 				cnt[0]++;
@@ -31,12 +28,6 @@ public class Mowigosa {
 //		for (int i = 0; i < cnt.length; i++) {
 //			System.out.println(cnt[i]);
 //		}
-		for (int i = 0; i < cnt.length; i++) {			
-			if(cnt[i]>0) {
-				list.put(cnt[i],i);
-			}
-		}
-		Object[] mapkey = list.keySet().toArray();
-		Arrays.sort(mapkey);
+
 	}
 }
