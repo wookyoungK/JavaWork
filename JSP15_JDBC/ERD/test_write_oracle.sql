@@ -5,7 +5,7 @@ DROP TABLE test_write CASCADE CONSTRAINTS;
 
 
 
-
+SELECT * FROM test_write;
 /* Create Tables */
 
 CREATE TABLE test_write
