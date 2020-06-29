@@ -39,7 +39,7 @@ public class BoardValidator implements Validator {
 		//ValidationUtils 사용
 		//단순히 빈 폼 데이터를 처리할때는 아래와 같이 사용 가능.
 		//두번째 매개변수 "subject" 는 반드시 target 클래스 필드명이어야함.
-		//
+		//이는 Errors에 등록될때에도 동일한 field  명으로 등록된다.
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "subject", "emptySubject");
 	}
 }

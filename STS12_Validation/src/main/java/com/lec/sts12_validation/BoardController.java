@@ -2,10 +2,14 @@ package com.lec.sts12_validation;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,18 +25,18 @@ public class BoardController {
 	}
 	
 	@RequestMapping("writeOk.do")
-	public String writeOk(@ModelAttribute("w") WriteDTO dto, 
+	public String writeOk(@ModelAttribute("w") @Valid WriteDTO dto, 
 			BindingResult result) {  // ← validator 가 유효성 검사를 한 결과가 담긴 객체.
 		System.out.println("writeOk():" + dto.getUid() + ":" + dto.getName());
 //		System.out.println("에러개수: " + result.getErrorCount());  // 바인딩과정에서 발생한 에러 개수 
-		System.out.println("validate전 ");showErrors(result);
+//		System.out.println("validate전 ");showErrors(result);
 		
 		String page = "board/writeOk";
 		
 		
 		//validator 객체 생성
-		BoardValidator validator =new BoardValidator();
-		validator.validate(dto, result);
+//		BoardValidator validator =new BoardValidator();
+//		validator.validate(dto, result);
 		System.out.println("validate후 ");showErrors(result);
 		
 		if(result.hasErrors()) {// 에러 있으면
@@ -54,8 +58,15 @@ public class BoardController {
 		} else {
 			System.out.println("에러 없슴");
 		}
-		
 	}
+		
+		// 이 컨트롤러 클래스의 handler 에서 폼 데이터를 바인딩 할때 검증하는 개체 지정
+		//에러 동작하는것을 멈춘후 여기서 동작하게해준다
+		@InitBinder
+		public void initBinder(WebDataBinder binder) {
+			binder.setValidator(new BoardValidator());
+		}
+	
 }
 
 
