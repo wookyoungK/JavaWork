@@ -124,7 +124,7 @@
 				
 				
 				
-			<Context docBase="STS09_MVC" path="/sts09_mvc" reloadable="true" source="org.eclipse.jst.jee.server:STS09_MVC"/><Context docBase="STS10_Request" path="/sts10_request" reloadable="true" source="org.eclipse.jst.jee.server:STS10_Request"/><Context docBase="STS11_RequestParameter" path="/sts11_param" reloadable="true" source="org.eclipse.jst.jee.server:STS11_RequestParameter"/></Host>
+			<Context docBase="STS12_Validation" path="/sts12_validation" reloadable="true" source="org.eclipse.jst.jee.server:STS12_Validation"/></Host>
 		</Engine>
 	</Service>
 </Server><!-- <Context docBase="JSP17_ConnectionPool" path="/JSP17_ConnectionPool" 
