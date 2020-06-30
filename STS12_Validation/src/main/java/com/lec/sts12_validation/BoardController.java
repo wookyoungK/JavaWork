@@ -24,7 +24,7 @@ public class BoardController {
 		return "board/write";
 	}
 	
-	@RequestMapping("writeOk.do")
+	@RequestMapping("writeOk.do")				//폼검증부분
 	public String writeOk(@ModelAttribute("w") @Valid WriteDTO dto, 
 			BindingResult result) {  // ← validator 가 유효성 검사를 한 결과가 담긴 객체.
 		System.out.println("writeOk():" + dto.getUid() + ":" + dto.getName());
@@ -62,6 +62,7 @@ public class BoardController {
 		
 		// 이 컨트롤러 클래스의 handler 에서 폼 데이터를 바인딩 할때 검증하는 개체 지정
 		//에러 동작하는것을 멈춘후 여기서 동작하게해준다
+		//으로 검증이 필요한 객체를 가져오기 전에 수행할 method를 지정해주는 annotation이다.
 		@InitBinder
 		public void initBinder(WebDataBinder binder) {
 			binder.setValidator(new BoardValidator());
