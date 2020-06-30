@@ -36,11 +36,16 @@ public class HomeController {
 		
 		return "home";
 	}
+	//트랜잭션 하나 처리할때마다 단계과정으로 해본것임 
 	
-	private TicketDAO1 dao;   // 트랜잭션 미적용
+	//private TicketDAO1 dao;   // 트랜잭션 미적용
+	//private TicketDAO2 dao;    // 트랜잭션 적용
+	private TicketDAO3 dao;    // 트랜잭션 적용
 	
 	@Autowired
-	public void setDao(TicketDAO1 dao) {
+	//public void setDao(TicketDAO1 dao) {
+	//public void setDao(TicketDAO2 dao) {
+		public void setDao(TicketDAO3 dao) {
 		this.dao = dao;
 	}
 	

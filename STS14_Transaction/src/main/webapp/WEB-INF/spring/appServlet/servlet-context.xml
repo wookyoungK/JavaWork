@@ -59,9 +59,26 @@
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
 
-
-
-
+	<!-- DAO2 트랜잭션 적용 -->
+	<beans:bean name="dao2" class="com.lec.sts14_transaction.TicketDAO2">
+		<beans:property name="template" ref="template"/>
+		<beans:property name="transactionManager" ref="transactionManager"/>
+	</beans:bean>
+	
+	<!-- TransactionTemplagte -->
+	<beans:bean name="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<beans:property name="transactionManager" ref="transactionManager"/>
+	</beans:bean>	
+	
+	
+<!-- DAO3 트랜잭션 적용 -->
+	<beans:bean name="dao3" class="com.lec.sts14_transaction.TicketDAO3">
+		<beans:property name="template" ref="template"/>
+		<beans:property name="transactionTemplate" ref="transactionTemplate"/>
+	</beans:bean>
+	
+	
 </beans:beans>
 
 
