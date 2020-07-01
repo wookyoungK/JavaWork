@@ -13,9 +13,11 @@ public class BDeleteCommand implements BCommand {
 		//Model 안에 있는 값(attribute) 꺼내기
 		Map<String, Object>map = model.asMap();
 		int uid = (Integer)map.get("uid");
-		BWriteDAO dao = new BWriteDAO();
-		int delete = dao.deleteByUid(uid);
-		model.addAttribute("delete", delete);
+		
+		
+//		BWriteDAO dao = new BWriteDAO();
+//		int delete = dao.deleteByUid(uid);
+//		model.addAttribute("delete", delete);
 	}
 	
 //	 강사님꺼

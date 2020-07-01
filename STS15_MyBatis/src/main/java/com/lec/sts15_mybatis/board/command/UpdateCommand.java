@@ -15,9 +15,10 @@ public class UpdateCommand implements BCommand {
 	public void excute(Model model) {
 		Map<String, Object>map = model.asMap();
 		BWriteDTO dto = (BWriteDTO)map.get("dto");
-		BWriteDAO dao = new BWriteDAO();
-		int result = dao.update(dto);
-		model.addAttribute("result", result);
+		
+//		BWriteDAO dao = new BWriteDAO();
+//		int result = dao.update(dto);
+//		model.addAttribute("result", result);
 
 	}
 
