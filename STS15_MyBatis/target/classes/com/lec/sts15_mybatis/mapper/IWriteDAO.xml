@@ -33,10 +33,16 @@
 		wr_name name, wr_viewcnt viewcnt,
 		wr_regdate regdate FROM
 		test_write
-		WHERE wr_uid= #{param1};
-
-
+		WHERE wr_uid= #{param1}
 	</select>
+
+	<!-- 조회수 증가 -->
+	<update id="incViewCnt" flushCache="true">
+		UPDATE test_write
+		SET wr_viewcnt = wr_viewcnt + 1
+		WHERE wr_uid = #{param1}
+	</update>
+
 
 </mapper>
 

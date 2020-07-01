@@ -10,11 +10,11 @@ public interface IWriteDAO {
 	public int insert(String subject, String content, String name);
 //	public BWriteDTO readByUid(final int uid);
 	public BWriteDTO selectByUid(final int uid);
-	public int update(final BWriteDTO dto);
+	public int update(String subject, String content, int uid);
 	public int deleteByUid(final int uid);
 
 	
-	//public int incViewCnt(int uid); //조회수 증가
+	public int incViewCnt(int uid); //조회수 증가
 	
 
 

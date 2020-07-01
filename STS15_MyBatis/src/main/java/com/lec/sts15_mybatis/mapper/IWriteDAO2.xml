@@ -8,14 +8,24 @@
 		BWriteDTO에서 자동적으로 Mapping 된다는뜻 -->
 
 
- 
+
 	<insert id="insert" flushCache="true">
 		INSERT INTO test_write
-			(wr_uid, wr_subject, wr_content, wr_name)
+		(wr_uid, wr_subject, wr_content, wr_name)
 		VALUES
-			(test_write_seq.nextval, #{param1}, #{param2}, #{param3})		
+		(test_write_seq.nextval, #{param1}, #{param2}, #{param3})
 	</insert>
-	
+
+
+	<update id="update" flushCache="true">
+		UPDATE test_write SET wr_subject = #{param1}, wr_content = #{param2} WHERE
+		wr_uid = #{param3}
+
+	</update>
+
+	<delete id="deleteByUid" flushCache="true">
+		DELETE FROM test_write WHERE wr_uid = #{param1}
+	</delete>
 
 </mapper>
 

@@ -4,7 +4,8 @@ import java.util.Map;
 
 import org.springframework.ui.Model;
 
-import com.lec.sts15_mybatis.board.beans.BWriteDAO;
+import com.lec.sts15_mybatis.board.C;
+import com.lec.sts15_mybatis.board.beans.IWriteDAO;
 
 public class BDeleteCommand implements BCommand {
 
@@ -18,6 +19,11 @@ public class BDeleteCommand implements BCommand {
 //		BWriteDAO dao = new BWriteDAO();
 //		int delete = dao.deleteByUid(uid);
 //		model.addAttribute("delete", delete);
+		
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+		model.addAttribute("delete", dao.deleteByUid(uid));
+		
+
 	}
 	
 //	 강사님꺼
