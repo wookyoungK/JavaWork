@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.sts19_rests.board.beans.IWriteDAO">
+	<!-- id = method 이름(IWriteDAO.java) 즉 select query문이라는 뜻임 resultType = select한결과가 
+		BWriteDTO에서 자동적으로 Mapping 된다는뜻 -->
+
+
+	<select id="select"
+		resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		SELECT
+		wr_uid "uid",
+		wr_subject subject,
+		wr_content content,
+		wr_name name,
+		wr_viewcnt viewcnt,
+		wr_regdate regdate
+		FROM
+		test_write
+		ORDER
+		BY
+		wr_uid DESC
+	</select>
+
+
+	<select id="selectByUid"
+		resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		SELECT wr_uid "uid", wr_subject subject,
+		wr_content
+		content,
+		wr_name name, wr_viewcnt viewcnt,
+		wr_regdate regdate FROM
+		test_write
+		WHERE wr_uid= #{param1}
+	</select>
+
+	<!-- 조회수 증가 -->
+	<update id="incViewCnt" flushCache="true">
+		UPDATE test_write
+		SET wr_viewcnt = wr_viewcnt + 1
+		WHERE wr_uid = #{param1}
+	</update>
+
+
+</mapper>
+
