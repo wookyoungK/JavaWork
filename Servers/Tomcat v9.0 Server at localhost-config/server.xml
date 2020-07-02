@@ -124,7 +124,7 @@
 				
 				
 				
-			<Context docBase="STS14_Transaction" path="/sts14_transaction" reloadable="true" source="org.eclipse.jst.jee.server:STS14_Transaction"/><Context docBase="STS15_MyBatis" path="/sts15_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:STS15_MyBatis"/><Context docBase="STS16_Interceptor" path="/sts16_interceptor" reloadable="true" source="org.eclipse.jst.jee.server:STS16_Interceptor"/></Host>
+			<Context docBase="STS16_Interceptor" path="/sts16_interceptor" reloadable="true" source="org.eclipse.jst.jee.server:STS16_Interceptor"/><Context docBase="STS19_REST" path="/sts19_rest" reloadable="true" source="org.eclipse.jst.jee.server:STS19_REST"/></Host>
 		</Engine>
 	</Service>
 </Server><!-- <Context docBase="JSP17_ConnectionPool" path="/JSP17_ConnectionPool" 
