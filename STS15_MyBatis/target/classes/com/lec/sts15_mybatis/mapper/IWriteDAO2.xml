@@ -6,20 +6,35 @@
 <mapper namespace="com.lec.sts15_mybatis.board.beans.IWriteDAO">
 	<!-- id = method 이름(IWriteDAO.java) 즉 select query문이라는 뜻임 resultType = select한결과가 
 		BWriteDTO에서 자동적으로 Mapping 된다는뜻 -->
+	
+	<insert id="insert" flushCache="true"
+	parameterType="com.lec.sts15_mybatis.board.beans.BWriteDTO"
+	keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid"
+	>
+		INSERT INTO test_write
+		(wr_uid, wr_subject, wr_content, wr_name)
+		VALUES
+		(test_write_seq.nextval, #{subject}, #{content}, #{name})
+	</insert>
 
 
-
-	<insert id="insert" flushCache="true">
+	<!-- <insert id="insert" flushCache="true">
 		INSERT INTO test_write
 		(wr_uid, wr_subject, wr_content, wr_name)
 		VALUES
 		(test_write_seq.nextval, #{param1}, #{param2}, #{param3})
-	</insert>
+	</insert> -->
 
 
-	<update id="update" flushCache="true">
+<!-- 	<update id="update" flushCache="true">
 		UPDATE test_write SET wr_subject = #{param1}, wr_content = #{param2} WHERE
 		wr_uid = #{param3}
+
+	</update> -->
+	
+	<update id="update" flushCache="true">
+		UPDATE test_write SET wr_subject = #{a.subject}, wr_content = #{a.content} WHERE
+		wr_uid = #{param1}
 
 	</update>
 

@@ -54,6 +54,23 @@
 	</beans:bean>
 	
 	
+	<!-- Transaction  -->
+	<beans:bean name="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource"/>
+	</beans:bean>
+	
+	<beans:bean name="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<beans:property name="transactionManager" ref="transactionManager"/>	
+	</beans:bean>
+	
+	<beans:bean name="ticketService"
+	class="com.lec.sts15_mybatis.ticket.TicketService">
+<!-- 	<beans:property name="sqlSession" ref="sqlSession"/>
+	<beans:property name="transactionTemplate" ref="transactionTemplate"/> -->
+	
+	</beans:bean>
 	
 	
 	
