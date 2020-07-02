@@ -1,7 +1,7 @@
 package com.lec.beans;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+ 
 // DTO : Data Trasfer Object
 //    데이터를 담아 나르기 위한 객체
 
