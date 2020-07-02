@@ -40,12 +40,12 @@ public class BoardController {
 		C.sqlSession = sqlSession;
 	}
 
-	@Autowired
-	public void setTemplate(JdbcTemplate template) {
-		System.out.println("setTemplate() 호출");
-		this.template = template;
-		C.template = template;
-	}
+//	@Autowired
+//	public void setTemplate(JdbcTemplate template) {
+//		System.out.println("setTemplate() 호출");
+//		this.template = template;
+//		C.template = template;
+//	}
 	
 	@RequestMapping("/list.do")
 	public String list(Model model) {
