@@ -54,6 +54,11 @@ public class BoardController {
 		return "board/list";
 	}
 	
+	@RequestMapping(value = "/index")
+	public String index() {
+		return "board/index";
+
+	}
 	@RequestMapping("/write.do")
 	public String write(Model model) {
 		return "board/write";

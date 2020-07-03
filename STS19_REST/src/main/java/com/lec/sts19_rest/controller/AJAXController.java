@@ -1,10 +1,13 @@
 package com.lec.sts19_rest.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +19,8 @@ import com.lec.sts19_rest.board.command.BCommand;
 import com.lec.sts19_rest.board.command.BListCommand;
 
 @RestController
-@RequestMapping("/SPA")
-public class SPAController {
+@RequestMapping("/spa")
+public class AJAXController {
 
 	private BCommand command;
 	private JdbcTemplate template;
@@ -30,6 +33,12 @@ public class SPAController {
 		C.sqlSession = sqlSession;
 	}
 
+	@RequestMapping("/listJSON")
+	public List<BWriteDTO> listJSON() {
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+		return dao.select();
+	}
+
 	@RequestMapping("/list.ajax")
 	public BWriteDTO[] arrJSON() {
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
@@ -38,11 +47,33 @@ public class SPAController {
 		return list.toArray(arr);
 	}
 
-	@RequestMapping("/index.do")
-	public String list(Model model) {
-		command = new BListCommand();
-		command.excute(model);
-		return "index.jsp";
+	// JSON 데이터 <-- 자바 Map<k,v>
+	@RequestMapping("/mapJSON")
+	public Map<Integer, BWriteDTO> mapJSON() {
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+		List<BWriteDTO> list = dao.select();
+
+		Map<Integer, BWriteDTO> map = new HashMap<Integer, BWriteDTO>();
+
+		for (BWriteDTO dto : list) {
+			map.put(dto.getUid(), dto);
+
+		}
+		return map;
 	}
 
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}//end class
