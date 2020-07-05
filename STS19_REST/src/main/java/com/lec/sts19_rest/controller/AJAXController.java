@@ -48,19 +48,19 @@ public class AJAXController {
 	}
 
 	// JSON 데이터 <-- 자바 Map<k,v>
-	@RequestMapping("/mapJSON")
-	public Map<Integer, BWriteDTO> mapJSON() {
-		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		List<BWriteDTO> list = dao.select();
-
-		Map<Integer, BWriteDTO> map = new HashMap<Integer, BWriteDTO>();
-
-		for (BWriteDTO dto : list) {
-			map.put(dto.getUid(), dto);
-
-		}
-		return map;
-	}
+//	@RequestMapping("/mapJSON")
+//	public Map<Integer, BWriteDTO> mapJSON() {
+//		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+//		List<BWriteDTO> list = dao.select();
+//
+//		Map<Integer, BWriteDTO> map = new HashMap<Integer, BWriteDTO>();
+//
+//		for (BWriteDTO dto : list) {
+//			map.put(dto.getUid(), dto);
+//
+//		}
+//		return map;
+//	}
 
 	
 	
