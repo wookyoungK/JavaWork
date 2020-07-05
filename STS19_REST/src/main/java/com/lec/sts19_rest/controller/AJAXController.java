@@ -33,11 +33,11 @@ public class AJAXController {
 		C.sqlSession = sqlSession;
 	}
 
-	@RequestMapping("/listJSON")
-	public List<BWriteDTO> listJSON() {
-		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		return dao.select();
-	}
+//	@RequestMapping("/listJSON")
+//	public List<BWriteDTO> listJSON() {
+//		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+//		return dao.select();
+//	}
 
 	@RequestMapping("/list.ajax")
 	public BWriteDTO[] arrJSON() {
