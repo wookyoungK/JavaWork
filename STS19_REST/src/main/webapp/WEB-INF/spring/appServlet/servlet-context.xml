@@ -47,7 +47,7 @@
 		<beans:property name="mapperLocations" value="classpath:com/lec/sts19_rest/mapper/*.xml"/>
 	</beans:bean>
 	
-	<beans:bean name="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+ 	<beans:bean name="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"/>
 	</beans:bean>
 	
