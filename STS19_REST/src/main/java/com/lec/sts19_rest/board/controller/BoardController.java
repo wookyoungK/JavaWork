@@ -54,11 +54,15 @@ public class BoardController {
 		return "board/list";
 	}
 	
-	@RequestMapping(value = "/index")
+	//REST 게시판 안했음.. 어려워서
+	@RequestMapping(value = "/rest")
 	public String index() {
-		return "board/index";
+		return "board/rest";
 
 	}
+	
+	
+	
 	@RequestMapping("/write.do")
 	public String write(Model model) {
 		return "board/write";

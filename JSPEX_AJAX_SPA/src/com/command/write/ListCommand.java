@@ -37,7 +37,7 @@ public class ListCommand implements Command {
 			} catch(NumberFormatException e) {
 				// 예외 처리 안함
 			}
-		}
+		} 
 		
 		// pageRows 값 :  '한 페이지' 에 몇개의 글?
 		param = request.getParameter("pageRows");

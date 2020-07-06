@@ -1,6 +1,5 @@
 package com.lec.sts19_rest.board;
 
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.apache.ibatis.session.SqlSession;
 
 public class C {
