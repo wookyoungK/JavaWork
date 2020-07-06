@@ -1,7 +1,9 @@
 package com.mvn.javaproj2;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CalculatorTest {
@@ -12,8 +14,23 @@ public class CalculatorTest {
 	
 	// 각 테스트 전/후 에 공통으로 수행해야 할 코드가 필요하다면
 	//@Before, @After
-	private Calculator cal =new Calculator();
+//	private Calculator cal =new Calculator();
+	
+	private Calculator cal;
+	
+	
+	@Before //테스트 메소드 실행전에 수행할 메소드
+	public void setUp() {
+		System.out.println("[테스트 전]");
+		cal =new Calculator();
+	}
 
+	
+	@After //테스트 메소드 실행후에 수행할 메소드
+	public void shutDown() {
+		System.out.println("[테스트 후]");
+	}
+	
 	@Test
 	public void testAdd() {
 		System.out.println("testAdd()");
