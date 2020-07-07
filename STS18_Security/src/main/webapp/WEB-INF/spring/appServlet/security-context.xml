@@ -11,6 +11,10 @@
 		class="com.lec.sts18_security.CustomAccressDeniedHandler" />
 	<bean id="customLoginSuccess"
 		class="com.lec.sts18_security.CustomLoginSuccessHandler"/>
+<!-- 	<bean id="customPasswordEncoder"
+		class="com.lec.sts18_security.security.CustomNoOpPasswordEncoder"/> -->
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 	<!-- 컨테이너의 HTTP security 요소 -->
 	<security:http>
@@ -41,22 +45,33 @@
 			
 				
 		<security:logout logout-url="/customLogout" invalidate-session="true"/>
-
+		<!-- 로그 아웃시 세션 무효화설정(invalid-session)이나 ,
+			특정한 쿠키 지우는 작업(delete-cookies) 지정 가능  -->
 
 	</security:http>
 
 
 	<!-- AuthenticationManager 빈 생성 /로그인 -->
 	<security:authentication-manager>
+	
+	
 		<!-- UserDetailsService 사용한 인증과 권한 처리 -->
 		<security:authentication-provider>
-			<security:user-service>
-				<!--아이뒤 , 비번 ,권한 -->
+			<!-- InMemory 방식
+			 <security:user-service>
+				아이뒤 , 비번 ,권한
 				<security:user name="memnber" password="{noop}member"
 					authorities="ROLE_MEMBER" />
 				<security:user name="admin" password="{noop}admin"
 					authorities="ROLE_MEMBER, ROLE_ADMIN" />
-			</security:user-service>
+			</security:user-service> -->
+			
+			<!--JDBC 사용  -->
+			<security:jdbc-user-service data-source-ref="dataSource"/>
+			
+			<!-- PasswordEncoder 설정  -->
+		<!-- 	<security:password-encoder ref="customPasswordEncoder"/> -->
+		<security:password-encoder ref="bcryptPasswordEncoder"/>
 		</security:authentication-provider>
 
 	</security:authentication-manager>

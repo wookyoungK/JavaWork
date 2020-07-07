@@ -16,15 +16,10 @@ public interface IAjaxDAO {
 	
 	// 전체글의 개수
 	public int countAll();
-	
-	
 	// 글 읽기
 	public BWriteDTO selectByUid(int uid);
-	
-	
 	//조회수 증가
 	public int incViewCnt(int uid);
-	
 	// 글작성
 	public int insert(
 			String subject,

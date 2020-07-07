@@ -21,7 +21,7 @@ public class AppTest {
 
 		//assertxxx() 메소드 사용
 		assertEquals("welcome",app.getWelcome());
-		assertEquals("Hello",app.getHello());
+		assertEquals("hello",app.getHello());
 		assertEquals("bye",app.getBye());
 		
 	}
@@ -30,7 +30,7 @@ public class AppTest {
 	@Test
 	public void test2() {
 		//assertxxx() 메소드 사용
-
+ 
 		assertEquals("Bye",app.getBye());
 		
 	}
@@ -38,7 +38,7 @@ public class AppTest {
 	public void test3() {
 		//assertxxx() 메소드 사용
 		
-		assertEquals("hello",app.getHello());
+		assertEquals("Hello",app.getHello());
 		
 	}
 }

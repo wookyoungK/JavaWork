@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/sample/*")
-public class SampleContriller {
+public class SampleController {
 	
 	
 	//@RequestMapping(value = "/all", method=RequestMethod.GET) 의 축약형

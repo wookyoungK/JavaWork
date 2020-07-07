@@ -14,7 +14,7 @@ public class CalculatorTest {
 	
 	// 각 테스트 전/후 에 공통으로 수행해야 할 코드가 필요하다면
 	//@Before, @After
-//	private Calculator cal =new Calculator();
+	//private Calculator cal =new Calculator();
 	
 	private Calculator cal;
 	
