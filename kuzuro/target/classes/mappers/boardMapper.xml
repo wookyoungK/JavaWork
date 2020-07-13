@@ -27,6 +27,6 @@
   bno = #{bno}   
 </select>
 
-<update id="modify" pa
+<!-- <update id="modify" pa -->
 
 </mapper>
