@@ -55,6 +55,8 @@ public class BoardController {
 		model.addAttribute("view", vo);
 
 	}
+	
+	
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void getModfiy(@RequestParam("bno") int bno, Model model) throws Exception {
 		

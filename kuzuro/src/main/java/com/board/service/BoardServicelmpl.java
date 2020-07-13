@@ -32,5 +32,10 @@ public class BoardServicelmpl implements BoardService {
 
 		return dao.view(bno);
 	}
+	@Override
+	public BoardVO modify(int bno ) throws Exception {
+		
+		return dao.modify(bno);
+	}
 
 }

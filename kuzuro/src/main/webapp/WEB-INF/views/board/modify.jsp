@@ -9,11 +9,19 @@
 <title>게시물 조회</title>
 </head>
 <body>
+	<label>제목</label> ${view.title}
+	<br />
 
+	<label>작성자</label> ${view.content}
+	<br />
 
-<div>
-<a href="/board/modify?bno=${view.bno}">게시물 수정</a>
-</div>
+	<label>내용</label>
+	<br /> ${view.writer}
+	<br />
+
+	<div>
+		<a href="/board/modify?bno=${view.bno}">게시물 수정</a>
+	</div>
 
 </body>
 </html>
