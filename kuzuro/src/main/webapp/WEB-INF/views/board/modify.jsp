@@ -11,7 +11,9 @@
 <body>
 
 
-
+<div>
+<a href="/board/modify?bno=${view.bno}">게시물 수정</a>
+</div>
 
 </body>
 </html>
