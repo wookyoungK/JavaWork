@@ -10,7 +10,6 @@
  from board.tbl_board
 </select>
 
-
 <insert id="write" parameterType="com.board.domain.BoardVO">
  insert into
  	tbl_board(title, content, writer)
@@ -27,5 +26,7 @@
  where
   bno = #{bno}   
 </select>
+
+<update id="modify" pa
 
 </mapper>
