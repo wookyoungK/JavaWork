@@ -27,7 +27,7 @@ public class BoardController {
 		model.addAttribute("list", list);
 	}
 
-	// 게시물 작성
+	// 게시물 목록
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void getWirte() throws Exception {
 
@@ -39,6 +39,12 @@ public class BoardController {
 	  service.write(vo);
 	  
 	  return "redirect:/board/list";
+	}
+	
+	
+	@RequestMapping(value = "/view", method = RequestMethod.POST)
+	public void getView() throws Exception {
+
 	}
 	
 	
