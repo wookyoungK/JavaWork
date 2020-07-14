@@ -16,13 +16,11 @@ import com.board.service.BoardService;
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
-	
-	
-	//주입
+
+	// 주입
 	@Inject
 	private BoardService service;
 
-	
 	// 게시물 목록
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void getList(Model model) throws Exception {
@@ -41,30 +39,46 @@ public class BoardController {
 	// 게시물 작성
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String posttWirte(BoardVO vo) throws Exception {
-	  service.write(vo);
-	  
-	  return "redirect:/board/list";
+		service.write(vo);
+
+		return "redirect:/board/list";
 	}
-	
+
 	// 게시물 조회
-	//@RequestParam([문자열])을 이용하면, 주소에 있는 특정한 값을 가져올 수 있습니다.주소에서 bno를 찾아 그 값을 int bno에 넣어줍니다.
+	// @RequestParam([문자열])을 이용하면, 주소에 있는 특정한 값을 가져올 수 있습니다.주소에서 bno를 찾아 그 값을 int
+	// bno에 넣어줍니다.
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public void getView(@RequestParam("bno") int bno, Model model) throws Exception {
-		
+
 		BoardVO vo = service.view(bno);
 		model.addAttribute("view", vo);
 
 	}
-	
-	
+
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void getModfiy(@RequestParam("bno") int bno, Model model) throws Exception {
-		
-		BoardVO vo = service.modify(bno);
-		model.addAttribute("modify", vo);
-		
+
+		BoardVO vo = service.view(bno);
+		model.addAttribute("view", vo);
+
+	}
+
+	// 게시물 수정
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String postModify(BoardVO vo) throws Exception {
+
+		service.modify(vo);
+
+		return "redirect:/board/view?bno=" + vo.getBno();
 	}
 	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String getDelete(@RequestParam("bno") int bno, Model model) throws Exception {
+
+		service.delete(bno);
 	
-	
+		return "redirect:/board/list";
+
+	}
+
 }

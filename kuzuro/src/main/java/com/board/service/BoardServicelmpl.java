@@ -15,27 +15,27 @@ public class BoardServicelmpl implements BoardService {
 	@Inject
 	private BoardDAO dao;
 
-	@Override
 	public List<BoardVO> list() throws Exception {
 
 		return dao.list();
 	}
 
-	@Override
 	public void write(BoardVO vo) throws Exception {
 
 		dao.write(vo);
 	}
 	
-	@Override
 	public BoardVO view(int bno ) throws Exception {
 
 		return dao.view(bno);
 	}
-	@Override
-	public BoardVO modify(int bno ) throws Exception {
+	public void modify(BoardVO vo ) throws Exception {
 		
-		return dao.modify(bno);
+		dao.modify(vo);
+	}
+	public void delete(int bno ) throws Exception {
+		
+		dao.delete(bno);
 	}
 
 }

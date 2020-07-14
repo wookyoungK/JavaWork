@@ -31,13 +31,16 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	@Override
 	public BoardVO view( int bno) throws Exception {
-
 		return sql.selectOne(namespace + ".view", bno);
 	}
 	
 	@Override
-	public BoardVO modify(int bno) throws Exception {
-		return sql.selectOne(namespace + ".modify", bno);
+	public void modify(BoardVO vo) throws Exception {
+		sql.update(namespace + ".modify", vo);
+	}
+	@Override
+	public void delete(int bno) throws Exception {
+		sql.delete(namespace + ".delete", bno);
 	}
 
 }
