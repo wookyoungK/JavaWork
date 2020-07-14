@@ -37,5 +37,9 @@ public class BoardServicelmpl implements BoardService {
 		
 		dao.delete(bno);
 	}
+	public int count( ) throws Exception {
+		
+		return dao.count();
+	}
 
 }

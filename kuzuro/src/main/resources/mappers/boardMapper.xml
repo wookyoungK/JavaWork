@@ -44,6 +44,14 @@
  where bno=#{bno}
 </delete>
 
+<!--페이지 총 갯수  -->
+<select id="count" resultType= "int" >
+select
+	count(dno)
+from tbl_board
+</select>
+
+
 
 
 </mapper>

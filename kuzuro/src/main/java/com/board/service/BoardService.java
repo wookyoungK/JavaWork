@@ -12,5 +12,6 @@ public interface BoardService {
 	public BoardVO view(int bno) throws Exception;
 	public void modify(BoardVO vo) throws Exception;
 	public void delete(int bno)throws Exception;
+	public int count()throws Exception;
 
 }

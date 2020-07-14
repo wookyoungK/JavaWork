@@ -42,5 +42,10 @@ public class BoardDAOImpl implements BoardDAO {
 	public void delete(int bno) throws Exception {
 		sql.delete(namespace + ".delete", bno);
 	}
+	
+	@Override
+	public int count() throws Exception {
+		return sql.selectOne(namespace + ".count");
+	}
 
 }
