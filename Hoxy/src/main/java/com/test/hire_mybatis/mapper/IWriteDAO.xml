@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.hire_mybatis.board.beans.IWriteDAO">
+
+
+	<select id="select"
+		resultType="com.test.hire_mybatis.board.beans.BWriteDTO">
+		SELECT
+		h_title,h_career
+		FROM
+		Hire
+	</select>
+
+
+	<select id="selectByUid"
+		resultType="com.test.hire_mybatis.board.beans.BWriteDTO">
+		SELECT wr_uid "uid", wr_name name,wr_position
+		position,wr_phone phone,wr_email email
+		FROM
+		test_staff
+		WHERE wr_uid=
+		#{param1}
+	</select>
+
+
+
+</mapper>
+

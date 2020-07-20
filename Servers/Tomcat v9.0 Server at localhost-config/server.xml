@@ -124,7 +124,7 @@
 				
 				
 				
-			<Context docBase="kuzuro" path="/" reloadable="true" source="org.eclipse.jst.jee.server:kuzuro"/><Context docBase="STS15_MyBatis" path="/sts15_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:STS15_MyBatis"/><Context docBase="Finshot" path="/staff" reloadable="true" source="org.eclipse.jst.jee.server:Finshot"/></Host>
+			<Context docBase="kuzuro" path="/" reloadable="true" source="org.eclipse.jst.jee.server:kuzuro"/><Context docBase="STS15_MyBatis" path="/sts15_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:STS15_MyBatis"/><Context docBase="Hoxy" path="/hire" reloadable="true" source="org.eclipse.jst.jee.server:Hoxy"/></Host>
 		</Engine>
 	</Service>
 </Server><!-- <Context docBase="JSP17_ConnectionPool" path="/JSP17_ConnectionPool" 

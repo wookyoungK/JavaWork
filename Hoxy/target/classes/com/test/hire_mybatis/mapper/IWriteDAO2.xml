@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.hire_mybatis.board.beans.IWriteDAO">
+
+	<insert id="insert" flushCache="true"
+		parameterType="com.test.hire_mybatis.board.beans.BWriteDTO"
+		keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid">
+		INSERT
+		INTO
+		test_hire
+		(wr_uid, wr_name, wr_position, wr_phone,wr_email)
+		VALUES
+		(#{uid},#{name}, #{position}, #{phone}, #{email})
+	</insert>
+
+
+	<update id="update" flushCache="true">
+		UPDATE test_hire SET
+		wr_uid=#{a.uid},
+		wr_name=#{a.name},
+		wr_position=#{a.position},
+		wr_phone=#{a.phone},
+		wr_email=#{a.email} WHERE
+		wr_uid = #{param1}
+
+	</update>
+
+	<delete id="deleteByUid" flushCache="true">
+		DELETE FROM test_hire WHERE
+		wr_uid = #{param1}
+	</delete>
+
+</mapper>
+
