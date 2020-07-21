@@ -155,7 +155,11 @@ function chkSubmit(){
 
 
 <input type="submit" value="공고 등록"/>
+
+
 </form>
+
+
 
 
 <br>

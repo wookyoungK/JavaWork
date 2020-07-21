@@ -20,12 +20,10 @@ import com.test.hire_mybatis.board.command.UpdateCommand;
 @Controller
 @RequestMapping("/board")
 public class BoardController {
-	
+
 	private BCommand command;
-	
+
 	private SqlSession sqlSession;
-	
-	
 
 	public BoardController() {
 		super();
@@ -37,26 +35,26 @@ public class BoardController {
 		this.sqlSession = sqlSession;
 		C.sqlSession = sqlSession;
 	}
-	
+
 	@RequestMapping("/hirelist.do")
 	public String list(Model model) {
 		command = new BListCommand();
 		command.excute(model);
 		return "board/hirelist";
 	}
-	
+
 	@RequestMapping("/write.do")
 	public String write(Model model) {
 		return "board/write";
 	}
-	
+
 	@RequestMapping(value = "/writeOk.do", method = RequestMethod.POST)
 	public String writeOk(BWriteDTO dto, Model model) {
 		model.addAttribute("dto", dto);
 		new BWriteCommand().excute(model);
 		return "board/writeOk";
 	}
-	
+
 	@RequestMapping("/view.do")
 	public String view(Model model, int uid) {
 		model.addAttribute("uid", uid);
@@ -64,22 +62,21 @@ public class BoardController {
 		command.excute(model);
 		return "board/view";
 	}
-	
+
 	@RequestMapping("/update.do")
 	public String update(int uid, Model model) {
 		model.addAttribute("uid", uid);
 		new BSelectCommand().excute(model);
 		return "board/update";
 	}
-	
+
 	@RequestMapping(value = "/updateOk.do", method = RequestMethod.POST)
 	public String updateOk(BWriteDTO dto, Model model) {
 		model.addAttribute("dto", dto);
 		new UpdateCommand().excute(model);
 		return "board/updateOk";
 	}
-	
-	
+
 	@RequestMapping("/deleteOk.do")
 	public String delete(Model model, int uid) {
 		model.addAttribute("uid", uid);
@@ -87,18 +84,28 @@ public class BoardController {
 		command.excute(model);
 		return "board/deleteOk";
 	}
-	
+
+	/*
+	 * @RequestMapping(value = "/fileupload.do", method = RequestMethod.POST) public
+	 * void upload(MultipartFile uploadfile) { logger.info("upload() POST 호출");
+	 * logger.info("파일 이름: {}", uploadfile.getOriginalFilename());
+	 * logger.info("파일 크기: {}", uploadfile.getSize());
+	 * 
+	 * saveFile(uploadfile);
+	 * 
+	 * }
+	 * 
+	 * private String saveFile(MultipartFile file) { // 파일 이름 변경 UUID uuid =
+	 * UUID.randomUUID(); String saveName = uuid + "_" + file.getOriginalFilename();
+	 * 
+	 * logger.info("saveName: {}", saveName);
+	 * 
+	 * // 저장할 File 객체를 생성(껍데기 파일)ㄴ File saveFile = new File(UPLOAD_PATH, saveName);
+	 * // 저장할 폴더 이름, 저장할 파일 이름
+	 * 
+	 * try { file.transferTo(saveFile); // 업로드 파일에 saveFile이라는 껍데기 입힘 } catch
+	 * (IOException e) { e.printStackTrace(); return null; }
+	 * 
+	 * return saveName; } // end saveFile(
+	 */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
