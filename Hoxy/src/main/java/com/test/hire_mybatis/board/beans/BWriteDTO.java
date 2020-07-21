@@ -2,135 +2,145 @@ package com.test.hire_mybatis.board.beans;
 
 public class BWriteDTO {
 
-	private int h_uid;
-	private int h_content;
-	// private int h_uid;
-	private int h_salary;
-	private int h_position1;
-	private int h_position2;
-	private int h_part;
-	private int h_career;
-	private int h_degree;
-	private int h_workform;
-	private int h_cnt;
-	private int h_upDate;
-	private int h_regDate;
+	private int uid;
+	private String title;
+	private String content;
+	// private String c_uid;
+	private String salary;
+	private String position1;
+	private String position2;
+	private String part;
+	private String career;
+	private String degree;
+	private String workform;
+	private int cnt;
+	private String upDate;
+	private String regDate;
 
 	public BWriteDTO() {
 		super();
 	}
 
-	public BWriteDTO(int h_uid, int h_content, int h_salary, int h_position1, int h_position2, int h_part, int h_career,
-			int h_degree, int h_workform, int h_cnt, int h_upDate, int h_regDate) {
+	public BWriteDTO(int uid, String title, String content, String salary, String position1, String position2,
+			String part, String career, String degree, String workform, int cnt, String upDate, String regDate) {
 		super();
-		this.h_uid = h_uid;
-		this.h_content = h_content;
-		this.h_salary = h_salary;
-		this.h_position1 = h_position1;
-		this.h_position2 = h_position2;
-		this.h_part = h_part;
-		this.h_career = h_career;
-		this.h_degree = h_degree;
-		this.h_workform = h_workform;
-		this.h_cnt = h_cnt;
-		this.h_upDate = h_upDate;
-		this.h_regDate = h_regDate;
+		this.uid = uid;
+		this.title = title;
+		this.content = content;
+		this.salary = salary;
+		this.position1 = position1;
+		this.position2 = position2;
+		this.part = part;
+		this.career = career;
+		this.degree = degree;
+		this.workform = workform;
+		this.cnt = cnt;
+		this.upDate = upDate;
+		this.regDate = regDate;
 	}
 
-	public int getH_uid() {
-		return h_uid;
+	public int getUid() {
+		return uid;
 	}
 
-	public void setH_uid(int h_uid) {
-		this.h_uid = h_uid;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 
-	public int getH_content() {
-		return h_content;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setH_content(int h_content) {
-		this.h_content = h_content;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public int getH_salary() {
-		return h_salary;
+	public String getContent() {
+		return content;
 	}
 
-	public void setH_salary(int h_salary) {
-		this.h_salary = h_salary;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public int getH_position1() {
-		return h_position1;
+	public String getSalary() {
+		return salary;
 	}
 
-	public void setH_position1(int h_position1) {
-		this.h_position1 = h_position1;
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 
-	public int getH_position2() {
-		return h_position2;
+	public String getPosition1() {
+		return position1;
 	}
 
-	public void setH_position2(int h_position2) {
-		this.h_position2 = h_position2;
+	public void setPosition1(String position1) {
+		this.position1 = position1;
 	}
 
-	public int getH_part() {
-		return h_part;
+	public String getPosition2() {
+		return position2;
 	}
 
-	public void setH_part(int h_part) {
-		this.h_part = h_part;
+	public void setPosition2(String position2) {
+		this.position2 = position2;
 	}
 
-	public int getH_career() {
-		return h_career;
+	public String getPart() {
+		return part;
 	}
 
-	public void setH_career(int h_career) {
-		this.h_career = h_career;
+	public void setPart(String part) {
+		this.part = part;
 	}
 
-	public int getH_degree() {
-		return h_degree;
+	public String getCareer() {
+		return career;
 	}
 
-	public void setH_degree(int h_degree) {
-		this.h_degree = h_degree;
+	public void setCareer(String career) {
+		this.career = career;
 	}
 
-	public int getH_workform() {
-		return h_workform;
+	public String getDegree() {
+		return degree;
 	}
 
-	public void setH_workform(int h_workform) {
-		this.h_workform = h_workform;
+	public void setDegree(String degree) {
+		this.degree = degree;
 	}
 
-	public int getH_cnt() {
-		return h_cnt;
+	public String getWorkform() {
+		return workform;
 	}
 
-	public void setH_cnt(int h_cnt) {
-		this.h_cnt = h_cnt;
+	public void setWorkform(String workform) {
+		this.workform = workform;
 	}
 
-	public int getH_upDate() {
-		return h_upDate;
+	public int getCnt() {
+		return cnt;
 	}
 
-	public void setH_upDate(int h_upDate) {
-		this.h_upDate = h_upDate;
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
 
-	public int getH_regDate() {
-		return h_regDate;
+	public String getUpDate() {
+		return upDate;
 	}
 
-	public void setH_regDate(int h_regDate) {
-		this.h_regDate = h_regDate;
+	public void setUpDate(String upDate) {
+		this.upDate = upDate;
+	}
+
+	public String getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
 	}
 
 }

@@ -7,13 +7,13 @@
 
 	<insert id="insert" flushCache="true"
 		parameterType="com.test.hire_mybatis.board.beans.BWriteDTO"
-		keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid">
+		keyProperty="uid" useGeneratedKeys="true" keyColumn="h_uid">
 		INSERT
 		INTO
-		test_hire
-		(wr_uid, wr_name, wr_position, wr_phone,wr_email)
+		Hire
+		(h_uid,h_title, h_salary, h_position2, h_part)
 		VALUES
-		(#{uid},#{name}, #{position}, #{phone}, #{email})
+		(hire_seq.nextval,#{title},#{salary}, #{position2}, #{part})
 	</insert>
 
 

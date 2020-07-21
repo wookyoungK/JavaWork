@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.test.staff">
+	<logger name="com.test.hire_mybatis">
 		<level value="info" />
 	</logger>
 	

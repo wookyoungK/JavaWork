@@ -27,8 +27,10 @@ CREATE SEQUENCE SEQ_Resume_r_uid INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_User_u_uid INCREMENT BY 1 START WITH 1;
 
 
-
+DROP SEQUENCE company_seq;
+DROP SEQUENCE hire_seq;
 CREATE SEQUENCE company_seq;
+CREATE SEQUENCE hire_seq;
 
 /* Create Tables */
 
@@ -95,13 +97,25 @@ INSERT INTO COMPANY (c_uid,c_name)VALUES (company_seq.nextval,'수햄');
 INSERT INTO COMPANY (c_uid,c_name)VALUES (company_seq.nextval,'진영햄');
 
 INSERT INTO Hire (h_uid,c_uid,h_title,h_content,h_salary,h_position1,h_position2,h_part,h_career,h_degree,h_workform,h_upDate)VALUES 
-(1,1,'코리아it아카데미','첫번째','2000~3000','수원시','강남역','대리','사원','학력무관','인턴','2020-07-20');
+(hire_seq.nextval,1,'코리아it아카데미','첫번째','2000~3000','수원시','강남역','대리','사원','학력무관','인턴','2020-07-20');
+INSERT INTO Hire (h_uid,c_uid,h_title,h_content,h_salary,h_position1,h_position2,h_part,h_career,h_degree,h_workform,h_upDate)VALUES 
+(hire_seq.nextval,2,'케이티뱅크','첫번째','2000~3000','서울시','강남역','인턴','사원','초대졸','인턴','2020-07-21');
+INSERT INTO Hire (h_uid,c_uid,h_title,h_content,h_salary,h_position1,h_position2,h_part,h_career,h_degree,h_workform,h_upDate)VALUES 
+(hire_seq.nextval,3,'에스케이티뱅크','첫번째','2000~3000','서울시','강남역','인턴','팀장','대졸','갓턴','2020-07-21');
 
 
 
 
 
-
+	SELECT
+		h_uid "uid",
+		h_title title,
+		h_career career
+		FROM
+		HIRE
+		ORDER
+		BY
+		h_uid DESC;
 
 
 

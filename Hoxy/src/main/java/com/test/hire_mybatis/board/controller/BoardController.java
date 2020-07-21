@@ -38,11 +38,11 @@ public class BoardController {
 		C.sqlSession = sqlSession;
 	}
 	
-	@RequestMapping("/list.do")
+	@RequestMapping("/hirelist.do")
 	public String list(Model model) {
 		command = new BListCommand();
 		command.excute(model);
-		return "board/list";
+		return "board/hirelist";
 	}
 	
 	@RequestMapping("/write.do")

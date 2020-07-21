@@ -11,28 +11,33 @@
 function chkSubmit(){ 
 	frm = document.forms["frm"];
 	
-	var uid = frm["uid"].value.trim();
-	var name = frm["name"].value.trim();
-	var position = frm["position"].value.trim();
-	var phone = frm["phone"].value.trim();
-	var email = frm["email"].value.trim();
+	var title = frm["title"].value.trim();
+	var salary = frm["salary"].value.trim();
+	var position2 = frm["position2"].value.trim();
+	var part = frm["part"].value.trim();
+
 	
-	if(uid == ""){
-		alert("직원번호 반드시 입력해야 합니다");
-		frm["uid"].focus();
-		return false;
-	}
-	if(name == ""){
+	if(title == ""){
 		alert("이름 반드시 작성해야 합니다");
-		frm["name"].focus();
+		frm["title"].focus();
 		return false;
 	}
-	if(position == ""){
+	if(salary == ""){
 		alert("직책 반드시 작성해야 합니다");
-		frm["position"].focus();
+		frm["salary"].focus();
 		return false;
 	}
-	var phone_check="^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}$";
+	if(position2 == ""){
+		alert("직책 반드시 작성해야 합니다");
+		frm["position2"].focus();
+		return false;
+	}
+	if(part == ""){
+		alert("직책 반드시 작성해야 합니다");
+		frm["part"].focus();
+		return false;
+	}
+/* 	var phone_check="^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}$";
 	
 	if(!frm.phone.value.match(phone_check)){
 		alert("휴대폰 번호 다시 작성해야 합니다");
@@ -46,29 +51,27 @@ function chkSubmit(){
 		frm["email"].focus();
 		return false;
 	}
-	return true;
+	return true; */
 }
 
 </script>
 <body>
 <h2>신규등록</h2>
 <form name="frm" action="writeOk.do" method="post" onsubmit="return chkSubmit()">
-직원번호:
-<input type="text" name="uid"/><br>
-이름:
-<input type="text" name="name"/><br>
-직책:
-<input type="text" name="position"/><br>
-휴대폰:
-<input type="text" name="phone"/><br>
-이메일:
-<input type="text" name="email"/><br>
+공고 제목:
+<input type="text" name="title"/><br>
+급여:
+<input type="text" name="salary"/><br>
+근무지역:
+<input type="text" name="position2"/><br>
+직무:
+<input type="text" name="part"/><br>
 
 <br><br>
-<input type="submit" value="등록"/>
+<input type="submit" value="공고 등록"/>
 </form>
 <br>
-<button type="button" onclick="location.href='list.do'">목록으로</button>
+<button type="button" onclick="location.href='hirelist.do'">목록으로</button>
 
 
 </body>
