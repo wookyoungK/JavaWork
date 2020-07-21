@@ -11,10 +11,17 @@
 		INSERT
 		INTO
 		Hire
+		(h_uid,h_name,h_title, h_salary, h_position2, h_part)
+		VALUES
+		(hire_seq.nextval,#{name},#{title},#{salary}, #{position2}, #{part})
+	</insert>
+	
+<!-- 	 <insert id="insert" flushCache="true">
+		INSERT INTO Hire
 		(h_uid,h_title, h_salary, h_position2, h_part)
 		VALUES
-		(hire_seq.nextval,#{title},#{salary}, #{position2}, #{part})
-	</insert>
+		(hire_seq.nextval, #{param1}, #{param2}, #{param3})
+	</insert> -->
 
 
 	<update id="update" flushCache="true">

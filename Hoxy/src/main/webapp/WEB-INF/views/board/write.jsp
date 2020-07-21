@@ -5,18 +5,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>글작성</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+/*datepicer 버튼 롤오버 시 손가락 모양 표시*/
+.ui-datepicker-trigger{cursor: pointer;}
+/*datepicer input 롤오버 시 손가락 모양 표시*/
+.hasDatepicker{cursor: pointer;}
+</style>
+<title>기업 공고 등록</title>
 </head>
 <script>
+$(function() {
+    //모든 datepicker에 대한 공통 옵션 설정
+    $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd' //Input Display Format 변경
+        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+        ,changeYear: true //콤보박스에서 년 선택 가능
+        ,changeMonth: true //콤보박스에서 월 선택 가능                
+        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+        ,buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" //버튼 이미지 경로
+        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+        ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
+        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+        ,minDate: "-1M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+        ,maxDate: "+1M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                    
+    });
+
+    //input을 datepicker로 선언
+    $("#datepicker").datepicker();                    
+    $("#datepicker2").datepicker();
+    
+    //From의 초기값을 오늘 날짜로 설정
+    $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    //To의 초기값을 내일로 설정
+    $('#datepicker2').datepicker('setDate', '+1D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+});
+
 function chkSubmit(){ 
 	frm = document.forms["frm"];
 	
+	var title = frm["name"].value.trim();
 	var title = frm["title"].value.trim();
 	var salary = frm["salary"].value.trim();
 	var position2 = frm["position2"].value.trim();
 	var part = frm["part"].value.trim();
 
 	
+	if(name == ""){
+		alert("이름 반드시 작성해야 합니다");
+		frm["title"].focus();
+		return false;
+	}
 	if(title == ""){
 		alert("이름 반드시 작성해야 합니다");
 		frm["title"].focus();
@@ -37,39 +83,81 @@ function chkSubmit(){
 		frm["part"].focus();
 		return false;
 	}
-/* 	var phone_check="^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}$";
 	
-	if(!frm.phone.value.match(phone_check)){
-		alert("휴대폰 번호 다시 작성해야 합니다");
-		frm["phone"].focus();
-		return false;
-	}
-	
-	var email_check="^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
-	if(!frm.email.value.match(email_check)){
-		alert("이메일 다시 작성해야 합니다");
-		frm["email"].focus();
-		return false;
-	}
-	return true; */
+	 
 }
 
 </script>
 <body>
-<h2>신규등록</h2>
+<h2>기업 공고 등록</h2>
+<br><hr>
 <form name="frm" action="writeOk.do" method="post" onsubmit="return chkSubmit()">
+
+기업명:
+<input type="text" name="title"/><br> 
 공고 제목:
 <input type="text" name="title"/><br>
 급여:
 <input type="text" name="salary"/><br>
+<br><hr>
+로고:
+<br><hr>
 근무지역:
+	<select id="position1" name="position1">
+							<option value="1">강남</option>
+							<option value="2">역삼</option>
+							<option value="3">수원</option>
+							<option value="4">서울</option>
+							<option value="5">서초</option>
+							<option value="6">방배</option>
+							<option value="7">교대</option>
+							<option value="" selected>지역 선택</option>
+			</select>
 <input type="text" name="position2"/><br>
+<br><hr>
+
+<h2>모집 내용</h2>
 직무:
 <input type="text" name="part"/><br>
+<br><hr>
 
+경력:
+<input type="checkbox" name="career" value="무관"/>무관(신입/경력에 상관없이 모집)
+<input type="checkbox" name="career" value="신입"/>신입
+<input type="checkbox" name="career" value="경력"/>경력
+
+<!-- <input type="checkbox" name="career" value="mango"/>3년이상
+<input type="checkbox" name="career" value="melon"/
+
+1,2,번호로 중복값가져오기
+>메론 -->
+
+<br><hr>
+학력:
+<input type="checkbox" name="degree" value="학력무관"/>학력무관
+<input type="checkbox" name="degree" value="고졸"/>고졸
+<input type="checkbox" name="degree" value="대졸"/>대졸
+<input type="checkbox" name="degree" value="초대졸"/>초대졸
+<br><hr>
+근무형태:
+<input type="checkbox" name="workform" value="정규직"/>정규직
+<input type="checkbox" name="workform" value="파견직"/>파견직
+<input type="checkbox" name="workform" value="계약직"/>계약직
+<input type="checkbox" name="workform" value="인턴직"/>인턴직
+<br><hr>
+모집마감일:
+<input type="checkbox" name="upDate" value="마감일 선택"/>마감일 선택
+<input type="checkbox" name="upDate" value="상시모집"/>상시모집<br><br>
+<div id="h_date">
+ From: <input type="text" id="datepicker">&nbsp;&nbsp;&nbsp; To: <input type="text" id="datepicker2">
+</div>
 <br><br>
+
+
 <input type="submit" value="공고 등록"/>
 </form>
+
+
 <br>
 <button type="button" onclick="location.href='hirelist.do'">목록으로</button>
 

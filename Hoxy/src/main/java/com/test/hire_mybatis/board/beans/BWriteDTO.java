@@ -3,6 +3,7 @@ package com.test.hire_mybatis.board.beans;
 public class BWriteDTO {
 
 	private int uid;
+	private String name;
 	private String title;
 	private String content;
 	// private String c_uid;
@@ -21,10 +22,11 @@ public class BWriteDTO {
 		super();
 	}
 
-	public BWriteDTO(int uid, String title, String content, String salary, String position1, String position2,
+	public BWriteDTO(int uid,String name, String title, String content, String salary, String position1, String position2,
 			String part, String career, String degree, String workform, int cnt, String upDate, String regDate) {
 		super();
 		this.uid = uid;
+		this.name = name;
 		this.title = title;
 		this.content = content;
 		this.salary = salary;
@@ -53,6 +55,13 @@ public class BWriteDTO {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getContent() {
