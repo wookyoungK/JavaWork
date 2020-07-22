@@ -59,7 +59,7 @@ CREATE TABLE Hire
 	h_degree varchar2(20) NOT NULL,
 	h_workform varchar2(100) NOT NULL,
 	h_cnt number default 0 NOT NULL,
-	h_upDate varchar2(100) NOT NULL,
+	h_upDate varchar2(100) ,
 	h_regDate varchar2(100),
 	PRIMARY KEY (h_uid)
 );

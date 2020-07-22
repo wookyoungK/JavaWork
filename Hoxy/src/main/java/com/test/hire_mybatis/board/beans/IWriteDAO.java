@@ -11,14 +11,11 @@ public interface IWriteDAO {
 
 	public List<BWriteDTO> select(); 
 	public int insert(final BWriteDTO dto);
-	public int insert(String title, String salary,String position1, String position2, String part,
-			String career, String degree, String workform,String upDate);
+//	public int insert(String name, String title, String salary,String position1, String position2, String part,String career, String degree, String workform,String upDate, String regDate);
 	public BWriteDTO selectByUid(final int uid);
 	public int update(int uid,@Param("a") BWriteDTO dto);
 	public int deleteByUid(final int uid);
 	
 
 
-
-	
 }

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$('#position2').hide();
+	$('#h_date').hide();
     // 모든 datepicker에 대한 공통 옵션 설정
     $.datepicker.setDefaults({
         dateFormat: 'yy-mm-dd' // Input Display Format 변경
@@ -42,11 +44,17 @@ $(document).ready(function() {
 													// -1M:한달후, -1Y:일년후)
    
     $('#position1').on('change', function(){
-	var localSelect = document.getElementById("position1");
-	localSelect = selectOption.options[selectOption.selectedIndex].value;
 	$('#position2').show();
     
     })
+    
+    $("#endDate").change(function(){
+        if($("#endDate").is(":checked")){
+        	$('#h_date').show();
+        }else{
+        	$('#h_date').hide();
+        }
+    });
 
 });
 
@@ -56,8 +64,37 @@ function chkSubmit(){
 	var name = frm["name"].value.trim();
 	var title = frm["title"].value.trim();
 	var salary = frm["salary"].value.trim();
-	var position2 = frm["position2"].value.trim();
 	var part = frm["part"].value.trim();
+	var position1 = document.getElementById("position1");
+	position1 = position1.options[position1.selectedIndex].value;
+	var position1 = frm["position1"].value.trim();
+	var position2 = frm["position2"].value.trim();
+	
+	  var career_count = document.getElementsByName("career").length;
+	  var degree_count = document.getElementsByName("degree").length;
+	  var workform_count = document.getElementsByName("workform").length;
+	  var upDate_count = document.getElementsByName("upDate").length;
+	  
+      for (var i=0; i<career_count; i++) {
+          if (document.getElementsByName("career")[i].checked == true) {
+        	  var career=frm["career"].value.trim();
+          }
+      }
+      for (var i=0; i<degree_count; i++) {
+    	  if (document.getElementsByName("degree")[i].checked == true) {
+    		  var degree=frm["degree"].value.trim();
+    	  }
+      }
+      for (var i=0; i<workform_count; i++) {
+    	  if (document.getElementsByName("workform")[i].checked == true) {
+    		  var workform=frm["workform"].value.trim();
+    	  }
+      }
+      for (var i=0; i<workform_count; i++) {
+    	  if (document.getElementsByName("workform")[i].checked == true) {
+    		  var workform=frm["workform"].value.trim();
+    	  }
+      }
 
 	
 	if(name == ""){
