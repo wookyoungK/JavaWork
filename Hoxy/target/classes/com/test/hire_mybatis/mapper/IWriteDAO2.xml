@@ -11,9 +11,9 @@
 		INSERT
 		INTO
 		Hire
-		(h_uid,h_name,h_title, h_salary, h_position2, h_part)
+		(h_uid,h_name,h_title, h_salary,h_position1, h_position2, h_part,h_career,h_degree,h_workform,h_upDate )
 		VALUES
-		(hire_seq.nextval,#{name},#{title},#{salary}, #{position2}, #{part})
+		(hire_seq.nextval,#{name},#{title},#{salary},#{position1} ,#{position2}, #{part},#{career},#{degree},#{workform},#{upDate})
 	</insert>
 	
 <!-- 	 <insert id="insert" flushCache="true">
