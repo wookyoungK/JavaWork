@@ -2,7 +2,6 @@ package com.lec.sts19_rest.board.controller;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,54 +13,37 @@ import com.lec.sts19_rest.board.command.BCommand;
 import com.lec.sts19_rest.board.command.BDeleteCommand;
 import com.lec.sts19_rest.board.command.BListCommand;
 import com.lec.sts19_rest.board.command.BSelectCommand;
+import com.lec.sts19_rest.board.command.UpdateCommand;
 import com.lec.sts19_rest.board.command.BViewCommand;
 import com.lec.sts19_rest.board.command.BWriteCommand;
-import com.lec.sts19_rest.board.command.UpdateCommand;
+
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 	
 	private BCommand command;
-	private JdbcTemplate template;
 	
+	// MyBabatis
 	private SqlSession sqlSession;
 	
-	
-
 	public BoardController() {
 		super();
 		System.out.println("BoardController() 생성");
 	}
-
+	
 	@Autowired
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 		C.sqlSession = sqlSession;
 	}
 
-//	@Autowired
-//	public void setTemplate(JdbcTemplate template) {
-//		System.out.println("setTemplate() 호출");
-//		this.template = template;
-//		C.template = template;
-//	}
-	
 	@RequestMapping("/list.do")
 	public String list(Model model) {
 		command = new BListCommand();
 		command.excute(model);
 		return "board/list";
 	}
-	
-	//REST 게시판 안했음.. 어려워서
-	@RequestMapping(value = "/rest")
-	public String index() {
-		return "board/rest";
-
-	}
-	
-	
 	
 	@RequestMapping("/write.do")
 	public String write(Model model) {
@@ -76,10 +58,9 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/view.do")
-	public String view(Model model, int uid) {
+	public String view(int uid, Model model) {
 		model.addAttribute("uid", uid);
-		command = new BViewCommand();
-		command.excute(model);
+		new BViewCommand().excute(model);
 		return "board/view";
 	}
 	
@@ -90,7 +71,6 @@ public class BoardController {
 		return "board/update";
 	}
 	
-	//내가수정한내용이기때문에 POST 방식
 	@RequestMapping(value = "/updateOk.do", method = RequestMethod.POST)
 	public String updateOk(BWriteDTO dto, Model model) {
 		model.addAttribute("dto", dto);
@@ -98,16 +78,35 @@ public class BoardController {
 		return "board/updateOk";
 	}
 	
-	
 	@RequestMapping("/deleteOk.do")
-	public String delete(Model model, int uid) {
+	public String deleteOk(int uid, Model model) {
 		model.addAttribute("uid", uid);
-		command = new BDeleteCommand();
-		command.excute(model);
+		new BDeleteCommand().excute(model);
 		return "board/deleteOk";
 	}
 	
+	// REST 게시판
+	@RequestMapping(value="/rest")
+	public String rest() {
+		return "board/rest";
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
