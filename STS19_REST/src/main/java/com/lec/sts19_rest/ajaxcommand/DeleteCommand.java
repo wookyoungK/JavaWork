@@ -14,8 +14,8 @@ public class DeleteCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
-		IAjaxDAO dao = C.sqlSession.getMapper(IAjaxDAO.class); //mybatis 용 dao
-//		WriteDAO dao = new WriteDAO();
+
+		IAjaxDAO dao = C.sqlSession.getMapper(IAjaxDAO.class);
 		
 		// ajax response 에 필요한 값들
 		StringBuffer message = new StringBuffer();
@@ -37,9 +37,9 @@ public class DeleteCommand implements Command {
 				status = "OK";
 			} catch (NumberFormatException e) {
 				//e.printStackTrace();
-				message.append("[유효하지않은 parameter]" +Arrays.toString(params));
-			} catch (Exception e) {
 				message.append("[유효하지 않은 parameter]" + Arrays.toString(params));
+			} catch (Exception e) {
+				message.append("[트랜잭션 에러:" + e.getMessage() + "]");
 			}
 		} // end if
 

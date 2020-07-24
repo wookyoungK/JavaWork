@@ -13,7 +13,7 @@ import com.lec.sts19_rest.board.command.BCommand;
 import com.lec.sts19_rest.board.command.BDeleteCommand;
 import com.lec.sts19_rest.board.command.BListCommand;
 import com.lec.sts19_rest.board.command.BSelectCommand;
-import com.lec.sts19_rest.board.command.UpdateCommand;
+import com.lec.sts19_rest.board.command.BUpdateCommand;
 import com.lec.sts19_rest.board.command.BViewCommand;
 import com.lec.sts19_rest.board.command.BWriteCommand;
 
@@ -41,7 +41,7 @@ public class BoardController {
 	@RequestMapping("/list.do")
 	public String list(Model model) {
 		command = new BListCommand();
-		command.excute(model);
+		command.execute(model);
 		return "board/list";
 	}
 	
@@ -53,35 +53,35 @@ public class BoardController {
 	@RequestMapping(value = "/writeOk.do", method = RequestMethod.POST)
 	public String writeOk(BWriteDTO dto, Model model) {
 		model.addAttribute("dto", dto);
-		new BWriteCommand().excute(model);
+		new BWriteCommand().execute(model);
 		return "board/writeOk";
 	}
 	
 	@RequestMapping("/view.do")
 	public String view(int uid, Model model) {
 		model.addAttribute("uid", uid);
-		new BViewCommand().excute(model);
+		new BViewCommand().execute(model);
 		return "board/view";
 	}
 	
 	@RequestMapping("/update.do")
 	public String update(int uid, Model model) {
 		model.addAttribute("uid", uid);
-		new BSelectCommand().excute(model);
+		new BSelectCommand().execute(model);
 		return "board/update";
 	}
 	
 	@RequestMapping(value = "/updateOk.do", method = RequestMethod.POST)
 	public String updateOk(BWriteDTO dto, Model model) {
 		model.addAttribute("dto", dto);
-		new UpdateCommand().excute(model);
+		new BUpdateCommand().execute(model);
 		return "board/updateOk";
 	}
 	
 	@RequestMapping("/deleteOk.do")
 	public String deleteOk(int uid, Model model) {
 		model.addAttribute("uid", uid);
-		new BDeleteCommand().excute(model);
+		new BDeleteCommand().execute(model);
 		return "board/deleteOk";
 	}
 	

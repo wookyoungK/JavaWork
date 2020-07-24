@@ -4,43 +4,48 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lec.sts19_rest.board.beans.IWriteDAO">
-	<!-- id = method 이름(IWriteDAO.java) 즉 select query문이라는 뜻임 resultType = select한결과가 
-		BWriteDTO에서 자동적으로 Mapping 된다는뜻 -->
-	
+
+
 	<insert id="insert" flushCache="true"
-	parameterType="com.lec.sts19_rest.board.beans.BWriteDTO"
-	keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid"
-	>
+		parameterType="com.lec.sts19_rest.board.beans.BWriteDTO"
+		keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid"
+		>
 		INSERT INTO test_write
-		(wr_uid, wr_subject, wr_content, wr_name)
+			(wr_uid, wr_subject, wr_content, wr_name)
 		VALUES
-		(test_write_seq.nextval, #{subject}, #{content}, #{name})
+			(test_write_seq.nextval, #{subject}, #{content}, #{name})	
 	</insert>
-
-
-	<!-- <insert id="insert" flushCache="true">
+ 
+<!--  
+	<insert id="insert" flushCache="true">
 		INSERT INTO test_write
-		(wr_uid, wr_subject, wr_content, wr_name)
+			(wr_uid, wr_subject, wr_content, wr_name)
 		VALUES
-		(test_write_seq.nextval, #{param1}, #{param2}, #{param3})
-	</insert> -->
-
-
-<!-- 	<update id="update" flushCache="true">
-		UPDATE test_write SET wr_subject = #{param1}, wr_content = #{param2} WHERE
-		wr_uid = #{param3}
-
-	</update> -->
-	
-	<update id="update" flushCache="true">
-		UPDATE test_write SET wr_subject = #{a.subject}, wr_content = #{a.content} WHERE
-		wr_uid = #{param1}
-
-	</update>
-
-	<delete id="deleteByUid" flushCache="true">
-		DELETE FROM test_write WHERE wr_uid = #{param1}
-	</delete>
-
+			(test_write_seq.nextval, #{param1}, #{param2}, #{param3})		
+	</insert>
+ -->
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

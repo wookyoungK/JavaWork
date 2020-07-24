@@ -1,9 +1,9 @@
 package com.lec.sts19_rest.ticket;
 
 public class TicketDTO {
-	
 	private String userId;
 	private int ticketCount;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -16,7 +16,7 @@ public class TicketDTO {
 	public void setTicketCount(int ticketCount) {
 		this.ticketCount = ticketCount;
 	}
-
+	
 	
 	
 }

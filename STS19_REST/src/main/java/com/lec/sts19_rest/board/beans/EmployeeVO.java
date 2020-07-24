@@ -4,29 +4,26 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@XmlRootElement(name = "employee") // <employee>
+@XmlRootElement(name = "employee")   // <employee>
 public class EmployeeVO {
-	@XmlAttribute // "id" attribute
+	@XmlAttribute		// "id" attribute
 	private Integer id;
-
-	@XmlElement // <name> element
+	
+	@XmlElement         // <name> element
 	private String name;
-
-	@XmlElement // <age> element
+	
+	@XmlElement			// <age> element
 	private int age;
-
-	@XmlElement // <score> elements !
+	
+	@XmlElement			// <score> elements !
 	private int[] score;
-
+	
 	// 어노테이션 없느면 XML변환에 포함 안됨.
 	private double point;
-
+	
 	public EmployeeVO() {
 		super();
 	}
-
 	public EmployeeVO(Integer id, String name, int age, int[] score, double point) {
 		super();
 		this.id = id;
@@ -35,27 +32,33 @@ public class EmployeeVO {
 		this.score = score;
 		this.point = point;
 	}
-
+	
 	// getter 만 제공 : read-only 속성, immutable
-
+	
 	public Integer getId() {
 		return id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public int getAge() {
 		return age;
 	}
-
 	public int[] getScore() {
 		return score;
 	}
-
 	public double getPoint() {
 		return point;
 	}
-
+	
+	
+	
 }
+
+
+
+
+
+
+
+

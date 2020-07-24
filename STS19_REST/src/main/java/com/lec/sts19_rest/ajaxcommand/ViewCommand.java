@@ -12,10 +12,8 @@ public class ViewCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-//		WriteDAO dao = new WriteDAO();
-		IAjaxDAO dao = C.sqlSession.getMapper(IAjaxDAO.class); //mybatis 용 dao
+		IAjaxDAO dao = C.sqlSession.getMapper(IAjaxDAO.class);
 		BWriteDTO dto = null;
-		
 		
 		// ajax response 에 필요한 값들
 		StringBuffer message = new StringBuffer();
@@ -31,19 +29,20 @@ public class ViewCommand implements Command {
 				int uid = Integer.parseInt(param);
 				
 				dao.incViewCnt(uid);  // 조회수 증가
-				dto =dao.selectByUid(uid); // 읽기
+				dto = dao.selectByUid(uid);  // 읽기
+				
 				if(dto == null) {
 					message.append("[해당 데이터가 없습니다]");
 				} else {
 					status = "OK";
 				}
 				
-			} catch (NumberFormatException e) {  
+			} catch (NumberFormatException e) {
+				message.append("[유효하지 않은 parameter:" + e.getMessage() + "]");
+			} catch (Exception e) {  
 				//e.printStackTrace();
-				message.append("[유효하지 않은 parameter]");
-			} catch (Exception e) {
-				message.append("[예외발생:" + e.getMessage() + "]");
-			}// end try
+				message.append("[트랜잭션 에러:" + e.getMessage() + "]");
+			} // end try
 		} // end if
 
 		request.setAttribute("list", Arrays.asList(dto));

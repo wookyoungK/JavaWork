@@ -12,8 +12,8 @@ public class WriteCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		int cnt = 0;
-//		WriteDAO dao = new WriteDAO();
-		IAjaxDAO dao = C.sqlSession.getMapper(IAjaxDAO.class); //mybatis 용 dao
+		IAjaxDAO dao = C.sqlSession.getMapper(IAjaxDAO.class);
+		
 		// ajax response 에 필요한 값들
 		StringBuffer message = new StringBuffer();
 		String status = "FAIL";   // 기본 FAIL

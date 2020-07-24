@@ -20,46 +20,50 @@ import com.lec.sts19_rest.board.beans.IWriteDAO;
 @RestController
 @RequestMapping("/MyRest")
 public class MyRestController {
-
+	
 	@RequestMapping("/")
-	public String helloText() {
+	public String helloTEXT() {
 		return "Hello REST";
 	}
-
+	
 	@RequestMapping("/helloJSON")
 	public BWriteDTO helloJSON() {
-		BWriteDTO dto = new BWriteDTO(100, "안녕하세요", "REST", "JSON이당!", 123, new Timestamp(10000));
-
+		BWriteDTO dto = 
+				new BWriteDTO(100, "안녕하세요", "REST", "JSON이당!", 
+						123, new Timestamp(10000));
+		
 		return dto;
 	}
-
+	
+	// JSON 데이터 <-- 자바 List<>
 	@RequestMapping("/listJSON")
-	public List<BWriteDTO> listJSON() {
+	public List<BWriteDTO> listJSON(){
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 		return dao.select();
 	}
 
+	// JSON 데이터 <-- 자바 배열
 	@RequestMapping("/arrJSON")
-	public BWriteDTO[] arrJSON() {
+	public BWriteDTO[] arrJSON(){
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		List<BWriteDTO> list = dao.select();
-		BWriteDTO arr[] = new BWriteDTO[list.size()];
+		List<BWriteDTO> list =  dao.select();
+		BWriteDTO [] arr = new BWriteDTO[list.size()];
 		return list.toArray(arr);
 	}
-
-	// JSON 데이터 <-- 자바 Map<k,v>
+	
+	// JSON 데이터 <-- 자바 Map<k, v>
 	@RequestMapping("/mapJSON")
-	public Map<Integer, BWriteDTO> mapJSON() {
+	public Map<Integer, BWriteDTO> mapJSON(){
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		List<BWriteDTO> list = dao.select();
-
+		List<BWriteDTO> list =  dao.select();
+		
 		Map<Integer, BWriteDTO> map = new HashMap<Integer, BWriteDTO>();
-
-		for (BWriteDTO dto : list) {
+		
+		for(BWriteDTO dto : list) {
 			map.put(dto.getUid(), dto);
-
 		}
-		return map;
+		
+		return map;		
 	}
 	
 	// XML데이터 <-- 자바객체
@@ -102,4 +106,28 @@ public class MyRestController {
 	
 	
 	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

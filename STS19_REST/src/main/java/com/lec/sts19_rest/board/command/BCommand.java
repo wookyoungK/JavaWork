@@ -3,7 +3,5 @@ package com.lec.sts19_rest.board.command;
 import org.springframework.ui.Model;
 
 public interface BCommand {
-	void excute(Model model);
-	
-	//달라진것
+	void execute(Model model);
 }

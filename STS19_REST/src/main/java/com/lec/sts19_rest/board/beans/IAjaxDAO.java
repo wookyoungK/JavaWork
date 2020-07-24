@@ -16,10 +16,13 @@ public interface IAjaxDAO {
 	
 	// 전체글의 개수
 	public int countAll();
+	
 	// 글 읽기
 	public BWriteDTO selectByUid(int uid);
-	//조회수 증가
+	
+	// 조회수 증가
 	public int incViewCnt(int uid);
+	
 	// 글작성
 	public int insert(
 			String subject,
@@ -27,12 +30,11 @@ public interface IAjaxDAO {
 			String name
 			);
 	
-	//글 수정 , Param을 쓰면 DAO.xml에서 순서대로 쓰지않고 이름만따와서 사용가능
-	// 쓰지않으면 param1,2,3 순서에맞게 써줘야한다.
+	// 글수정
 	public int update(
 			@Param("uid") int uid,
 			@Param("subject") String subject,
- 			@Param("content") String content
+			@Param("content") String content
 			);
 	
 	// 특정 uid 글(들) 삭제하기
@@ -47,9 +49,6 @@ public interface IAjaxDAO {
 	 * WHERE uid in (11)
 	 * 
 	 */
-	
-	
-	
 	
 	
 }

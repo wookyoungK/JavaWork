@@ -12,7 +12,7 @@ public class BWriteDTO {
 	private String name;  // wr_name
 	@JsonProperty("viewcnt")
 	private int viewCnt;   // wr_viewcnt
-	@JsonProperty("regdate") //대소문자 틀릴시 동작 x
+	@JsonProperty("regdate")
 	private Timestamp regDate;   // wr_regdate
 	
 	public BWriteDTO() {
@@ -64,6 +64,8 @@ public class BWriteDTO {
 	public String getRegDate() {
 		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(regDate);
 	}
+	
+	
 	public void setRegDate(Timestamp regDate) {
 		this.regDate = regDate;
 	}
@@ -71,3 +73,17 @@ public class BWriteDTO {
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
