@@ -128,16 +128,12 @@ function chkSubmit() {
 		}
 	}
 
-	if (name == "") {
+/*	if (name == "") {
 		alert("이름 반드시 작성해야 합니다");
 		frm["title"].focus();
 		return false;
 	}
-	if (title == "") {
-		alert("이름 반드시 작성해야 합니다");
-		frm["title"].focus();
-		return false;
-	}
+
 	if (salary == "") {
 		alert("직책 반드시 작성해야 합니다");
 		frm["salary"].focus();
@@ -152,7 +148,7 @@ function chkSubmit() {
 		alert("직책 반드시 작성해야 합니다");
 		frm["part"].focus();
 		return false;
-	}
+	}*/
 
 }
 function chkDelete(uid) {
