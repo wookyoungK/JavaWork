@@ -34,14 +34,9 @@ function chkDelete(uid){
 직원번호 : ${view[0].uid }<br>
 이름 : ${view[0].name }<br>
 직책 : ${view[0].position }<br>
-휴대폰 : ${view[0].phone }<br>
-이메일 : ${view[0].email }<br>
 <hr>
 <br>
 <button onclick="location.href='update.do?uid=${view[0].uid }'">수정하기</button>
-<button onclick="location.href = 'list.do'">목록보기</button>
-<button onclick="chkDelete(${view[0].uid })">삭제하기</button>
-<button onclick="location.href = 'write.do'">신규등록</button>
 
 </body>
 </html>

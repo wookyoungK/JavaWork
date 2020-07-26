@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="${pageContext.request.contextPath }/JS/board.js"></script> 
+<script src="${pageContext.request.contextPath }/JS/woo.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/woo.css"/>
 
 <style>
 /*datepicer 버튼 롤오버 시 손가락 모양 표시*/
@@ -27,7 +27,7 @@
 <h2>기업 공고 등록</h2>
 <br><hr>
 <form name="frm" action="writeOk.do" method="post" onsubmit="return chkSubmit()">
-
+<input type="text" name="C_UID"/><br>
 기업명:
 <input type="text" name="name"/><br> 
 공고 제목:
@@ -81,11 +81,13 @@
 <input type="checkbox" name="workform" value="인턴직"/>인턴직
 <br><hr>
 모집마감일:
-<input type="checkbox" name="upDate" value="마감일 선택" id="endDate"/>마감일 선택
-<input type="checkbox" name="upDate" value="상시모집" id="always"/>상시모집<br><br>
+<input type="checkbox" name="Date" value="마감일 선택" id="endDate"/>마감일 선택
+<input type="checkbox" name="Date" value="상시모집" id="always"/>상시모집<br><br>
+
 <div id="h_date">
- From: <input type="text" id="datepicker">&nbsp;&nbsp;&nbsp; To: <input type="text" id="datepicker2">
+ From: <input type="text" id="upDate" name="upDate">&nbsp;&nbsp;&nbsp; To: <input type="text" id="regDate" name="regDate">
 </div>
+
 <br><br>
 
 

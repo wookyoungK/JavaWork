@@ -27,61 +27,43 @@
 
 		var uid = frm["uid"].value.trim();
 		var name = frm["name"].value.trim();
-		var position = frm["position"].value.trim();
-		var phone = frm["phone"].value.trim();
-		var email = frm["email"].value.trim();
-		
-		if(uid == ""){
+		var part = frm["part"].value.trim();
+
+
+		if (uid == "") {
 			alert("직원번호 반드시 입력해야 합니다");
 			frm["uid"].focus();
 			return false;
 		}
-		if(name == ""){
+		if (name == "") {
 			alert("이름 반드시 작성해야 합니다");
 			frm["name"].focus();
 			return false;
 		}
-		if(position == ""){
+		if (part == "") {
 			alert("직책 반드시 작성해야 합니다");
 			frm["position"].focus();
 			return false;
 		}
-		var phone_check="^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}$";
-		
-		if(!frm.phone.value.match(phone_check)){
-			alert("휴대폰 번호 다시 작성해야 합니다");
-			frm["phone"].focus();
-			return false;
-		}
-		
-		var email_check="^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
-		if(!frm.email.value.match(email_check)){
-			alert("이메일 다시 작성해야 합니다");
-			frm["email"].focus();
-			return false;
-		}
-		return true;
 	}
+
 </script>
 <body>
 	<h2>수정</h2>
 	<form name="frm" action="updateOk.do" method="post"
 		onsubmit="return chkSubmit()">
 		
-직원번호:
+공고 번호:
 <input type="text" name="uid" value="${select[0].uid }" /><br>
-이름:
+기업 이름:
 <input type="text" name="name" value="${select[0].name }"/><br>
 직책:
-<input type="text" name="position" value="${select[0].position }"/><br>
-휴대폰:
-<input type="text" name="phone" value="${select[0].phone }"/><br>
-이메일:
-<input type="text" name="email" value="${select[0].email }"/><br>
+<input type="text" name="position" value="${select[0].part }"/><br>
+
 	<br> <input type="submit" value="수정" />
 	</form>
 	<button onclick="history.back()">이전으로</button>
-	<button onclick="location.href='list.do'">목록보기</button>
+	<button onclick="location.href='hirelist.do'">목록보기</button>
 
 </body>
 </html>

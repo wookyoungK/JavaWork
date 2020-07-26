@@ -8,25 +8,23 @@
 
 	<select id="select"
 		resultType="com.test.hire_mybatis.board.beans.BWriteDTO">
-		SELECT h_uid "uid",h_title title, h_career career
+		SELECT h_uid "uid",h_title title, h_career career,to_date(h_regDate, 'YYYY-MM-DD')-round(sysdate) remainDate
 		FROM
 		HIRE
 		ORDER
 		BY
 		h_uid DESC
 	</select>
-
-
+	
+	
 	<select id="selectByUid"
 		resultType="com.test.hire_mybatis.board.beans.BWriteDTO">
-		SELECT wr_uid "uid", wr_name name,wr_position
-		position,wr_phone phone,wr_email email
+		SELECT h_uid "uid", h_name name, h_part part
 		FROM
-		test_staff
-		WHERE wr_uid=
+		Hire
+		WHERE h_uid=
 		#{param1}
 	</select>
-
 
 
 </mapper>

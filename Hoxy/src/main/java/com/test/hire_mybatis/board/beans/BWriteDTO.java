@@ -2,6 +2,8 @@ package com.test.hire_mybatis.board.beans;
 
 public class BWriteDTO {
 
+
+	private int C_UID;
 	private int uid;
 	private String name;
 	private String title;
@@ -17,14 +19,24 @@ public class BWriteDTO {
 	private int cnt;
 	private String upDate;
 	private String regDate;
+	private String remainDate;
 
 	public BWriteDTO() {
 		super();
 	}
 
-	public BWriteDTO(int uid,String name, String title, String content, String salary, String position1, String position2,
-			String part, String career, String degree, String workform, int cnt, String upDate, String regDate) {
+	public String getRemainDate() {
+		return remainDate;
+	}
+
+	public void setRemainDate(String remainDate) {
+		this.remainDate = remainDate;
+	}
+
+	public BWriteDTO(int C_UID, int uid, String name, String title, String content, String salary, String position1, String position2,
+					 String part, String career, String degree, String workform, int cnt, String upDate, String regDate, String remainDate) {
 		super();
+		this.uid = C_UID;
 		this.uid = uid;
 		this.name = name;
 		this.title = title;
@@ -39,6 +51,15 @@ public class BWriteDTO {
 		this.cnt = cnt;
 		this.upDate = upDate;
 		this.regDate = regDate;
+		this.remainDate=remainDate;
+	}
+
+	public int getC_UID() {
+		return C_UID;
+	}
+
+	public void setC_UID(int c_UID) {
+		C_UID = c_UID;
 	}
 
 	public int getUid() {

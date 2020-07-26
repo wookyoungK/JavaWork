@@ -7,13 +7,13 @@
 
 	<insert id="insert" flushCache="true"
 		parameterType="com.test.hire_mybatis.board.beans.BWriteDTO"
-		keyProperty="uid" useGeneratedKeys="true" keyColumn="h_uid">
+	keyProperty="uid" useGeneratedKeys="true" keyColumn="h_uid">
 		INSERT
 		INTO
 		Hire
-		(h_uid,h_name,h_title, h_salary,h_position1, h_position2, h_part,h_career,h_degree,h_workform,h_upDate,h_regDate )
+		(C_UID,h_uid,h_name,h_title, h_salary,h_position1, h_position2, h_part,h_career,h_degree,h_workform,h_upDate,h_regDate)
 		VALUES
-		(hire_seq.nextval,#{name},#{title},#{salary},#{position1} ,#{position2}, #{part},#{career},#{degree},#{workform},SYSDATE,SYSDATE)
+		(#{C_UID},hire_seq.nextval,#{name},#{title},#{salary},#{position1} ,#{position2}, #{part},#{career},#{degree},#{workform},#{upDate},#{regDate})
 	</insert>
 	
 <!-- 	 <insert id="insert" flushCache="true">
@@ -25,20 +25,19 @@
 
 
 	<update id="update" flushCache="true">
-		UPDATE test_hire SET
-		wr_uid=#{a.uid},
-		wr_name=#{a.name},
-		wr_position=#{a.position},
-		wr_phone=#{a.phone},
-		wr_email=#{a.email} WHERE
-		wr_uid = #{param1}
+		UPDATE Hire SET
+		h_name=#{a.name},
+		h_part=#{a.part}
+		WHERE
+		h_uid = #{param1}
 
 	</update>
 
 	<delete id="deleteByUid" flushCache="true">
-		DELETE FROM test_hire WHERE
-		wr_uid = #{param1}
+		DELETE FROM Hire WHERE
+		h_uid = #{param1}
 	</delete>
+
 
 </mapper>
 
