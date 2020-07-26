@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="${pageContext.request.contextPath }/JS/woo.js"></script>
+<script src="${pageContext.request.contextPath }/JS/board.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/woo.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/common.css"/>
 
 <style>
 /*datepicer 버튼 롤오버 시 손가락 모양 표시*/

@@ -17,6 +17,7 @@ public interface IWriteDAO {
 	public int update(int uid,@Param("a") BWriteDTO dto);
 	public int deleteByUid(final int uid);
 	
+	
 
 
 }

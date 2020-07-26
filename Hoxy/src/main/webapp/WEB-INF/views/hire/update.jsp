@@ -19,46 +19,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="selectport" content="width=device-width, initial-scale=1.0">
-<title>수정  ${select[0].name }</title>
+<title>수정 </title>
 </head>
 <script>
-	function chkSubmit() {
+	function chkUpdate() {
 		frm = document.forms['frm'];
 
-		var uid = frm["uid"].value.trim();
 		var name = frm["name"].value.trim();
 		var part = frm["part"].value.trim();
-
-
-		if (uid == "") {
-			alert("직원번호 반드시 입력해야 합니다");
-			frm["uid"].focus();
-			return false;
-		}
+		
 		if (name == "") {
-			alert("이름 반드시 작성해야 합니다");
-			frm["name"].focus();
+			alert("이름은 반드시 작성해야 합니다");
+			frm['name'].focus();
 			return false;
 		}
-		if (part == "") {
-			alert("직책 반드시 작성해야 합니다");
-			frm["position"].focus();
-			return false;
-		}
+
+		return true;
 	}
 
 </script>
 <body>
-	<h2>수정</h2>
+	<h2>수정${select[0].name}</h2>
 	<form name="frm" action="updateOk.do" method="post"
-		onsubmit="return chkSubmit()">
+		onsubmit="return chkUpdate()">
+		<input type="hidden" name="uid" value="${select[0].uid }" />
 		
-공고 번호:
-<input type="text" name="uid" value="${select[0].uid }" /><br>
 기업 이름:
 <input type="text" name="name" value="${select[0].name }"/><br>
 직책:
-<input type="text" name="position" value="${select[0].part }"/><br>
+<input type="text" name="part" value="${select[0].part }"/><br>
 
 	<br> <input type="submit" value="수정" />
 	</form>

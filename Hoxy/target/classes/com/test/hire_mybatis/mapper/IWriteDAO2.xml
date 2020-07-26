@@ -26,11 +26,9 @@
 
 	<update id="update" flushCache="true">
 		UPDATE Hire SET
-		h_name=#{a.name},
-		h_part=#{a.part}
+		h_name=#{a.name},h_part=#{a.part}
 		WHERE
 		h_uid = #{param1}
-
 	</update>
 
 	<delete id="deleteByUid" flushCache="true">

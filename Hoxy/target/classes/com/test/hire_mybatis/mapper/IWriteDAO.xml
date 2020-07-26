@@ -17,15 +17,14 @@
 	</select>
 	
 	
-	<select id="selectByUid"
+ 	<select id="selectByUid"
 		resultType="com.test.hire_mybatis.board.beans.BWriteDTO">
 		SELECT h_uid "uid", h_name name, h_part part
 		FROM
 		Hire
 		WHERE h_uid=
 		#{param1}
-	</select>
-
+	</select> 
 
 </mapper>
 

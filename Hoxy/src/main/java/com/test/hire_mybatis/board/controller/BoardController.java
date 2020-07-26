@@ -57,14 +57,11 @@ public class BoardController {
         return "hire/writeOk";
     }
 
-    @RequestMapping("/view.do")
-    public String view(Model model, int uid) {
-        model.addAttribute("uid", uid);
-        command = new BViewCommand();
-        command.excute(model);
-        return "hire/view";
-    }
-
+	
+	  @RequestMapping("/view.do") public String view(Model model, int uid) {
+	  model.addAttribute("uid", uid); command = new BViewCommand();
+	  command.excute(model); return "hire/view"; }
+	 
     @RequestMapping("/update.do")
     public String update(int uid, Model model) {
         model.addAttribute("uid", uid);
@@ -86,6 +83,20 @@ public class BoardController {
         command.excute(model);
         return "hire/deleteOk";
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
      * @RequestMapping(value = "/fileupload.do", method = RequestMethod.POST) public
      * void upload(MultipartFile uploadfile) { logger.info("upload() POST 호출");

@@ -10,21 +10,30 @@ import com.test.hire_mybatis.board.beans.IWriteDAO;
 
 public class UpdateCommand implements BCommand {
 
+//	@Override
+//	public void excute(Model model) {
+//
+//		 Map<String, Object> map = model.asMap(); BWriteDTO dto =
+//		  (BWriteDTO)map.get("dto"); IWriteDAO dao =
+//		  C.sqlSession.getMapper(IWriteDAO.class);
+//
+//		  model.addAttribute("result", dao.update(dto.getUid(), dto));
+//
+//	}
+//
+//}
+//
+//
+
 	@Override
 	public void excute(Model model) {
-
-		 Map<String, Object> map = model.asMap(); BWriteDTO dto =
-		  (BWriteDTO)map.get("dto"); IWriteDAO dao =
-		  C.sqlSession.getMapper(IWriteDAO.class);
-
-		  model.addAttribute("result", dao.update(dto.getUid(), dto));
-
+		Map<String, Object> map = model.asMap();
+		BWriteDTO dto = (BWriteDTO)map.get("dto");
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+		model.addAttribute("result", dao.update(dto.getUid(), dto));
 	}
 
 }
-
-
-
 
 
 

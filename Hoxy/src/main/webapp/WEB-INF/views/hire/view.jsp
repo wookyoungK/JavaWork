@@ -33,11 +33,11 @@ function chkDelete(uid){
 <br>
 직원번호 : ${view[0].uid }<br>
 이름 : ${view[0].name }<br>
-직책 : ${view[0].position }<br>
+직책 : ${view[0].part }<br>
 <hr>
 <br>
 <button onclick="location.href='update.do?uid=${view[0].uid }'">수정하기</button>
-
+	<button onclick="history.back()">이전으로</button>
 </body>
 </html>
 

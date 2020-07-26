@@ -61,9 +61,8 @@
 
 
 
-            <button onclick="location.href='view.do'">상세 보기</button>
+            <button onclick="location.href='view.do?uid=${dto.uid }'">상세 보기</button>
             <button id="delete" onclick="chkDelete(${dto.uid })">공고 삭제</button>
-            <button onclick="location.href='update.do?uid=${dto.uid }'">공고 수정</button>
 
             <br><br>
         </c:forEach>
