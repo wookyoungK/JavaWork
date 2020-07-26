@@ -4,8 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/woo.css"/>
-<script src="${pageContext.request.contextPath }/JS/woo.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/common.css"/>
+<script src="${pageContext.request.contextPath }/JS/board.js"></script>
 <!-- JSTL 버전으로 바뀌니, import 번잡함도 사라진다. JAVA변수 선언도 사라진다! -->
 
 <!DOCTYPE html>
