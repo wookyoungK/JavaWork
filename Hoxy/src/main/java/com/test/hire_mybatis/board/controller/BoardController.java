@@ -37,11 +37,16 @@ public class BoardController {
         C.sqlSession = sqlSession;
     }
 
-    @RequestMapping("/hirelist.do")
-    public String list(Model model) {
-        command = new BListCommand();
-        command.excute(model);
-        return "hire/hirelist";
+//    @RequestMapping("/hirelist.do")
+//    public String list(Model model) {
+//        command = new BListCommand();
+//        command.excute(model);
+//        return "hire/hirelist";
+//    }
+    
+    @RequestMapping(value = "/hirelist.do")
+    public String rest() {
+    	return "hire/hirelist";
     }
 
 

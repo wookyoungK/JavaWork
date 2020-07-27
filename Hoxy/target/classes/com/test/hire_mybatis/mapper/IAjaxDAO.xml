@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.hire_mybatis.board.beans.IAjaxDAO">
+
+	<select id="selectFromRow" 
+		resultType="com.test.hire_mybatis.board.beans.BWriteDTO">
+		<![CDATA[
+		SELECT 
+			h_uid "uid",
+			h_name name,
+			h_title title
+		FROM 
+			(SELECT ROWNUM AS RNUM, T.* FROM 
+				(SELECT * FROM Hire ORDER BY h_uid DESC) T) 
+		WHERE 
+			RNUM >= #{from} AND RNUM < (#{from} + #{pageRows})
+		]]>
+	</select>
+
+
+	<!-- SELECT 쿼리문인데, 단일값 int 값 받고 싶으면 
+		resultType="java.lang.Integer" 혹은
+		resultType="int"
+	 -->
+	<select id="countAll" resultType="int"> 
+		SELECT count(*) FROM Hire
+	</select>
+
+
+	<!-- 조회수 증가 -->
+<!-- 	<update id="incViewCnt">
+		UPDATE hire
+		SET cnt = cnt + 1
+		WHERE h_uid = #{param1}	
+	</update>
+ -->
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
