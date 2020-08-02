@@ -7,7 +7,7 @@ public class AjaxWriteResult {
 	
 	/*
 	{
-		count : ○○○,
+		count : ○○○,	
 		status : ○○○,
 		message : ○○○
 	}

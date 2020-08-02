@@ -1,11 +1,10 @@
 var page = 1  // 현재 페이지 
-var pageRows = 10   // 한 페이지에 보여지는 게시글 개수
+var pageRows = 5   // 한 페이지에 보여지는 게시글 개수
 var viewItem = undefined;   // 가장 최근에 view 한 글 데이터
 
 $(document).ready(function () {
 
 	loadPage(page);
-	
     $('#position2').hide();
     $('#h_date').hide();
     // 모든 datepicker에 대한 공통 옵션 설정
@@ -143,17 +142,14 @@ function chkDelete(uid) {
 
 //page 번째 페이지 로딩
 function loadPage(page){
-	
 	$.ajax({
-		url : "list.ajax?page=" + page + "&pageRows=" + pageRows
+		url : "hirelist.ajax?page=" + page + "&pageRows=" + pageRows
 		, type : "GET"
 		, cache : false
 		, success : function(data, status){
 			if(status == "success"){
-				//alert("AJAX 성공: 받아쮸~");
-				
+				alert("AJAX 성공: 받아쮸~");
 				if(updateList(data)){
-				
 					// 업데이트된 list 에 필요한 이벤트 가동
 					addViewEvent();
 					// ★ 만약 위 코드를 $(document).ready() 에 두면 동작 안할것이다.!
@@ -168,12 +164,12 @@ function updateList(jsonObj){
 	result = ""; 
 	
 	if(jsonObj.status == "OK"){
-		
 var count = jsonObj.count;
 		
 		var i;
 		var items = jsonObj.data;  
 		for(i = 0; i < count; i++){
+			alert(count);
 			result += "<tr>\n";
 			result += "<td>" +"<i class='fas fa-user-tie'></i>" + "</td>\n";			
 			
