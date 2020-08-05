@@ -1,0 +1,92 @@
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.pad20 {
+    padding: 20px;
+}
+
+.wrtie_bar {
+    height: 2px;
+    background-color: orange;
+}
+
+.regist_Btn {
+    float: right;
+}
+
+
+
+th.th1, th.th2, th.th4, th.th5, th.th7 {
+    width: 10%;
+    font-weight: bold;
+}
+
+th.th3 {
+    width: 30%;
+    font-weight: bold;
+}
+
+th.th6 {
+    width: 20%;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+
+}
+
+th {
+    font-weight: bold;
+}
+
+.btnCategory {
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}
+
+th.reth1 {
+  width: 5%;
+}
+
+th.reth2, th.reth5, th.reth6 {
+    width: 10%;
+
+}
+
+th.reth3 {
+    width: 40%;
+}
+
+th.reth4 {
+    width: 25%;
+}
+
+td.retd, td.retd2 {
+    height: 100px;
+    word-break: break-all;
+}
+
+.newtextarea {
+
+}
+
+.border_btn{
+    background-color: white;
+    border: 1.5px solid #555555;
+    color: #555555;
+    padding: 7px 20px;
+    border-radius: 30px;
+    font-size: x-small;
+    font-weight: 900;
+}

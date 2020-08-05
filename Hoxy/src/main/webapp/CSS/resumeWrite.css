@@ -1,0 +1,27 @@
+
+body{
+    background-color: #fafafa;
+}
+
+.req{
+    font-size: 13px;
+    color: crimson;
+}
+
+#basicAddrs2{
+    margin-left: 97px;
+}
+
+#eduElePeriod{
+    margin-left: 25px;
+}
+
+#eduMedPeriod{
+    margin-left: 25px;
+}
+#eduHighPeriod{
+    margin-left: 25px;
+}
+#eduUniPeriod{
+    margin-left: 25px;
+}

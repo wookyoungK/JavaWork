@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+/*기본 버튼*/
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.success {
+    background-color: #4CAF50;
+}
+
+/* Green */
+.success:hover {
+    background-color: #46a049;
+}
+
+.info {
+    background-color: #2196F3;
+}
+
+/* Blue */
+.info:hover {
+    background: #0b7dda;
+}
+
+.warning {
+    background-color: #ff9800;
+}
+
+#frm{
+    width:100%
+}
+
+
+/* Orange */
+.warning:hover {
+    background: #e68a00;
+}
+
+.danger {
+    background-color: #f44336;
+}
+
+/* Red */
+.danger:hover {
+    background: #da190b;
+}
+
+.default {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+/* Gray */
+.default:hover {
+    background: #ddd;
+}
+
+
+/* 글 목록 */
+/*#list table {width: 100%;}*/
+
+/*#list table, #list th, #list td {*/
+/*    border: 1px solid black;*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+#list th, #list td {
+    padding: 10px;
+}
+
+#list .subject:hover { /* 글 제목 위헤 커서 올린 경우*/
+    text-decoration: underline;
+    color: orange;
+    cursor: pointer;
+}
+
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* hireSearch -  woo2 테이블 내용 */
+td#h_search_list {
+    border-top: 1px solid rgb(220, 220, 220);
+    border-bottom: 0px;
+    padding-bottom: 50px;
+    font-weight: 900;
+    width: 1000px;
+    padding-top: 40px;
+}
+
+
+#h_search_title{
+    font-size: larger;
+
+}
+#h_search_title:hover{
+    opacity: 0.7%;
+
+
+}
+#h_search_content {
+    font-size: x-small;
+    color: darkgray;
+}
+
+#h_search_date {
+    font-size: larger;
+    color: rgb(255, 210, 3);
+    font-weight: 900;
+
+}
+
+select#rows {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #555555;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#frmList {
+    margin-left: 100px;
+}
+/* woo2 테이블 내용 끝  */
+
+/*write 작성폼 */
+
+#hirewrite{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 1px 1px #dbdbdb;
+    height: auto;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+#hirewrite input {
+    background-color: rgba(230,230,230,0.3);
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+
+}
+.writeExtra{
+    background-color: rgba(230,230,230,0.3);
+}
+
+#subTitle{
+    color: orange;
+    font-weight: 900;
+    opacity: 0.6;
+
+}
+
+input#register{
+    background-color:darkolivegreen;;
+}
+
+
+
+form#frm{
+    font-family: monospace;
+
+}
+
+
+/*write 작성폼끝*/
+#h_list_content{
+    width: 450px;
+}
+
+
+
+/*      hirelist */
+
+#HessionHide{
+    display: none;
+}
+
+
+#pageinfo{
+    font-weight: 900;
+    color: darkslateblue;
+    font-size: smaller;
+}
+
+#h_hirelist{
+
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    box-shadow: 3px 3px 3px 3px #dbdbdb;
+    height: auto;
+    border-radius: 4px;
+    padding: 20px;
+    width: 800px;
+}
+button#register{
+    border-radius: 15px;
+    background-color: coral;
+
+}
+
+button#deletebtn{
+    border-radius: 15px;
+    background-color: coral;
+    width: 104px;
+}
+
+button#upbtn{
+    border-radius: 15px;
+    background-color: coral;
+
+}
+
+#hcnt{
+    font-size: small;
+    color: firebrick;
+    font-weight: 900;
+    font-family: inherit;
+}
+
+p#endhire{
+    color: darkred;
+}
+/*      hirelist 끝*/
+
+
+/* hireDetail*/
+
+#main_box_content1{
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+
+}
+
+
+/* hireDetail끝*/
+
+
+/* 페이징 */
+.center {
+    text-align: center;
+}
+
+ul.pagination {
+    list-style-type: none;
+    place-content: center;
+}
+
+ul.pagination li {
+    display: inline-block;
+}
+
+ul.pagination a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+    /* border: 1px solid #ddd; */
+    /* margin: 0 4px; */
+    margin: 0px;
+}
+
+ul.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+
+/* 버튼 그룹 */
+.d01 {
+    margin: 5px 0px;
+}
+
+
+div#searchbtn {
+    position: relative;
+    top: -20px;
+}
+
+div#searchbtn input {
+    padding: 15px;
+    border: 0.4px solid #ddd;
+
+}
+
+#searchbtn {
+    background-color: #555555;
+    color: white;
+    border: none;
+}
+
+
+
+
+
+
+
+
+

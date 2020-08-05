@@ -1,0 +1,21 @@
+.req{
+    color: crimson;
+}
+
+
+
+
+#btn-delete{
+    margin-left: 1000px;
+}
+
+button[id^="btn-delete_"]{
+    margin-left: 1000px;
+}
+
+/*#rightup{*/
+/*    margin-left: 900px;*/
+/*}*/
+#resumeUpdate{
+    margin-left: 970px;
+}
