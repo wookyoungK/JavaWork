@@ -32,10 +32,10 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 <c:choose>
-	<c:when test="${delete == 0 }">
+	<c:when test="${result == 0 }">
 		<script>
-			alert('삭제 실패');
-			history.back();
+			alert("등록 실패!!!!!!");
+			history.back();   // 브라우저가 기억하는 직전 페이지(입력중 페이지로)
 		</script>
 	</c:when>
 	<c:otherwise>
@@ -51,8 +51,8 @@
 		<script>
 			Swal.fire({
 				icon: 'success',
-				title: 'Delete!',
-				text: 'Show list.!',
+				title: '등록 성공!',
+				text: '글 목록으로 넘어갑니다.!',
 				buttons : {
 					confirm : {
 						text : 'OK',
@@ -62,10 +62,9 @@
 
 			}).then((result) => {
 				if(result){
-					location.href = "hirelist.do";
+					location.href = "list.do";
 				}
 			})
-
 
 
 		</script>
@@ -74,6 +73,41 @@
 
 	</c:otherwise>
 </c:choose>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

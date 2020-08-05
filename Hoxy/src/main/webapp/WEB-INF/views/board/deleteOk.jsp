@@ -16,6 +16,13 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/yoondoo.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/jinyoung.css"/>
+
+<script src="${pageContext.request.contextPath }/JS/yj.js"></script>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -28,16 +35,17 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+<script src="${pageContext.request.contextPath }/JS/board.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 <c:choose>
-	<c:when test="${delete == 0 }">
+	<c:when test="${result == 0 }">
 		<script>
 			alert('삭제 실패');
 			history.back();
 		</script>
 	</c:when>
+
 	<c:otherwise>
 		<!DOCTYPE html>
 		<html lang="ko">
@@ -51,8 +59,8 @@
 		<script>
 			Swal.fire({
 				icon: 'success',
-				title: 'Delete!',
-				text: 'Show list.!',
+				title: '삭제 성공!',
+				text: '글 목록으로 넘어갑니다.!',
 				buttons : {
 					confirm : {
 						text : 'OK',
@@ -62,7 +70,7 @@
 
 			}).then((result) => {
 				if(result){
-					location.href = "hirelist.do";
+					location.href = "list.do";
 				}
 			})
 
@@ -74,6 +82,13 @@
 
 	</c:otherwise>
 </c:choose>
+		
+
+
+
+
+
+
 
 
 

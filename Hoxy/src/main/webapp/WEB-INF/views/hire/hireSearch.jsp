@@ -1,23 +1,22 @@
-<%@ page import="com.lec.spring.user.domain.ComDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>지역별 채용공고</title>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="${pageContext.request.contextPath }/JS/woo2.js"></script>
     <script src="${pageContext.request.contextPath }/JS/yj.js"></script>
 
-    <script src="${pageContext.request.contextPath }/JS/woo.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/woo.css"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/yoondoo.css"/>
     <!-- banner관련 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -46,58 +45,27 @@
     <%--폰트--%>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet"
+          href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath }/CSS/woo.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/yoondoo.css"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <%--폰트--%>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+
     <%--icon--%>
     <link rel="shortcut icon" type="image/x-icon"
           href="https://i.imgur.com/8AyMFrx.png">
 </head>
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<style>
-    /*datepicer 버튼 롤오버 시 손가락 모양 표시*/
-    .ui-datepicker-trigger {
-        cursor: pointer;
-    }
-
-    /*datepicer input 롤오버 시 손가락 모양 표시*/
-    .hasDatepicker {
-        cursor: pointer;
-    }
-</style>
-
-<title>기업 공고 등록</title>
 
 <body>
-<%
-    int CID = 0;
-    String CeoName = "";
-    String CName = "";
-    if (session.getAttribute("comSession") == null) {
-%>
-
-<script>
-    alert('로그인이 필요한 페이지 입니다');
-    location.href = "/com/login"
-</script>
-
-<%
-    } else {
-
-        ComDTO dto = (ComDTO) session.getAttribute("comSession");
-        CID = dto.getC_uid();
-        CeoName = dto.getC_ceoName();
-        CName = dto.getC_name();
-    }
-%>
-
-<div id="HessionHide">
-    <div id="CID"><%=CID%>
-    </div>
-    <div id="CeoName"><%=CeoName%>
-    </div>
-    <div id="CName"><%=CName%>
-    </div>
-</div>
-
 
 <div id="main_header">
     <div class = "div_1260 row">
@@ -145,7 +113,7 @@
                     <li>
                         <a href="#"><i class="fas"></i></a>
                         <%
-                            if(session.getAttribute("comSession") != null) {
+                            if(session.getAttribute("userSession") != null) {
                         %>
                         <a href="/logout">로그아웃</a>
                         <% }else{%>
@@ -170,99 +138,52 @@
         </nav>
     </div>
 
-
-</div>
-
-<div class="row">
-
-    <div class="writeExtra col-md-2">
-
-    </div>
-    <div id="hirewrite" class="col-md-8 row">
-        <form id="frm" name="frm" action="writeOk.do" method="post" onsubmit="return chkSubmit()">
-            <div class="col-md-12 row">
-                기업명:<input class="col-md-5" type="text" name="h_name" value="<%=CName%>"/>
-                <input type="hidden" name="c_uid" value="<%=CID%>"/>
-            </div>
-            <br>
-            공고 제목:
-            <input class="col-md-8" type="text" name="h_title"/><br><br>
-            급여:
-            <input class="col-md-5" type="text" name="h_salary"/><br><br>
-            내용:
-            <input class="col-md-8" type="text" name="h_content"/><br>
-            <br>
-            근무지역:
-            <select class="col-md-4" id="h_position1" name="h_position1">
+    <div id="main_header_search" class="div_1260">
+        <form class="row col-md-10" name='frm' method='get' action='hireSearch.do'>
+            <select id="search" name="search" class="col-md-5">
                 <option value="서울시">서울시</option>
                 <option value="경기도">경기도</option>
                 <option value="부산광역시">부산광역시</option>
                 <option value="인천광역시">인천광역시</option>
                 <option value="대전광역시">대전광역시</option>
                 <option value="대구광역시">대구광역시</option>
-                <option value="을산광역시">을산광역시</option>
-                <option value="" selected>지역 선택</option>
+                <option value="울산광역시">울산광역시</option>
+                <option value="" selected> 지역 선택</option>
             </select>
-            <input class="col-md-6" type="text" name="h_position2" placeholder="상세 주소입력" id="h_position2"/><br>
-            <br>
-            <hr>
+            <input type="text" class="col-md-5" type="text" name='searchWord' id="searchWord"
+                   placeholder="특수문자 입력불가" aria-label="특수문자 입력 불가"
+                   aria-describedby="button-addon2">
 
-
-            <h2 id="subTitle">모집 내용</h2>
-            <br>
-            직무:
-            <input class="col-md-4" type="text" name="h_part"/><br>
-            <br>
-            <hr>
-
-            경력:
-            <input type="radio" name="h_career" value="무관" required/>무관(신입/경력에 상관없이 모집)
-            <input type="radio" name="h_career" value="신입"/>신입
-            <input type="radio" name="h_career" value="경력"/>경력
-
-            <!-- <input type="radio" name="career" value="mango"/>3년이상
-            <input type="radio" name="career" value="melon"/
-
-            1,2,번호로 중복값가져오기
-            >메론 -->
-
-            <br>
-            <hr>
-            학력:
-            <input type="radio" name="h_degree" value="학력무관" required/>학력무관
-            <input type="radio" name="h_degree" value="고졸"/>고졸
-            <input type="radio" name="h_degree" value="대졸"/>대졸
-            <input type="radio" name="h_degree" value="초대졸"/>초대졸
-            <br>
-            <hr>
-            근무형태:
-            <input type="radio" name="h_workform" value="정규직" required/>정규직
-            <input type="radio" name="h_workform" value="파견직"/>파견직
-            <input type="radio" name="h_workform" value="계약직"/>계약직
-            <input type="radio" name="h_workform" value="인턴직"/>인턴직
-            <br>
-            <hr>
-            모집마감일:
-            <input type="radio" name="Date" value="마감일 선택" id="h_endDate"/>마감일 선택
-            <input type="radio" name="Date" value="상시모집" id="h_always"/>상시모집<br><br>
-
-            <div id="h_date">
-                From: <input type="text" id="h_upDate" name="h_upDate" required>&nbsp;&nbsp;&nbsp; To: <input
-                    type="text"
-                    id="h_regDate"
-                    name="h_regDate" required>
-            </div>
-
-            <br><br>
-
-
-            <input id="register" class="org_Btn" type="submit" value="공고 등록"/>
-            <button class="org_Btn" type="button" onclick="location.href='hirelist.do'">목록으로</button>
-
+            <input type="button" class="col-md-2" value="검색" id="searchbtn">
         </form>
     </div>
 
-    <div class="writeExtra col-md-2"></div>
+</div>
+<%-- 글목록 --%>
+<div id="list">
+    <div class="d01">
+        <div class="right" id="pageRows"></div>
+    </div>
+
+    <form id="frmList" name="frmList" class="col-md-9">
+        <table>
+            <tbody class="col-md-9">
+            <tr>
+
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+
+</div>
+
+<br>
+<%-- 페이징 --%>
+<div class="center">
+    <ul class="pagination" id="pagination">
+
+    </ul>
 </div>
 
 
@@ -304,9 +225,11 @@
         </div>
     </div>
 </div>
-</div>
 
 </body>
 </html>
+
+
+
 
 
