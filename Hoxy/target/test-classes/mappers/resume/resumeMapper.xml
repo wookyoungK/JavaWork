@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.spring.resume.persistence.resumeDAO">
+
+    <insert id="filesave" flushCache="true"
+            parameterType="com.lec.spring.resume.domain.FileDTO">
+        insert into resumeFile
+            (rf_uid, u_uid, rf_source)
+        values
+            (SEQ_Resume_rf_uid.nextval, #{param1},#{param2})
+   </insert>
+
+    <delete id="deleteFile" flushCache="true">
+        DELETE FROM resumeFile WHERE u_uid = #{param1}
+    </delete>
+
+    <delete id="resumeDelete" flushCache="true">
+        DELETE FROM resume WHERE r_uid = #{param1}
+    </delete>
+
+    <insert id="resumeWrite" flushCache="true">
+        insert into Resume values (
+                           SEQ_Resume_r_uid.nextval,
+                           #{param1},
+                           #{param2},
+                           #{param3},
+                           #{param4},
+                           #{param5},
+                           #{param6},
+                           #{param7},
+                           #{param8},
+                           #{param9},
+                           #{param10},
+                           #{param11},
+                           #{param12},
+                           #{param13},
+                           #{param14},
+                           #{param15},
+                           #{param16},
+                           #{param17},
+                           #{param18},
+                           #{param19},
+                           #{param20},
+                           #{param21},
+                           #{param22},
+                           #{param23},
+                           #{param24},
+                           #{param25},
+                           #{param26},
+                           #{param27},
+                           #{param28},
+                           #{param29},
+                           #{param30},
+                           #{param31},
+                           #{param32},
+                           #{param33},
+                           #{param34},
+                           #{param35},
+                           #{param36},
+                           SYSDATE,
+                           #{param37}
+                          )
+    </insert>
+
+    <select id="selectAll" resultType="com.lec.spring.resume.domain.resumeListDTO">
+			select r_title , r_date , r_uid  from resume WHERE u_uid = #{param1}
+	</select>
+
+    <update id="resumeUpdate" flushCache="true">
+        UPDATE resume
+        SET r_title = #{param1},
+        r_name = #{param2},
+        r_gender = #{param3},
+        r_dateofbirth = #{param4},
+        r_email = #{param5},
+        r_phonenum = #{param6},
+        r_address1 = #{param7},
+        r_address2 = #{param8},
+        r_status = #{param9},
+        r_servicetype = #{param10},
+        r_hopeincome = #{param11},
+        r_workarea = #{param12},
+        r_jobtype = #{param13},
+        r_date = SYSDATE
+        WHERE r_uid = #{param14}
+    </update>
+
+    <select id="updateSelect" resultType="com.lec.spring.resume.domain.resumeUpdateDTO">
+        select * FROM resume WHERE r_uid = #{param1}
+    </select>
+
+
+    <select id="select" flushCache="true" resultType="com.lec.spring.resume.domain.resumeViewDTO">
+        select * from resume where r_uid = #{param1}
+    </select>
+
+</mapper>

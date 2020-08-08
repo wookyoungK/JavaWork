@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.spring.user.persistence.ComDAO">
+
+	<insert id="c_register" parameterType="com.lec.spring.user.domain.ComDTO">
+		INSERT INTO Company (
+        c_uid,
+         c_id,
+         c_pw,
+         c_name,
+         c_ceoName,
+         c_address1,
+         c_address2,
+         c_postNum,
+         c_cnum,
+         c_form,
+         c_employees,
+         c_category
+    ) VALUES (
+        SEQ_Company_c_uid.nextval
+        , #{c_id}
+        , #{c_pw}
+        , #{c_name}
+        , #{c_ceoName}
+        , #{c_address1}
+        , #{c_address2}
+        , #{c_postNum}
+        , #{c_cnum}
+        , #{c_form}
+        , #{c_employees}
+        , #{c_category}
+    )
+	</insert>
+
+    <select id="select_By_c_id" resultType="com.lec.spring.user.domain.ComDTO">
+        select * from company where c_uid = ${param1}
+    </select>
+
+    <select id="loginCom" resultType="com.lec.spring.user.domain.ComDTO">
+        select * from company where c_id = #{c_id}
+    </select>
+
+    <select id="checkOverId" parameterType="string" resultType="int">
+        Select count(*) from company where c_id = #{c_id}
+    </select>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.spring.app.persistence.ColorDAO">
+
+
+
+    <select id="select" resultType="com.lec.spring.app.domain.ColorDTO">
+        select * from GRAPHCOLOR
+    </select>
+
+    <update id="update" flushCache="true">
+       UPDATE graphColor SET color1 = #{param1},color2 = #{param2},color3=#{param3}WHERE GCID=1
+
+    </update>
+</mapper>

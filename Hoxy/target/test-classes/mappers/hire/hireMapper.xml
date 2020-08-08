@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.spring.hire.beans.IWriteDAO">
+
+
+    <select id="select"
+            resultType="com.lec.spring.hire.beans.HWriteDTO">
+		SELECT h_uid,h_title, h_career,to_date(h_regDate, 'YYYY-MM-DD')-round(sysdate) remainDate
+		FROM
+		Hire
+		ORDER
+		BY
+		h_uid DESC
+	</select>
+
+
+    <select id="adminselect"
+            resultType="com.lec.spring.hire.beans.HWriteDTO">
+		SELECT h_uid, h_name , h_part  , to_date(h_regDate, 'YYYY-MM-DD')-round(sysdate) remainDate FROM Hire ORDER BY  remainDate ASC
+	</select>
+
+    <select id="selectByUid"
+            resultType="com.lec.spring.hire.beans.HWriteDTO">
+		<![CDATA[
+
+                SELECT h.* , to_date(H_REGDATE, 'YYYY-MM-DD')-round(sysdate) h_remainDate FROM Hire h WHERE h_uid=#{param}
+
+
+        ]]>
+	</select>
+
+    <insert id="insert" flushCache="true"
+            parameterType="com.lec.spring.hire.beans.HWriteDTO"
+            keyProperty="h_uid" useGeneratedKeys="true" keyColumn="h_uid">
+			INSERT
+		INTO
+		Hire
+		(c_uid,h_uid,h_name,h_title, h_salary,h_content,h_position1, h_position2, h_part,h_career,h_degree,h_workform,h_upDate,h_regDate)
+		VALUES
+		(#{c_uid},hire_seq.nextval,#{h_name},#{h_title},#{h_salary},#{h_content},#{h_position1} ,#{h_position2}, #{h_part},#{h_career},#{h_degree},#{h_workform},#{h_upDate},#{h_regDate})
+	</insert>
+
+    <!-- 	 <insert id="insert" flushCache="true">
+            INSERT INTO Hire
+            (h_uid,h_title, h_salary, h_position2, h_part)
+            VALUES
+            (hire_seq.nextval, #{param1}, #{param2}, #{param3})
+        </insert> -->
+
+
+    <update id="update" flushCache="true">
+		UPDATE Hire SET
+		h_name=#{a.h_name},h_title=#{a.h_title},h_salary=#{a.h_salary},h_content=#{a.h_content},h_career=#{a.h_career},h_position1=#{a.h_position1},h_position2=#{a.h_position2},h_part=#{a.h_part},h_degree=#{a.h_degree},h_workform=#{a.h_workform},h_upDate=#{a.h_upDate},h_regDate=#{a.h_regDate}
+		WHERE
+		h_uid = #{param1}
+	</update>
+
+<!--    <delete id="deleteByUid" flushCache="true">-->
+<!--		DELETE FROM Hire WHERE-->
+<!--		h_uid = #{param1}-->
+<!--	</delete>-->
+
+
+    <update id="incViewCnt" flushCache="true">
+    		UPDATE Hire SET h_cnt = h_cnt + 1 WHERE h_uid = #{param1}
+
+    </update>
+
+
+</mapper>
+
